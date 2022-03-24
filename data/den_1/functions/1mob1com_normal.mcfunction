@@ -74,7 +74,7 @@ execute as @e[type=goat,nbt={IsScreamingGoat:true},limit=1,sort=random] at @s un
 execute at @e[type=minecraft:item,nbt={Item:{id:"minecraft:egg"},Age:5999s}] run summon minecraft:chicken ~ ~ ~ {Age:-24000}
 #ブタ
 #execute at @e[type=pig,sort=random,limit=1] at @e[type=cow,distance=..10,sort=random,limit=1] run summon pig ~ ~ ~ {Passengers:[{id:"minecraft:creeper",ignited:1b,Passengers:[{id:"minecraft:lightning_bolt"}]}]}
-execute as @e[type=pig,nbt={Saddle:1b},nbt=!{Health:10f,NoGravity:1b}] at @s run data modify entity @s NoGravity set value 1b
+execute as @e[type=pig,nbt={Saddle:1b},nbt=!{Health:10.0f,NoGravity:1b}] at @s run data modify entity @s NoGravity set value 1b
 #ウマ
 execute as @e[type=horse,nbt={OnGround:false,FallDistance:0f}] at @s if block ~ ~-1.5 ~ air run effect give @s speed 3 1
 #ロバ

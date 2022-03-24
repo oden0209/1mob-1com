@@ -52,7 +52,7 @@ execute as @e[type=goat,nbt={IsScreamingGoat:true},limit=1,sort=random] at @s un
 #ニワトリe
 execute as @e[type=chicken] run data modify entity @s ActiveEffects set value [{Id:8,Amplifier:1,Duration:20,ShowParticles:false},{Id:28,Amplifier:0,Duration:20,ShowParticles:false}]
 #ブタ
-execute as @e[type=pig,nbt={Saddle:1b},nbt=!{Health:10f,NoGravity:1b}] at @s run data modify entity @s NoGravity set value 1b
+execute as @e[type=pig,nbt={Saddle:1b},nbt=!{Health:10.0f,NoGravity:1b}] at @s run data modify entity @s NoGravity set value 1b
 #ウマ
 execute as @e[type=horse,nbt={OnGround:false,FallDistance:0f}] at @s if block ~ ~-1.5 ~ air run effect give @s speed 3 1
 #ロバ
