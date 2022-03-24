@@ -1,0 +1,10 @@
+{
+  "criteria": {
+    "1mob1com": {
+      "trigger": "minecraft:location"
+    }
+  },
+  "rewards": {
+    "function": "den_1:give_manual"
+  }
+}
