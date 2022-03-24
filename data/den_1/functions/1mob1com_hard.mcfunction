@@ -93,7 +93,7 @@ execute at @e[type=strider] run fill ~-1 ~-1 ~-1 ~1 ~1 ~1 lava replace lava
 #村人ゾンビh
 execute at @e[type=minecraft:zombie_villager,nbt={ActiveEffects:[{Duration:4800}]}] run summon tnt
 #ドラウンド
-execute at @e[type=minecraft:trident,nbt={life:1s,pickup:0b}] run summon husk ~ ~ ~ {HandItems:[{id:"minecraft:trident",Count:1b},{}]}
+execute at @e[type=minecraft:trident,nbt={life:1s,pickup:0b}] unless entity @e[type=husk,distance=10..30] run summon husk ~ ~ ~ {HandItems:[{id:"minecraft:trident",Count:1b},{}]}
 #ハスク
 #execute at @e[type=husk] at @e[distance=..10,type=!item] if block ~ ~-1 ~ sand unless entity @e[type=area_effect_cloud,distance=..1] run summon area_effect_cloud ~ ~ ~ {Particle:"flame",ReapplicationDelay:5,Radius:1f,Duration:6,Effects:[{Id:7b,Amplifier:0b,Duration:1}]}
 execute at @e[type=husk,sort=random,limit=1] at @e[distance=..10,type=!item] if block ~ ~-1 ~ sand unless entity @e[type=area_effect_cloud,distance=..1] run summon area_effect_cloud ~ ~ ~ {Particle:"flame",ReapplicationDelay:5,Radius:1f,Duration:6,Effects:[{Id:7b,Amplifier:0b,Duration:1}]}
