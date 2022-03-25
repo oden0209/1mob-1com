@@ -57,7 +57,7 @@ execute at @e[type=minecraft:item,nbt={Item:{id:"minecraft:egg"},Age:5999s}] run
 #ブタh
 execute at @e[type=pig,sort=random,limit=1] at @e[type=cow,distance=..10,sort=random,limit=1] run summon pig ~ ~ ~ {Passengers:[{id:"minecraft:creeper",ignited:1b,Passengers:[{id:"minecraft:lightning_bolt"}]}]}
 #ウマh
-
+execute as @e[type=minecraft:horse] at @s if entity @e[distance=..1,nbt=!{Motion:[0.0d,0.0d,0.0d]}] as @e[distance=..5,nbt={HurtTime:10s}] store result entity @s Motion[1] double 1 run data get entity @s Motion[1] 5
 #ロバh
 
 #ラバh
