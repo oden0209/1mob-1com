@@ -71,7 +71,8 @@ execute as @e[type=goat,nbt={IsScreamingGoat:true},limit=1,sort=random] at @s un
 #effect give @e[type=chicken] jump_boost 200 1 true
 #effect give @e[type=chicken] slow_falling 200 0 true
 #execute as @e[type=chicken] run data modify entity @s ActiveEffects set value [{Id:8,Amplifier:1,Duration:20,ShowParticles:false},{Id:28,Amplifier:0,Duration:20,ShowParticles:false}]
-execute at @e[type=minecraft:item,nbt={Item:{id:"minecraft:egg"},Age:5999s}] run summon minecraft:chicken ~ ~ ~ {Age:-24000}
+#execute at @e[type=minecraft:item,nbt={Item:{id:"minecraft:egg"},Age:5999s}] run summon minecraft:chicken ~ ~ ~ {Age:-24000}
+execute at @e[type=minecraft:item,nbt={Item:{id:"minecraft:egg"},Age:5999s}] unless entity @e[type=minecraft:item,nbt={Item:{id:"minecraft:egg"}},distance=0.1..10] run summon minecraft:chicken ~ ~ ~ {Age:-24000}
 #ブタ
 #execute at @e[type=pig,sort=random,limit=1] at @e[type=cow,distance=..10,sort=random,limit=1] run summon pig ~ ~ ~ {Passengers:[{id:"minecraft:creeper",ignited:1b,Passengers:[{id:"minecraft:lightning_bolt"}]}]}
 execute as @e[type=pig,nbt={Saddle:1b},nbt=!{Health:10.0f,NoGravity:1b}] at @s run data modify entity @s NoGravity set value 1b

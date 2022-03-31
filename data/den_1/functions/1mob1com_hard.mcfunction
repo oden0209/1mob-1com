@@ -53,7 +53,8 @@ execute at @e[type=minecraft:mooshroom] as @e[type=item,distance=..20,nbt={Item:
 #ヤギh
 execute at @e[type=minecraft:goat] positioned ^ ^ ^1 at @e[distance=..1,nbt=!{HurtTime:0s},type=!goat] run fill ~-0.5 ~-2 ~-0.5 ~0.5 ~-1 ~0.5 minecraft:powder_snow
 #ニワトリ
-execute at @e[type=minecraft:item,nbt={Item:{id:"minecraft:egg"},Age:5999s}] run summon minecraft:chicken ~ ~ ~ {Age:-24000}
+#execute at @e[type=minecraft:item,nbt={Item:{id:"minecraft:egg"},Age:5999s}] run summon minecraft:chicken ~ ~ ~ {Age:-24000}
+execute at @e[type=minecraft:item,nbt={Item:{id:"minecraft:egg"},Age:5999s}] unless entity @e[type=minecraft:item,nbt={Item:{id:"minecraft:egg"}},distance=0.1..10] run summon minecraft:chicken ~ ~ ~ {Age:-24000}
 #ブタh
 execute at @e[type=pig,sort=random,limit=1] at @e[type=cow,distance=..10,sort=random,limit=1] run summon pig ~ ~ ~ {Passengers:[{id:"minecraft:creeper",ignited:1b,Passengers:[{id:"minecraft:lightning_bolt"}]}]}
 #ウマh
