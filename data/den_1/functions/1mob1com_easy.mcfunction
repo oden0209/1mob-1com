@@ -126,7 +126,8 @@ execute at @e[type=hoglin,nbt=!{InLove:0}] if entity @e[type=minecraft:hoglin,di
 execute at @e[type=zoglin] unless entity @e[type=area_effect_cloud,distance=..10,tag=zoglin_area] run summon area_effect_cloud ~ ~ ~ {Radius:0.5f,Duration:10,DurationOnUse:-20f,Passengers:[{id:"minecraft:area_effect_cloud",Tags:["zoglin_area"],Particle:"damage_indicator",Radius:0f,RadiusPerTick:1f,Duration:10,WaitTime:30,Effects:[{Id:2b,Amplifier:2b,Duration:20},{Id:7b,Amplifier:2b,Duration:1},{Id:11b,Amplifier:0b,Duration:1728000},{Id:17b,Amplifier:80b,Duration:200}]}],Effects:[{Id:1b,Amplifier:1b,Duration:1200},{Id:5b,Amplifier:3b,Duration:1200}]}
 #ブレイズe
 #execute at @e[type=minecraft:small_fireball] run fill ~-1 ~-1 ~-1 ~1 ~1 ~1 lava[level=1] replace fire
-execute at @e[type=minecraft:small_fireball] if block ~ ~-0.5 ~ fire run fill ~-0.5 ~-0.5 ~-0.5 ~0.5 ~0.5 ~0.5 lava[level=1] keep
+#execute at @e[type=minecraft:small_fireball] if block ~ ~-0.5 ~ fire run fill ~-0.5 ~-0.5 ~-0.5 ~0.5 ~0.5 ~0.5 lava[level=1] keep
+execute as @e[type=minecraft:blaze] at @s unless entity @e[type=minecraft:fox,distance=..20] run summon firework_rocket ~ ~ ~ {HasVisualFire:1b,LifeTime:10,Motion:[0.0,0.5,0.0],Passengers:[{id:"minecraft:fox",HasVisualFire:1b,Motion:[0.0,0.5,0.0],Passengers:[{id:"minecraft:silverfish",HasVisualFire:1b,Silent:1b,HandItems:[{id:"minecraft:golden_sword",Count:1b,tag:{Enchantments:[{id:"minecraft:fire_aspect",lvl:1s}]}},{}],HandDropChances:[0.000F,0.085F],ActiveEffects:[{Id:12b,Amplifier:0b,Duration:99999},{Id:14b,Amplifier:0b,Duration:99999}]}],ActiveEffects:[{Id:28b,Amplifier:0b,Duration:99999}]}]}
 #ガスト
 execute at @e[type=ghast] run kill @e[distance=..10,type=!fireball,type=!wither,type=!ghast,type=!enderman,type=!skeleton,type=!wither_skeleton,type=!blaze,type=!magma_cube,type=!hoglin,type=!piglin,type=!piglin_brute,type=!zombified_piglin,type=!strider]
 #シュルカー
