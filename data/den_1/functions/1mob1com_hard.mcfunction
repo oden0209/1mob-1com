@@ -126,9 +126,9 @@ execute at @e[type=minecraft:piglin_brute] positioned ^ ^ ^1 as @e[type=!minecra
 #ゾンビピグリンh
 execute at @e[type=minecraft:zombified_piglin] run fill ~-1 ~-1 ~-1 ~1 ~1 ~1 minecraft:crimson_nylium replace #minecraft:bamboo_plantable_on
 #ホグリンh
-
+execute as @e[type=minecraft:hoglin,nbt={TimeInOverworld:0}] at @s in minecraft:the_nether if entity @s unless block ~ ~-1 ~ air unless block ~ ~-1 ~ minecraft:crimson_nylium unless block ~ ~-1 ~ minecraft:netherrack unless block ~ ~-1 ~ #minecraft:mineable/axe unless block ~ ~-1 ~ #minecraft:mineable/hoe unless block ~ ~-1 ~ minecraft:crimson_roots in minecraft:overworld store success entity @s PersistenceRequired byte 1 run tp ~ ~-64 ~
 #ゾグリンh
-
+execute as @e[type=minecraft:zoglin] at @s facing entity @e[type=!minecraft:zoglin,sort=nearest,limit=1] feet if block ^ ^0.5 ^4 #minecraft:mineable/pickaxe store success entity @s[nbt=!{ActiveEffects:[{Id:7b}]}] ActiveEffects[0].Id byte 7 run fill ^-0.5 ^0 ^-0.5 ^0.5 ^2 ^4 lava[level=1] replace #minecraft:mineable/pickaxe
 #ブレイズ
 execute at @e[type=blaze,tag=!dragon_eye] at @e[type=small_fireball,distance=..30] as @e[distance=..2,nbt=!{SelectedItem:{id:"minecraft:netherite_sword"}},nbt=!{SelectedItem:{id:"minecraft:snowball"}}] run item replace entity @s weapon.mainhand with baked_potato 1
 #ガストh
