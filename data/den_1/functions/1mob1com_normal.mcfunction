@@ -141,7 +141,8 @@ execute as @e[type=villager] at @s facing entity @e[type=zombie_villager,nbt=!{A
 execute at @e[type=minecraft:trident,nbt={life:1s,pickup:0b}] unless entity @e[type=husk,distance=10..30] run summon husk ~ ~ ~ {HandItems:[{id:"minecraft:trident",Count:1b},{}]}
 #ハスク
 #execute at @e[type=husk] at @e[distance=..10,type=!item] if block ~ ~-1 ~ sand unless entity @e[type=area_effect_cloud,distance=..1] run summon area_effect_cloud ~ ~ ~ {Particle:"flame",ReapplicationDelay:5,Radius:1f,Duration:6,Effects:[{Id:7b,Amplifier:0b,Duration:1}]}
-execute at @e[type=husk,sort=random,limit=1] at @e[distance=..10,type=!item] if block ~ ~-1 ~ sand unless entity @e[type=area_effect_cloud,distance=..1] run summon area_effect_cloud ~ ~ ~ {Particle:"flame",ReapplicationDelay:5,Radius:1f,Duration:6,Effects:[{Id:7b,Amplifier:0b,Duration:1}]}
+#execute at @e[type=husk,sort=random,limit=1] at @e[distance=..10,type=!item] if block ~ ~-1 ~ sand unless entity @e[type=area_effect_cloud,distance=..1] run summon area_effect_cloud ~ ~ ~ {Particle:"flame",ReapplicationDelay:5,Radius:1f,Duration:6,Effects:[{Id:7b,Amplifier:0b,Duration:1}]}
+execute at @e[type=husk,sort=random,limit=1] unless block ~ ~ ~ water at @e[distance=..10,type=!item] if block ~ ~-1 ~ sand unless entity @e[type=area_effect_cloud,distance=..1] run summon area_effect_cloud ~ ~ ~ {Particle:"flame",ReapplicationDelay:5,Radius:1f,Duration:6,Effects:[{Id:7b,Amplifier:0b,Duration:1}]}
 #ジャイアント
 #execute at @e[type=giant] as @e[distance=..30] run data modify entity @s ActiveEffects set value [{Id:14b,Amplifier:0b,Duration:18,ShowParticles:false},{Id:24b,Amplifier:0b,Duration:18,ShowParticles:false}]
 execute at @e[type=giant] if entity @p[distance=..30] run time set midnight
