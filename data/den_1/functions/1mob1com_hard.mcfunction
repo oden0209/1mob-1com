@@ -83,7 +83,7 @@ execute at @e[type=salmon] unless entity @e[type=area_effect_cloud,distance=..5]
 #タラh
 
 #ウーパールーパーh
-execute as @e[type=minecraft:axolotl,distance=..10] at @s store result entity @s ActiveEffects[0].Id byte 1 run execute if entity @e[distance=..10]
+execute as @e[type=minecraft:axolotl] at @s store result entity @s ActiveEffects[0].Id byte 1 run execute if entity @e[distance=..10]
 #イカ
 execute at @e[type=squid] positioned ~-10 ~ ~-10 at @e[type=boat,dx=20,dy=100,dz=20] if block ~ ~-1 ~ water run fill ~-1 ~ ~-1 ~1 ~1 ~1 water[level=9] keep
 #ヒカリイカ
