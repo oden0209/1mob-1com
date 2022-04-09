@@ -158,7 +158,8 @@ execute at @e[type=ravager,nbt={AttackTick:9}] run summon creeper ^ ^ ^3 {Explos
 execute as @e[type=minecraft:witch] at @s if entity @e[type=cat,distance=..30] unless entity @e[type=minecraft:illusioner,distance=..40] run summon illusioner ~ ~ ~ {HandItems:[{id:"minecraft:bow",Count:1b,tag:{Enchantments:[{id:"minecraft:punch",lvl:1s},{id:"minecraft:vanishing_curse",lvl:1s}]}},{}]}
 #イリュージョナーh
 #execute at @e[type=illusioner,nbt={SpellTicks:1}] at @e[type=arrow,nbt={inGround:true},distance=..30,limit=100] unless block ~ ~-3 ~ air run summon item ~ ~-3 ~ {Age:5980,Item:{id:"totem_of_undying",Count:1b},Passengers:[{id:"zombie_villager",Health:4f,ArmorItems:[{id:"coarse_dirt",Count:1b},{},{id:"ancient_debris",Count:1b},{}],ArmorDropChances:[0.700F,0.085F,0.010F,0.085F]}]}
-execute as @e[type=minecraft:illusioner,nbt={ActiveEffects:[{Id:14b,Amplifier:0b,Duration:1200}]},tag=!illusion] at @s run summon illusioner ~ ~ ~ {Health:4f,Tags:["illusion"],HandItems:[{id:"minecraft:bow",Count:1b},{}],ActiveEffects:[{Id:25b,Amplifier:0b,Duration:10}]}
+#execute as @e[type=minecraft:illusioner,nbt={ActiveEffects:[{Id:14b,Amplifier:0b,Duration:1200}]},tag=!illusion] at @s run summon illusioner ~ ~ ~ {Health:4f,Tags:["illusion"],HandItems:[{id:"minecraft:bow",Count:1b},{}],ActiveEffects:[{Id:25b,Amplifier:0b,Duration:10}]}
+execute as @e[type=minecraft:illusioner,nbt={HurtTime:1s},tag=!illusion] at @s as @e[type=#minecraft:raiders,distance=..50,sort=random,limit=3] rotated as @s positioned ^ ^ ^3 run summon illusioner ~ ~ ~ {DeathLootTable:"empty",LeftHanded:1b,Health:1f,Tags:["illusion"],Passengers:[{id:"minecraft:area_effect_cloud",Particle:"dripping_water",Radius:1f,RadiusPerTick:0.01f,Duration:40,WaitTime:200,Effects:[{Id:7b,Amplifier:0b,Duration:1},{Id:9b,Amplifier:0b,Duration:100}]}],HandItems:[{id:"minecraft:bow",Count:1b},{}],Attributes:[{Name:generic.max_health,Base:1}]}
 
 #ボス
 #ガーディアンh
