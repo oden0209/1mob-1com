@@ -278,6 +278,6 @@ execute at @e[type=wither] unless block ~ ~-1 ~ air unless entity @e[type=spawne
 #最強装備
 #防具、ロバ
 #武器近、ゾグリン
-#武器遠、エルダーガーディアン
+#武器遠、
 #食料
-#バフ、ホグリン、（ゾンビホース）
+#バフ、ホグリン、（ゾンビホース）、エルダーガーディアン
