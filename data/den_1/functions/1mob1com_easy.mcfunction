@@ -83,7 +83,7 @@ execute at @e[type=cod] unless entity @e[type=cod,distance=10..30] positioned ^ 
 #ウーパールーパー
 execute as @e[type=axolotl,nbt={Variant:4},nbt={Invulnerable:0b}] run data modify entity @s Invulnerable set value 1b
 #イカe
-
+execute as @e[type=item,nbt={Item:{id:"minecraft:ink_sac"}},nbt={OnGround:1b}] at @s store result entity @s Age short 6000 run summon area_effect_cloud ~ ~ ~ {Particle:"squid_ink",Radius:3f,Duration:60,Effects:[{Id:2b,Amplifier:4b,Duration:20},{Id:15b,Amplifier:0b,Duration:30}]}
 #ヒカリイカe
 
 #ストライダーe
