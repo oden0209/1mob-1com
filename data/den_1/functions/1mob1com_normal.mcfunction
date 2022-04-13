@@ -225,7 +225,7 @@ execute at @e[type=evoker] positioned as @e[type=evoker_fangs,nbt={Warmup:2},dis
 #effect give @e[type=vex] invisibility 1 0
 #execute at @e[type=vex] run setblock ~ ~ ~ fire keep
 #execute at @e[type=vex] run effect give @e[distance=..2,type=!vex,type=!#raiders] levitation 5 0 true
-execute at @e[type=vex,nbt={Health:1.0f,LifeTicks:1}] run summon evoker_fangs ~ ~ ~ {Warmup:4}
+execute at @e[type=vex,nbt={Health:1.0f,LifeTicks:1},tag=sea_shard] run summon evoker_fangs ~ ~ ~ {Warmup:4}
 #execute at @e[type=vex] positioned as @e[type=evoker_fangs,nbt={Warmup:2},distance=..50,limit=1,sort=furthest] facing entity @e[type=!evoker_fangs,type=!#raiders,type=!vex,distance=..30,limit=3,sort=nearest] feet positioned ^ ^ ^1 unless entity @e[type=evoker_fangs,distance=..0.5] run summon evoker_fangs ~ ~ ~ {Warmup:4}
 #ラヴェジャー
 execute at @e[type=ravager,nbt={AttackTick:9}] run summon creeper ^ ^ ^3 {ExplosionRadius:1b,Fuse:2,ignited:1b}
