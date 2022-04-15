@@ -202,9 +202,9 @@ execute at @e[type=blaze,tag=!dragon_eye] at @e[type=small_fireball,distance=..3
 execute at @e[type=ghast] run kill @e[distance=..10,type=!fireball,type=!wither,type=!ghast,type=!enderman,type=!skeleton,type=!wither_skeleton,type=!blaze,type=!magma_cube,type=!hoglin,type=!piglin,type=!piglin_brute,type=!zombified_piglin,type=!strider]
 #シュルカー
 #execute at @e[type=minecraft:shulker_bullet] as @e[distance=..3] run data modify entity @s FallDistance set value 14
-#execute at @e[type=!shulker,type=!end_crystal] at @e[type=shulker,tag=!rider,distance=1..2] run setblock ~ ~ ~ purple_stained_glass
+execute at @e[type=!shulker,type=!end_crystal] at @e[type=shulker,tag=!rider,distance=1..2] run setblock ~ ~ ~ purple_stained_glass
 #execute at @e[type=minecraft:shulker] at @e[type=minecraft:item_frame,nbt={Item:{id:"minecraft:elytra"}},distance=..50] unless entity @e[type=minecraft:command_block_minecart,tag=shulker,distance=..10] positioned ^ ^ ^2 align xyz positioned ~0.5 ~0.5 ~0.5 run summon falling_block ~ ~ ~ {BlockState:{Name:"minecraft:redstone_block"},Time:1,Passengers:[{id:"minecraft:area_effect_cloud",Duration:20,Passengers:[{id:"minecraft:falling_block",BlockState:{Name:"minecraft:activator_rail"},Time:1,Passengers:[{id:"minecraft:command_block_minecart",Command:"execute at @e[type=minecraft:shulker,nbt={Peek:100b},distance=..50] positioned ~ ~2 ~ if entity @e[type=minecraft:shulker_bullet,distance=2..20] unless entity @e[type=minecraft:shulker_bullet,distance=..2] run summon minecraft:shulker_bullet ~ ~ ~ {Steps:1}",Tags:["shulker"]},{id:"minecraft:command_block_minecart",Command:"execute as @e[type=minecraft:shulker_bullet,distance=..50] at @s run data modify entity @s Target set from entity @e[type=minecraft:shulker_bullet,limit=1,sort=furthest] Target",Tags:["shulker"]}]}]}]}
-execute at @e[type=minecraft:shulker,nbt={Peek:30b},tag=!rider] unless entity @e[type=minecraft:endermite,distance=..5] run summon endermite ~ ~ ~ {Lifetime:2300}
+#execute at @e[type=minecraft:shulker,nbt={Peek:30b},tag=!rider] unless entity @e[type=minecraft:endermite,distance=..5] run summon endermite ~ ~ ~ {Lifetime:2300}
 #略奪
 #ヴィンディケーター
 #execute at @e[type=vindicator] run effect give @e[distance=..16] blindness 2 0 true

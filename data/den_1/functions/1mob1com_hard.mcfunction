@@ -140,7 +140,8 @@ execute at @e[type=blaze,tag=!dragon_eye] at @e[type=small_fireball,distance=..3
 #execute at @e[type=ghast] run kill @e[distance=..10,type=!fireball,type=!wither,type=!ghast,type=!enderman,type=!skeleton,type=!wither_skeleton,type=!blaze,type=!magma_cube,type=!hoglin,type=!piglin,type=!piglin_brute,type=!zombified_piglin,type=!strider]
 execute as @e[type=minecraft:ghast] at @s positioned as @e[type=minecraft:fireball,distance=5..100] positioned ^ ^ ^15 run summon tnt
 #シュルカーh
-execute at @e[type=!shulker,type=!end_crystal] at @e[type=shulker,tag=!rider,distance=1..2] run setblock ~ ~ ~ purple_stained_glass
+#execute at @e[type=!shulker,type=!end_crystal] at @e[type=shulker,tag=!rider,distance=1..2] run setblock ~ ~ ~ purple_stained_glass
+execute at @e[type=minecraft:shulker,nbt={Peek:30b},tag=!rider] unless entity @e[type=minecraft:endermite,distance=..5] run summon endermite ~ ~ ~ {Lifetime:2300}
 #略奪
 #ヴィンディケーター
 execute at @e[type=vindicator] at @e[type=ravager,distance=..2] run fill ~-3 ~1 ~-3 ~3 ~4 ~3 air destroy
