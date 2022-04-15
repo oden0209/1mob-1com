@@ -146,8 +146,9 @@ execute at @e[type=pillager] if entity @e[type=ravager,distance=..2] unless enti
 execute at @e[type=evoker] positioned as @e[type=evoker_fangs,nbt={Warmup:2},distance=..50,limit=1,sort=furthest] facing entity @e[type=!evoker_fangs,type=!#raiders,type=!vex,distance=..30,limit=3,sort=nearest] feet positioned ^ ^ ^1 unless entity @e[type=evoker_fangs,distance=..0.5] run summon evoker_fangs ~ ~ ~ {Warmup:4}
 #execute at @e[type=evoker] at @e[type=#minecraft:raiders,distance=..100] run fill ~-15 ~-15 ~-15 ~15 ~15 ~15 spawner{SpawnCount:1,SpawnRange:2,MinSpawnDelay:1200,MaxSpawnDelay:1300,MaxNearbyEntities:1,RequiredPlayerRange:30,SpawnData:{entity:{id:"minecraft:area_effect_cloud",Passengers:[{id:"minecraft:evoker_fangs",Warmup:4}]}}} replace fire
 #ヴェックス
-execute at @e[type=vex,nbt={Health:1.0f,LifeTicks:1},tag=!sea_shard] run summon evoker_fangs ~ ~ ~ {Warmup:4}
+#execute at @e[type=vex,nbt={Health:1.0f,LifeTicks:1},tag=!sea_shard] run summon evoker_fangs ~ ~ ~ {Warmup:4}
 #execute at @e[type=vex] positioned as @e[type=evoker_fangs,nbt={Warmup:2},distance=..50,limit=1,sort=furthest] facing entity @e[type=!evoker_fangs,type=!#raiders,type=!vex,distance=..30,limit=3,sort=nearest] feet positioned ^ ^ ^1 unless entity @e[type=evoker_fangs,distance=..0.5] run summon evoker_fangs ~ ~ ~ {Warmup:4}
+execute at @e[type=vex,nbt={LifeTicks:1},tag=!sea_shard] run summon evoker_fangs ~ ~ ~ {Warmup:4}
 #ラヴェジャーe
 execute as @e[type=minecraft:ravager,nbt={RoarTick:10}] at @s at @e[type=!#minecraft:raiders,sort=nearest,limit=3] run summon minecraft:lightning_bolt
 #ウィッチ
