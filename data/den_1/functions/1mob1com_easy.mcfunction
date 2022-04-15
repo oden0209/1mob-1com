@@ -92,7 +92,7 @@ execute as @e[type=minecraft:strider] at @s unless entity @e[tag=zombie_travelle
 #村人ゾンビ
 execute as @e[type=villager] at @s facing entity @e[type=zombie_villager,nbt=!{ActiveEffects:[{Id:14b}]},distance=..7,sort=nearest,limit=1] feet if block ^ ^ ^0.01 air unless block ~ ~-0.5 ~ air run tp ^ ^ ^0.01
 #ドラウンドe
-
+execute at @e[type=minecraft:drowned] at @e[distance=..25] anchored eyes positioned ~ ~1.5 ~ if block ~ ~1 ~ air run fill ~-1 ~ ~-1 ~1 ~ ~1 minecraft:frosted_ice replace minecraft:water[level=0]
 #ハスクe
 
 #ジャイアント
