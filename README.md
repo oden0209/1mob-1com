@@ -9,7 +9,7 @@ JAVA版 1.18.2
 
 ※一人で制作しているため動作の確実な保証はできません
 # インストール方法
-1.[こちら](https://github.com/oden0209/1mob-1com/tags)からzipをダウンロード。
+1.[こちら](https://github.com/oden0209/1mob-1com/releases)からzipをダウンロード。
 
 2.zip内の「1mob1com」を、適用するワールドのdatapacksフォルダ内に配置。
 
