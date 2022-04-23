@@ -73,7 +73,7 @@ execute at @e[type=skeleton_horse,nbt={SkeletonTrap:true}] at @p[distance=..10] 
 #ゾンビホースh
 execute as @e[type=minecraft:zombie,nbt={Attributes:[{Base:1.0d}]}] at @s unless entity @e[type=minecraft:zombie_horse,distance=..15] run summon zombie_horse ~ ~ ~ {Tags:["enemy"],Passengers:[{id:"minecraft:zombie",CanPickUpLoot:1b,HandItems:[{id:"minecraft:wooden_axe",Count:1b},{}],ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",Count:1b}],Attributes:[{Name:generic.armor,Base:25}]}],ArmorItems:[{id:"minecraft:leather_boots",Count:1b,tag:{display:{color:17408},Enchantments:[{id:"minecraft:thorns",lvl:1s},{id:"minecraft:frost_walker",lvl:1s},{id:"minecraft:soul_speed",lvl:1s}]}},{},{},{}],ActiveEffects:[{Id:8b,Amplifier:1b,Duration:99999,ShowParticles:0b},{Id:17b,Amplifier:0b,Duration:99999,ShowParticles:0b}]}
 #イルカh
-
+execute as @e[type=minecraft:dolphin,tag=!dolphin_jockey] at @s store result entity @s Health float 0 run summon dolphin ~ ~ ~ {PersistenceRequired:1b,Tags:["dolphin_jockey"],Passengers:[{id:"minecraft:area_effect_cloud",Particle:"portal",Radius:1f,Duration:99999,Passengers:[{id:"minecraft:drowned",CanPickUpLoot:1b,ArmorItems:[{},{},{},{id:"minecraft:turtle_helmet",Count:1b}]}],Effects:[{Id:9b,Amplifier:0b,Duration:100}]}]}
 #カメ
 execute at @e[type=!turtle,type=!item] if block ~ ~ ~ turtle_egg positioned ~ ~40 ~-40 unless entity @e[type=fireball,distance=..20] run summon fireball ~ ~ ~ {Item:{id:"turtle_egg",Count:1b},power:[0.0,-1.0,1.0]}
 #フグh
