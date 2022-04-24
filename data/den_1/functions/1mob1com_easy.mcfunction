@@ -39,8 +39,8 @@ execute as @e[type=bat,nbt=!{Motion:[0.0,0.0,0.0]}] at @s run data modify entity
 
 #パンダ
 execute at @e[type=minecraft:panda] at @e[type=item,distance=..10,sort=nearest,limit=1,nbt={Item:{id:"minecraft:bamboo"}}] align xyz positioned ~0.5 ~0.5 ~0.5 if block ~ ~ ~ air unless entity @e[distance=..20,type=minecraft:falling_block] run summon area_effect_cloud ~ ~1 ~ {Passengers:[{id:"minecraft:falling_block",BlockState:{Name:"minecraft:bamboo_sapling"},Time:1,DropItem:0b},{id:"minecraft:falling_block",BlockState:{Name:"minecraft:pointed_dripstone",Properties:{vertical_direction:"up"}},Time:1,DropItem:0b}]}
-#シロクマe
-
+#シロクマ
+execute as @e[type=minecraft:polar_bear,nbt={Age:-23999}] at @s run summon firework_rocket ~ ~1 ~ {LifeTime:60,Passengers:[{id:"minecraft:item",Item:{id:"minecraft:cake",Count:1b}},{id:"minecraft:item",Item:{id:"minecraft:wolf_spawn_egg",Count:1b}},{id:"minecraft:item",Item:{id:"minecraft:mojang_banner_pattern",Count:1b}},{id:"minecraft:item",Item:{id:"minecraft:lily_of_the_valley",Count:1b}},{id:"minecraft:item",Item:{id:"minecraft:azure_bluet",Count:1b}},{id:"minecraft:item",Item:{id:"minecraft:oxeye_daisy",Count:1b}}],FireworksItem:{id:firework_rocket,Count:1,tag:{Fireworks:{Explosions:[{Type:4,Trail:1b,Colors:[I;16777215],FadeColors:[I;27303,16698368]}]}}}}
 #ウシ
 execute at @e[type=cow] run effect clear @e[distance=..2]
 #ムーシュルームe

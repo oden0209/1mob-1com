@@ -41,7 +41,7 @@ execute at @e[type=fox,nbt={HandItems:[{id:"minecraft:sweet_berries",Count:1b},{
 execute at @e[type=rabbit,nbt=!{RabbitType:99}] unless entity @e[type=rabbit,nbt={RabbitType:99},distance=..5] run summon rabbit ~ ~ ~ {Age:-600,RabbitType:99}
 #パンダh
 execute at @e[type=panda] as @e[type=item,nbt=!{Item:{id:"minecraft:bamboo"}},distance=..10] run data modify entity @s Item set value {id:"minecraft:bamboo",Count:1b}
-#シロクマ
+#シロクマh
 execute at @e[type=polar_bear,nbt={Age:0}] at @e[type=polar_bear,nbt=!{Age:0}] at @e[distance=..4] unless entity @e[type=polar_bear,distance=..3] run fill ~-1 ~-1 ~-1 ~1 ~4 ~1 ice
 #ウシh
 
