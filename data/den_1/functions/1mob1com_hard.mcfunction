@@ -11,6 +11,7 @@ execute at @e[type=creeper] at @e[type=item,distance=..10] if entity @e[type=!it
 execute at @e[type=enderman,nbt={HurtTime:10s},nbt=!{AngerTime:0}] as @e[distance=..10,type=!minecraft:spawner_minecart] run spreadplayers ~ ~ 2 15 false @s
 #スライム
 execute as @e[type=slime,nbt={Size:0}] at @s run tp @s @e[distance=..1,limit=1,sort=nearest,type=!slime,type=!item]
+#-----
 #友好・中立
 #スノーゴーレムh
 execute at @e[type=minecraft:snow_golem] at @e[type=minecraft:snowball,distance=..20] run fill ~-1 ~-1 ~-1 ~1 ~1 ~1 minecraft:snow[layers=8] replace minecraft:snow
@@ -27,9 +28,12 @@ execute as @e[type=minecraft:wandering_trader,nbt=!{Offers:{Recipes:[{buy:{id:"m
 execute as @e[type=minecraft:cat] at @s if entity @e[type=minecraft:potion,distance=..20] unless entity @e[type=minecraft:ghast,distance=..80] run summon minecraft:ghast ~ ~50 ~
 #ヤマネコh
 #execute at @e[type=minecraft:ocelot] run fill ~-3 ~-3 ~-3 ~3 ~3 ~3 minecraft:skulk_catalyst replace minecraft:melon
+execute at @e[type=minecraft:ocelot] run fill ~-10 ~-3 ~-10 ~10 ~3 ~10 minecraft:sculk_catalyst replace minecraft:melon
 #オオカミh
 
 #オウムh
+
+#アレイ
 
 #ミツバチ
 execute at @e[type=bee,nbt={HasNectar:true},nbt=!{HivePos:{}}] positioned ~ ~1 ~1 unless block ~ ~1 ~ air if block ~ ~ ~ air run setblock ~ ~ ~ bee_nest{Bees:[{EntityData:{id:"bee",Age:-12000}}]}
@@ -62,7 +66,7 @@ execute at @e[type=pig,sort=random,limit=1] at @e[type=cow,distance=..10,sort=ra
 #ウマh
 execute as @e[type=minecraft:horse] at @s if entity @e[distance=..1,nbt=!{Motion:[0.0d,0.0d,0.0d]}] as @e[distance=1..5,nbt={HurtTime:10s}] store result entity @s Motion[1] double 1 run data get entity @s Motion[1] 5
 #ロバh
-
+execute as @e[type=minecraft:donkey] at @s unless block ~ ~ ~ air as @e[distance=..1] run effect give @s invisible 3 0
 #ラバh
 
 #ラマh
@@ -87,12 +91,17 @@ execute at @e[type=salmon] unless entity @e[type=area_effect_cloud,distance=..5]
 
 #ウーパールーパーh
 execute as @e[type=minecraft:axolotl] at @s store result entity @s ActiveEffects[0].Id byte 1 run execute if entity @e[distance=..10]
+#オタマジャクシ
+
+#カエル
+
 #イカ
 execute at @e[type=squid] positioned ~-10 ~ ~-10 at @e[type=boat,dx=20,dy=100,dz=20] if block ~ ~-1 ~ water run fill ~-1 ~ ~-1 ~1 ~1 ~1 water[level=9] keep
 #ヒカリイカ
 execute at @e[type=glow_squid] as @e[distance=..10] at @s anchored eyes run setblock ^ ^1 ^ water[level=9] keep
 #ストライダー
 execute at @e[type=strider] run fill ~-1 ~-1 ~-1 ~1 ~1 ~1 lava replace lava
+#-----
 #上位
 #村人ゾンビh
 execute at @e[type=minecraft:zombie_villager,nbt={ActiveEffects:[{Duration:4800}]}] run summon tnt
@@ -114,6 +123,7 @@ execute at @e if block ~ ~-1 ~ minecraft:nether_bricks positioned ~ ~-1 ~ run fi
 execute as @e[nbt={ActiveEffects:[{Duration:1},{Id:19b}]}] at @s if entity @s[y=-64,dy=94] at @s run summon spawner_minecart ~ ~ ~ {Delay:0,SpawnData:{entity:{id:"minecraft:falling_block",BlockState:{Name:"minecraft:cobweb"},Time:1,DropItem:0b,Passengers:[{id:"minecraft:cave_spider",Health:2f}]}}}
 #マグマキューブ
 execute as @e[type=magma_cube,nbt={Size:0}] at @s run tp @s @e[distance=..2,limit=1,sort=furthest,type=!magma_cube,type=!item,type=!item,type=!experience_orb]
+#-----
 #強敵
 #ファントムh
 execute at @e[type=minecraft:phantom,tag=!dragon_eye,nbt={HurtTime:5s},nbt={Fire:-1s},tag=!phantom_shadow] run summon area_effect_cloud ~ ~ ~ {Particle:"campfire_signal_smoke",Radius:10f,Duration:10,Passengers:[{id:"minecraft:phantom",DeathLootTable:"minecraft:empty",Health:1f,Tags:["phantom_shadow"]}]}
@@ -139,10 +149,12 @@ execute as @e[type=minecraft:zoglin] at @s at @e[nbt=!{HurtTime:0s},distance=..2
 execute at @e[type=blaze,tag=!dragon_eye] at @e[type=small_fireball,distance=..30] as @e[distance=..2,nbt=!{SelectedItem:{id:"minecraft:netherite_sword"}},nbt=!{SelectedItem:{id:"minecraft:snowball"}}] run item replace entity @s weapon.mainhand with baked_potato 1
 #ガストh
 #execute at @e[type=ghast] run kill @e[distance=..10,type=!fireball,type=!wither,type=!ghast,type=!enderman,type=!skeleton,type=!wither_skeleton,type=!blaze,type=!magma_cube,type=!hoglin,type=!piglin,type=!piglin_brute,type=!zombified_piglin,type=!strider]
-execute as @e[type=minecraft:ghast] at @s positioned as @e[type=minecraft:fireball,distance=5..100] positioned ^ ^ ^15 run summon tnt
+#execute as @e[type=minecraft:ghast] at @s positioned as @e[type=minecraft:fireball,distance=5..100] positioned ^ ^ ^15 run summon tnt
+execute as @e[type=minecraft:ghast] at @s as @e[type=minecraft:fireball,distance=..100,sort=nearest,limit=1] facing entity @s eyes positioned as @s unless entity @e[type=minecraft:ghast,distance=..50] positioned ^ ^ ^15 run summon tnt
 #シュルカーh
 #execute at @e[type=!shulker,type=!end_crystal] at @e[type=shulker,tag=!rider,distance=1..2] run setblock ~ ~ ~ purple_stained_glass
 execute at @e[type=minecraft:shulker,nbt={Peek:30b},tag=!rider] unless entity @e[type=minecraft:endermite,distance=..5] run summon endermite ~ ~ ~ {Lifetime:2300}
+#-----
 #略奪
 #ヴィンディケーター
 execute at @e[type=vindicator] at @e[type=ravager,distance=..2] run fill ~-3 ~1 ~-3 ~3 ~4 ~3 air destroy
@@ -165,8 +177,11 @@ execute as @e[type=minecraft:witch] at @s if entity @e[type=cat,distance=..30] u
 #execute at @e[type=illusioner,nbt={SpellTicks:1}] at @e[type=arrow,nbt={inGround:true},distance=..30,limit=100] unless block ~ ~-3 ~ air run summon item ~ ~-3 ~ {Age:5980,Item:{id:"totem_of_undying",Count:1b},Passengers:[{id:"zombie_villager",Health:4f,ArmorItems:[{id:"coarse_dirt",Count:1b},{},{id:"ancient_debris",Count:1b},{}],ArmorDropChances:[0.700F,0.085F,0.010F,0.085F]}]}
 #execute as @e[type=minecraft:illusioner,nbt={ActiveEffects:[{Id:14b,Amplifier:0b,Duration:1200}]},tag=!illusion] at @s run summon illusioner ~ ~ ~ {Health:4f,Tags:["illusion"],HandItems:[{id:"minecraft:bow",Count:1b},{}],ActiveEffects:[{Id:25b,Amplifier:0b,Duration:10}]}
 execute as @e[type=minecraft:illusioner,nbt={HurtTime:1s},tag=!illusion] at @s as @e[type=#minecraft:raiders,distance=..50,sort=random,limit=3] rotated as @s positioned ^ ^ ^3 run summon illusioner ~ ~ ~ {DeathLootTable:"empty",LeftHanded:1b,Health:1f,Tags:["illusion"],Passengers:[{id:"minecraft:area_effect_cloud",Particle:"dripping_water",Radius:1f,RadiusPerTick:0.01f,Duration:40,WaitTime:200,Effects:[{Id:7b,Amplifier:0b,Duration:1},{Id:9b,Amplifier:0b,Duration:100}]}],HandItems:[{id:"minecraft:bow",Count:1b},{}],Attributes:[{Name:generic.max_health,Base:1}]}
-
+#-----
 #ボス
+#ウォーデン
+#execute at @p if block ~ ~ ~ minecraft:sculk_vein run fill ~-20 ~-5 ~-20 ~20 ~5 ~20 spawner{SpawnCount:2,SpawnRange:10,Delay:20,MinSpawnDelay:10,MaxSpawnDelay:20,MaxNearbyEntities:5,RequiredPlayerRange:3,SpawnData:{entity:{id:"minecraft:zombie",Silent:1b}}} replace minecraft:polished_basalt[axis=y]
+execute as @e[type=minecraft:warden,nbt={anger:{suspects:[]}},sort=random,limit=1] at @s positioned as @e[type=!minecraft:warden,type=!#minecraft:impact_projectiles,type=!item,type=!minecraft:experience_orb,sort=nearest,limit=1] unless entity @e[type=minecraft:warden,distance=..5] if block ~ ~ ~ minecraft:sculk_vein store result entity @s Brain.memories long 1 store result entity @s Motion byte 0 run summon warden ^ ^ ^-1 {Brain:{memories:{"minecraft:dig_cooldown":{value:{},ttl:1200L},"minecraft:is_emerging":{value:{},ttl:125L}}}}
 #ガーディアン
 #execute at @e[type=guardian,nbt={Motion:[0.0,0.0,0.0]},tag=!dragon] as @e[type=!elder_guardian,type=!guardian,tag=!guardian,distance=..5] at @s facing entity @e[type=guardian,limit=1,sort=nearest] eyes positioned ^ ^ ^-0.1 rotated as @s run tp ~ ~ ~
 #execute as @e[type=minecraft:item,nbt={Item:{id:"minecraft:pufferfish"}}] at @s if block ~ ~ ~ minecraft:water unless entity @e[type=minecraft:guardian,distance=..10] store success entity @s Age short 5999 run summon minecraft:guardian
@@ -194,3 +209,4 @@ execute at @e[type=minecraft:ender_dragon] at @e[type=minecraft:end_crystal] pos
 #武器遠、
 #食料
 #バフ、エルダーガーディアン
+#特殊武器、

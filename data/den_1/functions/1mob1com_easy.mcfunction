@@ -11,6 +11,7 @@ execute at @e[type=minecraft:creeper,tag=!time_bomb,nbt=!{Fire:-1s},nbt=!{Fire:0
 execute as @e[type=minecraft:enderman,nbt=!{AngerTime:0}] at @s run effect give @e[distance=..5] minecraft:blindness 2 0
 #スライムe
 execute at @e[type=minecraft:slime,nbt={OnGround:0b},nbt=!{FallDistance:0f}] unless block ~ ~-0.3 ~ air unless block ~ ~-0.3 ~ minecraft:cave_air unless block ~ ~-0.3 ~ water unless block ~ ~-0.3 ~ lava run summon area_effect_cloud ~ ~ ~ {Particle:"bubble_pop",Radius:0f,RadiusPerTick:0.5f,Duration:10,Effects:[{Id:25b,Amplifier:10b,Duration:5}]}
+#-----
 #友好・中立
 #スノーゴーレム
 execute at @e[type=snow_golem] at @e[type=snowball,distance=..5] as @e[type=!snow_golem,type=!polar_bear,type=!stray,nbt=!{VillagerData:{type:"minecraft:snow"}},nbt=!{Type:"snow"},distance=..2] run item replace entity @s armor.head with ice{AttributeModifiers:[{AttributeName:"generic.follow_range",Name:"generic.follow_range",Amount:-0.5,Operation:2,UUID:[I;754064627,-1304345982,-2044253836,1119759208]},{AttributeName:"generic.movement_speed",Name:"generic.movement_speed",Amount:-0.5,Operation:2,UUID:[I;-1827194926,-970438675,-2038461094,-78379753]}]} 1
@@ -29,6 +30,8 @@ execute at @e[type=ocelot] as @e[type=creeper,distance=..20] run data modify ent
 execute as @e[type=wolf] at @s run tp @e[type=item,distance=..2] @s
 #オウム
 effect give @e[nbt={ShoulderEntityLeft:{}}] levitation 10 254
+#アレイ
+
 #ミツバチe
 execute as @e[type=minecraft:bee,nbt={HasStung:0b}] at @s positioned ^ ^ ^0.5 as @e[nbt={ActiveEffects:[{Id:19b}]},distance=..0.5,type=!minecraft:bee] run effect give @s minecraft:poison 18 2
 #コウモリe
@@ -36,7 +39,7 @@ execute as @e[type=bat,nbt=!{Motion:[0.0,0.0,0.0]}] at @s run data modify entity
 #キツネe
 
 #ウサギe
-
+execute as @e[type=minecraft:rabbit,nbt=!{RabbitType:99},nbt={HurtTime:10s}] run data modify entity @s RabbitType set value 99
 #パンダ
 execute at @e[type=minecraft:panda] at @e[type=item,distance=..10,sort=nearest,limit=1,nbt={Item:{id:"minecraft:bamboo"}}] align xyz positioned ~0.5 ~0.5 ~0.5 if block ~ ~ ~ air unless entity @e[distance=..20,type=minecraft:falling_block] run summon area_effect_cloud ~ ~1 ~ {Passengers:[{id:"minecraft:falling_block",BlockState:{Name:"minecraft:bamboo_sapling"},Time:1,DropItem:0b},{id:"minecraft:falling_block",BlockState:{Name:"minecraft:pointed_dripstone",Properties:{vertical_direction:"up"}},Time:1,DropItem:0b}]}
 #シロクマ
@@ -82,19 +85,24 @@ execute at @e[type=salmon] at @e[type=!salmon,distance=..5] if block ~ ~ ~ air r
 execute at @e[type=cod] unless entity @e[type=cod,distance=10..30] positioned ^ ^ ^3 if block ~ ~ ~ minecraft:water unless entity @e[type=cod,distance=..2] run summon cod
 #ウーパールーパー
 execute as @e[type=axolotl,nbt={Variant:4},nbt={Invulnerable:0b}] run data modify entity @s Invulnerable set value 1b
+#オタマジャクシ
+
+#カエル
+execute at @e[type=minecraft:frog,nbt={variant:"minecraft:cold"}] as @e[type=minecraft:item,distance=..10,nbt={Age:0s,Item:{id:"minecraft:slime_ball"}}] run data modify entity @s Item set value {id:"minecraft:lingering_potion",Count:1b,tag:{display:{Name:'{"text":"frog fog"}'},CustomPotionEffects:[{Id:2,Amplifier:1b,Duration:100},{Id:8,Amplifier:0b,Duration:40},{Id:18,Amplifier:0b,Duration:200},{Id:19,Amplifier:0b,Duration:100},{Id:24,Amplifier:0b,Duration:20}],CustomPotionColor:30464}}
 #イカe
 execute as @e[type=item,nbt={Item:{id:"minecraft:ink_sac"}},nbt={OnGround:1b}] at @s store result entity @s Age short 6000 run summon area_effect_cloud ~ ~ ~ {Particle:"squid_ink",Radius:3f,Duration:60,Effects:[{Id:2b,Amplifier:4b,Duration:20},{Id:15b,Amplifier:0b,Duration:30}]}
 #ヒカリイカe
 execute as @e[type=item,nbt={Item:{id:"minecraft:glow_ink_sac"}},nbt={OnGround:1b}] at @s store result entity @s Age short 6000 run summon area_effect_cloud ~ ~ ~ {Particle:"glow_squid_ink",Radius:3f,Duration:20,Passengers:[{id:"minecraft:area_effect_cloud",Passengers:[{id:"minecraft:spectral_arrow",life:1200,Motion:[1.0,0.1,0.0],SoundEvent:"block.amethyst_cluster.fall"},{id:"minecraft:spectral_arrow",life:1200,Motion:[0.5,0.1,0.5],SoundEvent:"block.amethyst_cluster.fall"},{id:"minecraft:spectral_arrow",life:1200,Motion:[0.0,0.1,1.0],SoundEvent:"block.amethyst_cluster.fall"},{id:"minecraft:spectral_arrow",life:1200,Motion:[-0.5,0.1,0.5],SoundEvent:"block.amethyst_cluster.fall"},{id:"minecraft:spectral_arrow",life:1200,Motion:[-1.0,0.1,0.0],SoundEvent:"block.amethyst_cluster.fall"},{id:"minecraft:spectral_arrow",life:1200,Motion:[-0.5,0.1,-0.5],SoundEvent:"block.amethyst_cluster.fall"},{id:"minecraft:spectral_arrow",life:1200,Motion:[0.0,0.1,-1.0],SoundEvent:"block.amethyst_cluster.fall"},{id:"minecraft:spectral_arrow",life:1200,Motion:[0.5,0.1,-0.5],SoundEvent:"block.amethyst_cluster.fall"},{id:"minecraft:falling_block",BlockState:{Name:"minecraft:glow_lichen",Properties:{down:"true"}},Time:1,DropItem:0b,Motion:[0.3,0.5,0.0]},{id:"minecraft:falling_block",BlockState:{Name:"minecraft:glow_lichen",Properties:{down:"true"}},Time:1,DropItem:0b,Motion:[-0.3,0.5,0.0]}]}],Effects:[{Id:24b,Amplifier:0b,Duration:1200}]}
 #ストライダーe
 execute as @e[type=minecraft:strider] at @s unless entity @e[tag=zombie_traveller,distance=..30] positioned ~ ~0.84 ~ if entity @e[type=minecraft:zombified_piglin,distance=..0.3] run summon area_effect_cloud ~ ~ ~ {Passengers:[{id:"minecraft:strider",UUID:[I;4,4,4,4],PersistenceRequired:1b,Saddle:1b,Tags:["zombie_traveller"],Passengers:[{id:"minecraft:piglin",PersistenceRequired:1b,Health:2f,HandItems:[{id:"minecraft:warped_fungus_on_a_stick",Count:1b},{id:"minecraft:book",Count:1b}],ArmorItems:[{},{},{},{id:"minecraft:golden_helmet",Count:1b}]}]},{id:"minecraft:strider",UUID:[I;44,44,44,44],PersistenceRequired:1b,Saddle:1b,Tags:["zombie_traveller"],Passengers:[{id:"minecraft:zombified_piglin",PersistenceRequired:1b,HandItems:[{id:"minecraft:crossbow",Count:1b},{}]}],Leash:{UUID:[I;4,4,4,4]}},{id:"minecraft:strider",PersistenceRequired:1b,Saddle:1b,Motion:[0.1,0.0,0.0],Tags:["zombie_traveller"],Passengers:[{id:"minecraft:zombified_piglin",HasVisualFire:1b,PersistenceRequired:1b,HandItems:[{id:"minecraft:spyglass",Count:1b},{}]}],Leash:{UUID:[I;4,4,4,4]}},{id:"minecraft:strider",PersistenceRequired:1b,Saddle:1b,Motion:[-0.1,0.0,0.0],Tags:["zombie_traveller"],Passengers:[{id:"minecraft:skeleton",PersistenceRequired:1b,HandItems:[{id:"minecraft:golden_sword",Count:1b},{}],ArmorItems:[{},{},{id:"minecraft:golden_chestplate",Count:1b},{}]}],Leash:{UUID:[I;4,4,4,4]}},{id:"minecraft:strider",PersistenceRequired:1b,Tags:["zombie_traveller"],Passengers:[{id:"minecraft:chest_minecart",Items:[{Slot:0b,id:"minecraft:warped_fungus_on_a_stick",Count:1b,tag:{Damage:79}},{Slot:1b,id:"minecraft:rotten_flesh",Count:2b},{Slot:2b,id:"minecraft:crimson_roots",Count:1b},{Slot:5b,id:"minecraft:fishing_rod",Count:1b,tag:{Damage:93}},{Slot:7b,id:"minecraft:crimson_roots",Count:2b},{Slot:8b,id:"minecraft:lead",Count:1b},{Slot:9b,id:"minecraft:bone",Count:3b},{Slot:10b,id:"minecraft:enchanted_book",Count:1b,tag:{StoredEnchantments:[{id:"minecraft:binding_curse",lvl:1s}]}},{Slot:11b,id:"minecraft:golden_sword",Count:1b,tag:{Damage:82}},{Slot:12b,id:"minecraft:crimson_roots",Count:2b},{Slot:13b,id:"minecraft:arrow",Count:7b},{Slot:14b,id:"minecraft:crossbow",Count:1b,tag:{Damage:108}},{Slot:15b,id:"minecraft:golden_leggings",Count:1b,tag:{Damage:44}},{Slot:16b,id:"minecraft:cooked_porkchop",Count:1b},{Slot:17b,id:"minecraft:rotten_flesh",Count:2b},{Slot:18b,id:"minecraft:rotten_flesh",Count:1b},{Slot:19b,id:"minecraft:crossbow",Count:1b,tag:{Damage:7}},{Slot:20b,id:"minecraft:porkchop",Count:1b},{Slot:21b,id:"minecraft:rotten_flesh",Count:5b},{Slot:22b,id:"minecraft:golden_chestplate",Count:1b,tag:{Damage:54}},{Slot:23b,id:"minecraft:music_disc_11",Count:1b},{Slot:24b,id:"minecraft:raw_gold",Count:4b},{Slot:25b,id:"minecraft:warped_fungus",Count:3b},{Slot:26b,id:"minecraft:arrow",Count:3b}]}],Leash:{UUID:[I;44,44,44,44]}}]}
+#-----
 #上位
 #村人ゾンビ
 execute as @e[type=villager] at @s facing entity @e[type=zombie_villager,nbt=!{ActiveEffects:[{Id:14b}]},distance=..7,sort=nearest,limit=1] feet if block ^ ^ ^0.01 air unless block ~ ~-0.5 ~ air run tp ^ ^ ^0.01
 #ドラウンドe
 execute at @e[type=minecraft:drowned] at @e[distance=..25] anchored eyes positioned ~ ~1.5 ~ if block ~ ~1 ~ air run fill ~-1 ~ ~-1 ~1 ~ ~1 minecraft:frosted_ice replace minecraft:water[level=0]
 #ハスクe
-
+execute as @e[type=minecraft:husk] at @s as @e[nbt=!{DeathTime:0s},distance=..10] at @s positioned ~ ~-7 ~ unless entity @e[type=minecraft:area_effect_cloud,distance=..1] positioned as @s positioned ~ ~1 ~ unless entity @e[type=minecraft:area_effect_cloud,distance=..0.5] run summon area_effect_cloud ~ ~ ~ {Particle:"falling_dust sand",Radius:5f,RadiusPerTick:-0.1f,Duration:40,Effects:[{Id:25b,Amplifier:2b,Duration:5}]}
 #ジャイアント
 execute at @e[type=giant] if entity @p[distance=..30] run time set midnight
 #ストレイe
@@ -105,6 +113,7 @@ execute at @e[type=wither_skeleton] positioned ^ ^ ^5 at @e[type=!wither_skeleto
 execute at @e[type=cave_spider] at @e[nbt={ActiveEffects:[{Id:19b}]},distance=3..16] run fill ^ ^ ^-1 ^ ^-1 ^ cobweb keep
 #マグマキューブe
 execute at @e[type=minecraft:magma_cube,nbt={OnGround:0b}] unless block ~ ~-0.3 ~ air unless block ~ ~-0.3 ~ minecraft:cave_air unless block ~ ~-0.3 ~ water unless block ~ ~-0.3 ~ lava run summon area_effect_cloud ~ ~ ~ {Particle:"smoke",Radius:0f,RadiusPerTick:0.5f,Duration:15,Effects:[{Id:4b,Amplifier:0b,Duration:200},{Id:25b,Amplifier:20b,Duration:5}]}
+#-----
 #強敵
 #ファントム
 execute at @e[type=phantom,tag=!dragon_eye] at @e[type=!phantom,distance=..10] anchored eyes positioned ^ ^ ^5 unless entity @e[type=area_effect_cloud,distance=..5] run summon area_effect_cloud ~ ~ ~ {Particle:"campfire_signal_smoke",Radius:2f,Duration:20,Effects:[{Id:15b,Amplifier:0b,Duration:20},{Id:28b,Amplifier:0b,Duration:20}]}
@@ -138,6 +147,7 @@ execute at @e[type=ghast] run kill @e[distance=..10,type=!fireball,type=!wither,
 #execute at @e[type=minecraft:shulker] at @e[type=minecraft:item_frame,nbt={Item:{id:"minecraft:elytra"}},distance=..50] unless entity @e[type=minecraft:command_block_minecart,tag=shulker,distance=..10] positioned ^ ^ ^2 align xyz positioned ~0.5 ~0.5 ~0.5 run summon falling_block ~ ~ ~ {BlockState:{Name:"minecraft:redstone_block"},Time:1,Passengers:[{id:"minecraft:area_effect_cloud",Duration:20,Passengers:[{id:"minecraft:falling_block",BlockState:{Name:"minecraft:activator_rail"},Time:1,Passengers:[{id:"minecraft:command_block_minecart",Command:"execute at @e[type=minecraft:shulker,nbt={Peek:100b},distance=..50] positioned ~ ~2 ~ if entity @e[type=minecraft:shulker_bullet,distance=2..20] unless entity @e[type=minecraft:shulker_bullet,distance=..2] run summon minecraft:shulker_bullet ~ ~ ~ {Steps:1}",Tags:["shulker"]},{id:"minecraft:command_block_minecart",Command:"execute as @e[type=minecraft:shulker_bullet,distance=..50] at @s run data modify entity @s Target set from entity @e[type=minecraft:shulker_bullet,limit=1,sort=furthest] Target",Tags:["shulker"]}]}]}]}
 #execute at @e[type=minecraft:shulker,nbt={Peek:30b},tag=!rider] unless entity @e[type=minecraft:endermite,distance=..5] run summon endermite ~ ~ ~ {Lifetime:2300}
 execute at @e[type=!shulker,type=!end_crystal] at @e[type=shulker,tag=!rider,distance=1..2] run setblock ~ ~ ~ purple_stained_glass
+#-----
 #略奪
 #ヴィンディケーターe
 execute as @e[type=minecraft:vindicator,sort=random,limit=1] at @s if entity @e[type=minecraft:vindicator,distance=0.1..10] if entity @e[type=minecraft:pillager,distance=..10] unless entity @e[tag=royal_vindicator,distance=..20] run summon vindicator ~ ~ ~ {CanPickUpLoot:1b,AbsorptionAmount:24f,Health:12f,Johnny:1b,PatrolLeader:1b,Patrolling:1b,CanJoinRaid:1b,Tags:["royal_vindicator"],HandItems:[{id:"minecraft:iron_pickaxe",Count:1b},{id:"minecraft:shield",Count:1b,tag:{AttributeModifiers:[{AttributeName:"generic.knockback_resistance",Name:"generic.knockback_resistance",Amount:0.8,Operation:0,UUID:[I;-1416099236,108284001,-1330051610,1166704511],Slot:"offhand"},{AttributeName:"generic.armor",Name:"generic.armor",Amount:5,Operation:0,UUID:[I;2060609541,-825671196,-1484919450,345400488],Slot:"offhand"}],BlockEntityTag:{Base:15,Patterns:[{Pattern:sc,Color:4},{Pattern:flo,Color:15},{Pattern:bo,Color:4}]}}}],ArmorItems:[{},{},{id:"minecraft:totem_of_undying",Count:1b},{id:"minecraft:white_banner",Count:1b,tag:{AttributeModifiers:[{AttributeName:"generic.follow_range",Name:"generic.follow_range",Amount:10,Operation:0,UUID:[I;-427564967,1796426898,-1961142600,-1738495926]},{AttributeName:"generic.movement_speed",Name:"generic.movement_speed",Amount:0.1,Operation:0,UUID:[I;-298741571,1648184905,-1138334715,390999831]}],BlockEntityTag:{Base:15,Patterns:[{Pattern:hh,Color:15},{Pattern:mc,Color:14},{Pattern:hhb,Color:0},{Pattern:ss,Color:10},{Pattern:tt,Color:0},{Pattern:ts,Color:0},{Pattern:sc,Color:0},{Pattern:bs,Color:10},{Pattern:bo,Color:15}]}}}],Attributes:[{Name:generic.max_health,Base:12},{Name:generic.attack_knockback,Base:2}]}
@@ -157,7 +167,10 @@ execute at @e[type=witch] at @e[type=potion,distance=..20] unless entity @e[type
 #イリュージョナー
 #execute at @e[type=illusioner,nbt={SpellTicks:1}] run summon phantom ~ ~ ~ {Size:4,HandItems:[{id:"minecraft:totem_of_undying",Count:1b},{}],ActiveEffects:[{Id:12b,Amplifier:0b,Duration:600},{Id:14b,Amplifier:0b,Duration:60}]}
 execute at @e[type=illusioner,nbt={SpellTicks:1}] at @e[type=arrow,nbt={inGround:true},distance=..30,limit=100] unless block ~ ~-3 ~ air run summon item ~ ~-3 ~ {Age:5980,Item:{id:"totem_of_undying",Count:1b},Passengers:[{id:"zombie_villager",Health:4f,ArmorItems:[{id:"coarse_dirt",Count:1b},{},{id:"ancient_debris",Count:1b},{}],ArmorDropChances:[0.700F,0.085F,0.010F,0.085F]}]}
+#-----
 #ボス
+#ウォーデンe
+execute as @a at @s anchored eyes positioned ^ ^ ^1.5 if block ~ ~ ~ minecraft:sculk_shrieker align xyz positioned ~0.5 ~0.5 ~0.5 unless entity @e[tag=sculk_artery,distance=..15] run summon area_effect_cloud ~ ~0.5 ~ {Passengers:[{id:"minecraft:arrow",life:1180,Motion:[0.2,0.4,0.2],Tags:["sculk_artery"],Passengers:[{id:"minecraft:area_effect_cloud",Particle:"sculk_charge_pop",Radius:0.5f,RadiusPerTick:0.1f,Duration:40,WaitTime:20,Tags:["sculk_artery"],Effects:[{Id:2,Amplifier:0b,Duration:200},{Id:4,Amplifier:0b,Duration:600},{Id:33,Amplifier:0b,Duration:60}]}],SoundEvent:"ambient.cave",CustomPotionEffects:[{Id:4,Amplifier:2b,Duration:200},{Id:15,Amplifier:0b,Duration:40}]},{id:"minecraft:arrow",life:1180,Motion:[-0.2,0.4,0.2],Tags:["sculk_artery"],Passengers:[{id:"minecraft:area_effect_cloud",Particle:"sculk_charge_pop",Radius:0.5f,RadiusPerTick:0.1f,Duration:40,WaitTime:20,Tags:["sculk_artery"],Effects:[{Id:2,Amplifier:0b,Duration:200},{Id:4,Amplifier:0b,Duration:600},{Id:33,Amplifier:0b,Duration:60}]}],SoundEvent:"entity.warden.heartbeat",CustomPotionEffects:[{Id:4,Amplifier:2b,Duration:200},{Id:15,Amplifier:0b,Duration:40}]},{id:"minecraft:arrow",life:1180,Motion:[0.2,0.4,-0.2],Tags:["sculk_artery"],Passengers:[{id:"minecraft:area_effect_cloud",Particle:"sculk_charge_pop",Radius:0.5f,RadiusPerTick:0.1f,Duration:40,WaitTime:20,Tags:["sculk_artery"],Effects:[{Id:2,Amplifier:0b,Duration:200},{Id:4,Amplifier:0b,Duration:600},{Id:33,Amplifier:0b,Duration:60}]}],SoundEvent:"entity.warden.heartbeat",CustomPotionEffects:[{Id:4,Amplifier:2b,Duration:200},{Id:15,Amplifier:0b,Duration:40}]},{id:"minecraft:arrow",life:1180,Motion:[-0.2,0.4,-0.2],Tags:["sculk_artery"],Passengers:[{id:"minecraft:area_effect_cloud",Particle:"sculk_charge_pop",Radius:0.5f,RadiusPerTick:0.1f,Duration:40,WaitTime:20,Tags:["sculk_artery"],Effects:[{Id:2,Amplifier:0b,Duration:200},{Id:4,Amplifier:0b,Duration:600},{Id:33,Amplifier:0b,Duration:60}]}],SoundEvent:"entity.warden.listening",CustomPotionEffects:[{Id:4,Amplifier:2b,Duration:200},{Id:15,Amplifier:0b,Duration:40}]}]}
 #ガーディアンe
 execute as @e[type=minecraft:guardian,nbt={Motion:[0.0,0.0,0.0]},nbt={HurtTime:10s}] at @s run summon vex ~ ~ ~ {Silent:1b,Health:15f,LifeTicks:40,Motion:[0.0,0.2,0.0],Tags:["sea_shard"],Passengers:[{id:"minecraft:area_effect_cloud",Particle:"block redstone_block",Radius:0.5f,Duration:10}],HandItems:[{id:"minecraft:prismarine_shard",Count:1b},{}],ActiveEffects:[{Id:14b,Amplifier:0b,Duration:99999}],Attributes:[{Name:generic.follow_range,Base:50},{Name:generic.attack_damage,Base:2},{Name:generic.attack_knockback,Base:0}]}
 #エルダーガーディアンe
@@ -181,4 +194,4 @@ execute at @e[type=minecraft:ender_dragon] as @e[type=minecraft:area_effect_clou
 #武器遠、
 #食料、
 #バフ、ホグリン、（ゾンビホース）、カメ
-#特殊武器、イカ、ヒカリイカ
+#特殊武器、カエル、イカ、ヒカリイカ
