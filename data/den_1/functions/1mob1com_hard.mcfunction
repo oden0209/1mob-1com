@@ -94,7 +94,7 @@ execute as @e[type=minecraft:axolotl] at @s store result entity @s ActiveEffects
 #オタマジャクシ
 
 #カエル
-
+execute at @e[type=minecraft:frog,nbt={variant:"minecraft:cold"}] as @e[type=minecraft:item,distance=..10,nbt={Age:0s,Item:{id:"minecraft:slime_ball"}}] run data modify entity @s Item set value {id:"minecraft:lingering_potion",Count:1b,tag:{display:{Name:'{"text":"frog fog"}'},CustomPotionEffects:[{Id:2,Amplifier:1b,Duration:100},{Id:8,Amplifier:0b,Duration:40},{Id:18,Amplifier:0b,Duration:200},{Id:19,Amplifier:0b,Duration:100},{Id:24,Amplifier:0b,Duration:20}],CustomPotionColor:30464}}
 #イカ
 execute at @e[type=squid] positioned ~-10 ~ ~-10 at @e[type=boat,dx=20,dy=100,dz=20] if block ~ ~-1 ~ water run fill ~-1 ~ ~-1 ~1 ~1 ~1 water[level=9] keep
 #ヒカリイカ

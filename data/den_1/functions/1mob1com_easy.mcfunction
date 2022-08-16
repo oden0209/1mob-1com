@@ -87,8 +87,8 @@ execute at @e[type=cod] unless entity @e[type=cod,distance=10..30] positioned ^ 
 execute as @e[type=axolotl,nbt={Variant:4},nbt={Invulnerable:0b}] run data modify entity @s Invulnerable set value 1b
 #オタマジャクシ
 
-#カエル
-execute at @e[type=minecraft:frog,nbt={variant:"minecraft:cold"}] as @e[type=minecraft:item,distance=..10,nbt={Age:0s,Item:{id:"minecraft:slime_ball"}}] run data modify entity @s Item set value {id:"minecraft:lingering_potion",Count:1b,tag:{display:{Name:'{"text":"frog fog"}'},CustomPotionEffects:[{Id:2,Amplifier:1b,Duration:100},{Id:8,Amplifier:0b,Duration:40},{Id:18,Amplifier:0b,Duration:200},{Id:19,Amplifier:0b,Duration:100},{Id:24,Amplifier:0b,Duration:20}],CustomPotionColor:30464}}
+#カエルe
+#execute at @e[type=minecraft:frog,nbt={variant:"minecraft:cold"}] as @e[type=minecraft:item,distance=..10,nbt={Age:0s,Item:{id:"minecraft:slime_ball"}}] run data modify entity @s Item set value {id:"minecraft:lingering_potion",Count:1b,tag:{display:{Name:'{"text":"frog fog"}'},CustomPotionEffects:[{Id:2,Amplifier:1b,Duration:100},{Id:8,Amplifier:0b,Duration:40},{Id:18,Amplifier:0b,Duration:200},{Id:19,Amplifier:0b,Duration:100},{Id:24,Amplifier:0b,Duration:20}],CustomPotionColor:30464}}
 #イカe
 execute as @e[type=item,nbt={Item:{id:"minecraft:ink_sac"}},nbt={OnGround:1b}] at @s store result entity @s Age short 6000 run summon area_effect_cloud ~ ~ ~ {Particle:"squid_ink",Radius:3f,Duration:60,Effects:[{Id:2b,Amplifier:4b,Duration:20},{Id:15b,Amplifier:0b,Duration:30}]}
 #ヒカリイカe
