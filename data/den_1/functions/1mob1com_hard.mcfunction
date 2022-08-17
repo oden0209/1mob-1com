@@ -92,7 +92,7 @@ execute at @e[type=salmon] unless entity @e[type=area_effect_cloud,distance=..5]
 #ウーパールーパーh
 execute as @e[type=minecraft:axolotl] at @s store result entity @s ActiveEffects[0].Id byte 1 run execute if entity @e[distance=..10]
 #オタマジャクシ
-
+execute as @e[type=minecraft:tadpole,nbt={Age:0}] store result entity @s ArmorDropChances[0] float 0.75 store result entity @s ArmorDropChances[1] float 0.75 store result entity @s ArmorDropChances[2] float 0.75 store result entity @s ArmorDropChances[3] float 0.05 run data modify entity @s ArmorItems set value [{id:"minecraft:beetroot",Count:4b,tag:{display:{Name:'{"text":"BeatRoots"}'}}},{id:"minecraft:beetroot",Count:2b,tag:{display:{Name:'{"text":"BeatRoots"}'}}},{id:"minecraft:beetroot",Count:1b,tag:{display:{Name:'{"text":"BeatRoots"}'}}},{id:"minecraft:leather_helmet",Count:1b,tag:{display:{Name:'{"text":"tadpole"}'},Enchantments:[{id:"minecraft:respiration",lvl:1s},{id:"minecraft:aqua_affinity",lvl:1s}],AttributeModifiers:[{AttributeName:"generic.max_health",Name:"generic.max_health",Amount:-2,Operation:0,UUID:[I;-900135741,-942388930,-2133355397,-1703115466],Slot:"head"},{AttributeName:"generic.luck",Name:"generic.luck",Amount:0.5,Operation:1,UUID:[I;2061584797,649087981,-1662449545,903455963],Slot:"head"}]}}]
 #カエルh
 #execute at @e[type=minecraft:frog,nbt={variant:"minecraft:cold"}] as @e[type=minecraft:item,distance=..10,nbt={Age:0s,Item:{id:"minecraft:slime_ball"}}] run data modify entity @s Item set value {id:"minecraft:lingering_potion",Count:1b,tag:{display:{Name:'{"text":"frog fog"}'},CustomPotionEffects:[{Id:2,Amplifier:1b,Duration:100},{Id:8,Amplifier:0b,Duration:40},{Id:18,Amplifier:0b,Duration:200},{Id:19,Amplifier:0b,Duration:100},{Id:24,Amplifier:0b,Duration:20}],CustomPotionColor:30464}}
 execute at @e[type=minecraft:witch,nbt={HurtTime:10s}] unless entity @e[distance=..20,type=minecraft:villager] as @e[distance=..10,sort=random,limit=1] if entity @s[type=minecraft:frog] at @s store result entity @s Health float 0 run summon villager ~ ~ ~ {VillagerData:{level:5,profession:"minecraft:fletcher",type:"minecraft:swamp"},Offers:{Recipes:[{buy:{id:"minecraft:pearlescent_froglight",Count:1b},buyB:{id:"minecraft:verdant_froglight",Count:1b},sell:{id:"minecraft:splash_potion",Count:1b,tag:{CustomPotionEffects:[{Id:2,Amplifier:2b,Duration:2400},{Id:18,Amplifier:0b,Duration:2400},{Id:19,Amplifier:1b,Duration:2400},{Id:24,Amplifier:0b,Duration:2400},{Id:31,Amplifier:0b,Duration:2400}],CustomPotionColor:5337183}}},{buy:{id:"minecraft:pearlescent_froglight",Count:1b},buyB:{id:"minecraft:ochre_froglight",Count:1b},sell:{id:"minecraft:tipped_arrow",Count:5b,tag:{CustomPotionEffects:[{Id:2,Amplifier:0b,Duration:2400},{Id:19,Amplifier:0b,Duration:2400},{Id:24,Amplifier:0b,Duration:2400}],CustomPotionColor:11629948}}},{buy:{id:"minecraft:verdant_froglight",Count:1b},buyB:{id:"minecraft:ochre_froglight",Count:1b},sell:{id:"minecraft:potion",Count:1b,tag:{CustomPotionEffects:[{Id:8,Amplifier:0b,Duration:2400},{Id:10,Amplifier:0b,Duration:2400},{Id:22,Amplifier:0b,Duration:2400},{Id:24,Amplifier:0b,Duration:2400},{Id:30,Amplifier:0b,Duration:2400}],CustomPotionColor:6325532}}}]}}
@@ -207,7 +207,7 @@ execute at @e[type=minecraft:ender_dragon] at @e[type=minecraft:end_crystal] pos
 #最強装備
 #防具、
 #武器近、
-#武器遠、
+#武器遠、カエル
 #食料
-#バフ、エルダーガーディアン
-#特殊武器、
+#バフ、エルダーガーディアン、カエル
+#特殊武器、カエル
