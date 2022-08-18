@@ -11,4 +11,4 @@ execute if score @p mode matches 3 run give @p written_book{display:{Lore:['{"te
 #n=76/76
 #h=69/76
 #all=141/152
-#(v2.3.0)
+#(v2.4.0)

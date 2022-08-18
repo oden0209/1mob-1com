@@ -66,7 +66,7 @@ execute at @e[type=pig,sort=random,limit=1] at @e[type=cow,distance=..10,sort=ra
 #ウマh
 execute as @e[type=minecraft:horse] at @s if entity @e[distance=..1,nbt=!{Motion:[0.0d,0.0d,0.0d]}] as @e[distance=1..5,nbt={HurtTime:10s}] store result entity @s Motion[1] double 1 run data get entity @s Motion[1] 5
 #ロバh
-execute as @e[type=minecraft:donkey] at @s unless block ~ ~ ~ air as @e[distance=..1] run effect give @s invisible 3 0
+execute as @e[type=minecraft:donkey] at @s unless block ~ ~ ~ air as @e[distance=..1] run execute as @e[type=minecraft:donkey] at @s unless block ~ ~ ~ air as @e[distance=..1] run effect give @s minecraft:invisibility 3 0
 #ラバh
 
 #ラマh
@@ -145,7 +145,7 @@ execute at @e[type=minecraft:zombified_piglin] run fill ~-1 ~-1 ~-1 ~1 ~1 ~1 min
 execute as @e[type=minecraft:hoglin,nbt={TimeInOverworld:0}] at @s in minecraft:the_nether if entity @s unless block ~ ~-1 ~ air unless block ~ ~-1 ~ minecraft:crimson_nylium unless block ~ ~-1 ~ minecraft:netherrack unless block ~ ~-1 ~ #minecraft:mineable/axe unless block ~ ~-1 ~ #minecraft:mineable/hoe unless block ~ ~-1 ~ minecraft:crimson_roots in minecraft:overworld store success entity @s PersistenceRequired byte 1 run tp ~ ~ ~
 #ゾグリンh
 #execute as @e[type=minecraft:zoglin] at @s facing entity @e[type=!minecraft:zoglin,sort=nearest,limit=1] feet if block ^ ^0.5 ^4 #minecraft:mineable/pickaxe store success entity @s[nbt=!{ActiveEffects:[{Id:7b}]}] ActiveEffects[0].Id byte 7 run fill ^-0.5 ^0 ^-0.5 ^0.5 ^2 ^4 lava[level=1] replace #minecraft:mineable/pickaxe
-execute as @e[type=minecraft:zoglin] at @s at @e[nbt=!{HurtTime:0s},distance=..20] positioned ~-7 ~ ~-7 store success entity @s[nbt=!{ActiveEffects:[{Id:7b}]}] ActiveEffects[0].Id byte 7 run placefeature minecraft:lake_lava ~ ~ ~
+execute as @e[type=minecraft:zoglin] at @s at @e[nbt=!{HurtTime:0s},distance=..20] positioned ~-7 ~ ~-7 store success entity @s[nbt=!{ActiveEffects:[{Id:7b}]}] ActiveEffects[0].Id byte 7 run place feature minecraft:lake_lava ~ ~ ~
 #ブレイズ
 execute at @e[type=blaze,tag=!dragon_eye] at @e[type=small_fireball,distance=..30] as @e[distance=..2,nbt=!{SelectedItem:{id:"minecraft:netherite_sword"}},nbt=!{SelectedItem:{id:"minecraft:snowball"}}] run item replace entity @s weapon.mainhand with baked_potato 1
 #ガストh
