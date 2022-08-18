@@ -231,15 +231,16 @@ execute at @e[type=pillager] if entity @e[type=ravager,distance=..2] unless enti
 #エヴォーカー
 #execute at @e[type=evoker] at @e[type=evoker_fangs,distance=..15] as @e[type=!#raiders,distance=..30] at @s facing entity @e[type=evoker_fangs] eyes run tp ^ ^ ^1
 #execute at @e[type=evoker] facing entity @e[type=evoker_fangs,nbt={Warmup:2},distance=..100,limit=1,sort=furthest] feet positioned as @e[type=evoker_fangs,nbt={Warmup:2},distance=..100,limit=1,sort=furthest] positioned ^ ^ ^1 unless entity @e[type=evoker_fangs,distance=..0.5] run summon evoker_fangs ~ ~ ~ {Warmup:4}
-execute at @e[type=evoker] positioned as @e[type=evoker_fangs,nbt={Warmup:2},distance=..50,limit=1,sort=furthest] facing entity @e[type=!evoker_fangs,type=!#raiders,type=!vex,distance=..30,limit=3,sort=nearest] feet positioned ^ ^ ^1 unless entity @e[type=evoker_fangs,distance=..0.5] run summon evoker_fangs ~ ~ ~ {Warmup:4}
+execute at @e[type=evoker] positioned as @e[type=evoker_fangs,nbt={Warmup:2},distance=..50,limit=1,sort=furthest] facing entity @e[type=!evoker_fangs,type=!#raiders,type=!vex,distance=..30,limit=3,sort=nearest] feet positioned ^ ^ ^1 unless entity @e[type=evoker_fangs,distance=..0.5] run summon evoker_fangs ~ ~ ~ {Warmup:4,Tags:["evoked_fang"]}
 #execute at @e[type=evoker] at @e[type=#minecraft:raiders,distance=..100] run fill ~-15 ~-15 ~-15 ~15 ~15 ~15 spawner{SpawnCount:1,SpawnRange:2,MinSpawnDelay:1200,MaxSpawnDelay:1300,MaxNearbyEntities:1,RequiredPlayerRange:30,SpawnData:{id:"minecraft:area_effect_cloud",Passengers:[{id:"minecraft:evoker_fangs",Warmup:4}]}} replace fire
 #execute at @e[type=evoker] at @e[type=#minecraft:raiders,distance=..100] run fill ~-15 ~-15 ~-15 ~15 ~15 ~15 spawner{SpawnCount:1,SpawnRange:2,MinSpawnDelay:1200,MaxSpawnDelay:1300,MaxNearbyEntities:1,RequiredPlayerRange:30,SpawnData:{entity:{id:"minecraft:area_effect_cloud",Passengers:[{id:"minecraft:evoker_fangs",Warmup:4}]}}} replace fire
 #ヴェックス
 #effect give @e[type=vex] invisibility 1 0
 #execute at @e[type=vex] run setblock ~ ~ ~ fire keep
 #execute at @e[type=vex] run effect give @e[distance=..2,type=!vex,type=!#raiders] levitation 5 0 true
-execute at @e[type=vex,nbt={Health:1.0f,LifeTicks:1},tag=sea_shard] run summon evoker_fangs ~ ~ ~ {Warmup:4}
+#execute at @e[type=vex,nbt={Health:1.0f,LifeTicks:1},tag=!sea_shard] run summon evoker_fangs ~ ~ ~ {Warmup:4}
 #execute at @e[type=vex] positioned as @e[type=evoker_fangs,nbt={Warmup:2},distance=..50,limit=1,sort=furthest] facing entity @e[type=!evoker_fangs,type=!#raiders,type=!vex,distance=..30,limit=3,sort=nearest] feet positioned ^ ^ ^1 unless entity @e[type=evoker_fangs,distance=..0.5] run summon evoker_fangs ~ ~ ~ {Warmup:4}
+execute at @e[type=minecraft:vex] at @e[type=minecraft:evoker_fangs,nbt={Warmup:-22},distance=..50,tag=!evoked_fang] align xz run summon falling_block ~ ~ ~ {BlockState:{Name:"minecraft:large_amethyst_bud"},Time:1,DropItem:0b,Passengers:[{id:"minecraft:area_effect_cloud",Radius:0.5f,Duration:600,DurationOnUse:-600f,Color:5192538,Effects:[{Id:2,Amplifier:3b,Duration:20},{Id:15,Amplifier:0b,Duration:20}]}]}
 #ラヴェジャー
 execute at @e[type=ravager,nbt={AttackTick:9}] run summon creeper ^ ^ ^3 {ExplosionRadius:1b,Fuse:2,ignited:1b}
 #ウィッチ
@@ -296,6 +297,6 @@ execute at @e[type=wither] unless block ~ ~-1 ~ air unless entity @e[type=spawne
 #防具、ロバ
 #武器近、ゾグリン
 #武器遠、
-#食料
+#食料、タラ、オタマジャクシ
 #バフ、ホグリン、（ゾンビホース）、エルダーガーディアン
 #特殊武器、カエル

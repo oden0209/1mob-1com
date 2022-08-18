@@ -154,9 +154,9 @@ execute as @e[type=minecraft:vindicator,sort=random,limit=1] at @s if entity @e[
 #ピリジャー
 execute at @e[type=pillager] if entity @e[type=ravager,distance=..2] unless entity @e[type=illusioner,distance=..100] if entity @e[type=arrow,distance=..30] run summon illusioner ~ ~ ~
 #エヴォーカー
-execute at @e[type=evoker] positioned as @e[type=evoker_fangs,nbt={Warmup:2},distance=..50,limit=1,sort=furthest] facing entity @e[type=!evoker_fangs,type=!#raiders,type=!vex,distance=..30,limit=3,sort=nearest] feet positioned ^ ^ ^1 unless entity @e[type=evoker_fangs,distance=..0.5] run summon evoker_fangs ~ ~ ~ {Warmup:4}
+execute at @e[type=evoker] positioned as @e[type=evoker_fangs,nbt={Warmup:2},distance=..50,limit=1,sort=furthest] facing entity @e[type=!evoker_fangs,type=!#raiders,type=!vex,distance=..30,limit=3,sort=nearest] feet positioned ^ ^ ^1 unless entity @e[type=evoker_fangs,distance=..0.5] run summon evoker_fangs ~ ~ ~ {Warmup:4,Tags:["evoked_fang"]}
 #execute at @e[type=evoker] at @e[type=#minecraft:raiders,distance=..100] run fill ~-15 ~-15 ~-15 ~15 ~15 ~15 spawner{SpawnCount:1,SpawnRange:2,MinSpawnDelay:1200,MaxSpawnDelay:1300,MaxNearbyEntities:1,RequiredPlayerRange:30,SpawnData:{entity:{id:"minecraft:area_effect_cloud",Passengers:[{id:"minecraft:evoker_fangs",Warmup:4}]}}} replace fire
-#ヴェックス
+#ヴェックスe
 #execute at @e[type=vex,nbt={Health:1.0f,LifeTicks:1},tag=!sea_shard] run summon evoker_fangs ~ ~ ~ {Warmup:4}
 #execute at @e[type=vex] positioned as @e[type=evoker_fangs,nbt={Warmup:2},distance=..50,limit=1,sort=furthest] facing entity @e[type=!evoker_fangs,type=!#raiders,type=!vex,distance=..30,limit=3,sort=nearest] feet positioned ^ ^ ^1 unless entity @e[type=evoker_fangs,distance=..0.5] run summon evoker_fangs ~ ~ ~ {Warmup:4}
 execute at @e[type=vex,nbt={LifeTicks:1},tag=!sea_shard] run summon evoker_fangs ~ ~ ~ {Warmup:4}
@@ -192,6 +192,6 @@ execute at @e[type=minecraft:ender_dragon] as @e[type=minecraft:area_effect_clou
 #防具、ロバ
 #武器近、ゾグリン
 #武器遠、
-#食料、
+#食料、タラ
 #バフ、ホグリン、（ゾンビホース）、カメ
 #特殊武器、カエル、イカ、ヒカリイカ
