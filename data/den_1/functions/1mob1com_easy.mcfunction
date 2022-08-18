@@ -31,7 +31,7 @@ execute as @e[type=wolf] at @s run tp @e[type=item,distance=..2] @s
 #オウム
 effect give @e[nbt={ShoulderEntityLeft:{}}] levitation 10 254
 #アレイ
-
+execute as @e[sort=nearest,limit=1,type=minecraft:allay,nbt={HandItems:[{id:"minecraft:echo_shard",Count:1b},{}]}] at @p[distance=..20,nbt={SelectedItem:{id:"minecraft:echo_shard"}}] as @e[distance=..60] store result entity @s ActiveEffects[0].Id byte 24 run effect give @s minecraft:blindness 3 0
 #ミツバチe
 execute as @e[type=minecraft:bee,nbt={HasStung:0b}] at @s positioned ^ ^ ^0.5 as @e[nbt={ActiveEffects:[{Id:19b}]},distance=..0.5,type=!minecraft:bee] run effect give @s minecraft:poison 18 2
 #コウモリe
