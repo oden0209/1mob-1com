@@ -30,7 +30,7 @@ execute as @e[type=minecraft:cat] at @s if entity @e[type=minecraft:potion,dista
 #execute at @e[type=minecraft:ocelot] run fill ~-3 ~-3 ~-3 ~3 ~3 ~3 minecraft:skulk_catalyst replace minecraft:melon
 execute at @e[type=minecraft:ocelot] run fill ~-10 ~-3 ~-10 ~10 ~3 ~10 minecraft:sculk_catalyst replace minecraft:melon
 #オオカミh
-
+execute as @e[type=minecraft:wolf,nbt={HurtTime:0s,FallDistance:0.0f},nbt=!{AngerTime:0},sort=random,limit=1] at @s at @e[type=!minecraft:wolf,type=!minecraft:item,type=!minecraft:experience_orb,type=!minecraft:player,distance=..5,sort=nearest,limit=1] positioned ^ ^ ^3 at @s[distance=..3] facing entity @e[type=!minecraft:wolf,type=!minecraft:item,type=!minecraft:experience_orb,type=!minecraft:player,distance=..5,sort=nearest,limit=1] feet positioned ^ ^-0.1 ^-0.5 if block ^ ^-0.2 ^-0.5 minecraft:air if block ^ ^-0.2 ^0.5 minecraft:air unless block ~ ~-2.5 ~ air run tp ^ ^ ^
 #オウムh
 
 #アレイ
