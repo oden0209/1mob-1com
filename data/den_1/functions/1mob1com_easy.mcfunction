@@ -36,8 +36,8 @@ execute as @e[sort=nearest,limit=1,type=minecraft:allay,nbt={HandItems:[{id:"min
 execute as @e[type=minecraft:bee,nbt={HasStung:0b}] at @s positioned ^ ^ ^0.5 as @e[nbt={ActiveEffects:[{Id:19b}]},distance=..0.5,type=!minecraft:bee] run effect give @s minecraft:poison 18 2
 #コウモリe
 execute as @e[type=bat,nbt=!{Motion:[0.0,0.0,0.0]}] at @s run data modify entity @s BatFlags set value 1
-#キツネe
-
+#キツネ
+execute as @e[type=fox,nbt={Age:0,Sitting:0b,Sleeping:0b,HurtTime:0s},nbt=!{HandItems:[{Count:1b},{}]}] at @s run summon area_effect_cloud ~ ~0.3 ~ {Particle:"soul_fire_flame",Radius:0.5f,Duration:15,Effects:[{Id:10,Amplifier:0b,Duration:40},{Id:12,Amplifier:0b,Duration:40},{Id:14,Amplifier:0b,Duration:40},{Id:28,Amplifier:0b,Duration:40}]}
 #ウサギe
 execute as @e[type=minecraft:rabbit,nbt=!{RabbitType:99},nbt={HurtTime:10s}] run data modify entity @s RabbitType set value 99
 #パンダ

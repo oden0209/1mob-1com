@@ -39,7 +39,7 @@ execute as @e[type=minecraft:wolf,nbt={HurtTime:0s,FallDistance:0.0f},nbt=!{Ange
 execute at @e[type=bee,nbt={HasNectar:true},nbt=!{HivePos:{}}] positioned ~ ~1 ~1 unless block ~ ~1 ~ air if block ~ ~ ~ air run setblock ~ ~ ~ bee_nest{Bees:[{EntityData:{id:"bee",Age:-12000}}]}
 #コウモリ
 execute at @e[type=bat] as @e[type=!item,distance=..20,sort=furthest,limit=1] run effect give @s invisibility 1 0
-#キツネ
+#キツネh
 execute at @e[type=fox,nbt={HandItems:[{id:"minecraft:sweet_berries",Count:1b},{}]}] if block ^ ^ ^-1 sweet_berry_bush[age=1] positioned ^ ^ ^1 unless entity @e[type=falling_block,distance=..2] unless block ~ ~ ~ sweet_berry_bush run summon falling_block ~ ~1 ~ {BlockState:{Name:"sweet_berry_bush",Properties:{age:"0"}},Time:1,DropItem:false}
 #ウサギ
 execute at @e[type=rabbit,nbt=!{RabbitType:99}] unless entity @e[type=rabbit,nbt={RabbitType:99},distance=..5] run summon rabbit ~ ~ ~ {Age:-600,RabbitType:99}

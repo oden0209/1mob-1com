@@ -50,7 +50,8 @@ execute at @e[type=bee,nbt={HasNectar:true},nbt=!{HivePos:{}}] positioned ~ ~1 ~
 execute at @e[type=bat] as @e[type=!item,distance=..20,sort=furthest,limit=1] run effect give @s invisibility 1 0
 #キツネ
 #execute at @e[type=fox,nbt={HandItems:[{id:"minecraft:sweet_berries",Count:1b},{}]}] if block ^ ^ ^-1 sweet_berry_bush[age=1] unless block ^ ^ ^ sweet_berry_bush unless block ^ ^-1 ^ air run setblock ^ ^ ^ sweet_berry_bush
-execute at @e[type=fox,nbt={HandItems:[{id:"minecraft:sweet_berries",Count:1b},{}]}] if block ^ ^ ^-1 sweet_berry_bush[age=1] positioned ^ ^ ^1 unless entity @e[type=falling_block,distance=..2] unless block ~ ~ ~ sweet_berry_bush run summon falling_block ~ ~1 ~ {BlockState:{Name:"sweet_berry_bush",Properties:{age:"0"}},Time:1,DropItem:false}
+#execute at @e[type=fox,nbt={HandItems:[{id:"minecraft:sweet_berries",Count:1b},{}]}] if block ^ ^ ^-1 sweet_berry_bush[age=1] positioned ^ ^ ^1 unless entity @e[type=falling_block,distance=..2] unless block ~ ~ ~ sweet_berry_bush run summon falling_block ~ ~1 ~ {BlockState:{Name:"sweet_berry_bush",Properties:{age:"0"}},Time:1,DropItem:false}
+execute as @e[type=fox,nbt={Age:0,Sitting:0b,Sleeping:0b,HurtTime:0s},nbt=!{HandItems:[{Count:1b},{}]}] at @s run summon area_effect_cloud ~ ~0.3 ~ {Particle:"soul_fire_flame",Radius:0.5f,Duration:15,Effects:[{Id:10,Amplifier:0b,Duration:40},{Id:12,Amplifier:0b,Duration:40},{Id:14,Amplifier:0b,Duration:40},{Id:28,Amplifier:0b,Duration:40}]}
 #ウサギ
 execute at @e[type=rabbit,nbt=!{RabbitType:99}] unless entity @e[type=rabbit,nbt={RabbitType:99},distance=..5] run summon rabbit ~ ~ ~ {Age:-600,RabbitType:99}
 #パンダ
