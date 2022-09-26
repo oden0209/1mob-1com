@@ -117,7 +117,7 @@ execute at @e[type=wither_skeleton] positioned ^ ^ ^5 at @e[type=!wither_skeleto
 #洞窟グモ
 execute at @e[type=cave_spider] at @e[nbt={ActiveEffects:[{Id:19b}]},distance=3..16] run fill ^ ^ ^-1 ^ ^-1 ^ cobweb keep
 #マグマキューブe
-execute at @e[type=minecraft:magma_cube,nbt={OnGround:0b}] unless block ~ ~-0.3 ~ air unless block ~ ~-0.3 ~ minecraft:cave_air unless block ~ ~-0.3 ~ water unless block ~ ~-0.3 ~ lava run summon area_effect_cloud ~ ~ ~ {Particle:"smoke",Radius:0f,RadiusPerTick:0.5f,Duration:15,Effects:[{Id:4b,Amplifier:0b,Duration:200},{Id:25b,Amplifier:20b,Duration:5}]}
+execute at @e[type=minecraft:magma_cube,nbt={OnGround:0b}] unless block ~ ~-0.5 ~ air unless block ~ ~-0.5 ~ minecraft:cave_air unless block ~ ~-0.5 ~ water unless block ~ ~-0.5 ~ lava run summon area_effect_cloud ~ ~ ~ {Particle:"smoke",Radius:0f,RadiusPerTick:0.5f,Duration:15,Effects:[{Id:4b,Amplifier:0b,Duration:200},{Id:25b,Amplifier:20b,Duration:5}]}
 #-----
 #強敵
 #ファントム
