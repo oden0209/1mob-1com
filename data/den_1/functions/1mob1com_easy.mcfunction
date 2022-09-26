@@ -101,14 +101,17 @@ execute as @e[type=minecraft:strider] at @s unless entity @e[tag=stranger,distan
 #村人ゾンビ
 execute as @e[type=villager] at @s facing entity @e[type=zombie_villager,nbt=!{ActiveEffects:[{Id:14b}]},distance=..7,sort=nearest,limit=1] feet if block ^ ^ ^0.01 air unless block ~ ~-0.5 ~ air run tp ^ ^ ^0.01
 #ドラウンドe
-execute at @e[type=minecraft:drowned] at @e[distance=..25] anchored eyes positioned ~ ~1.5 ~ if block ~ ~1 ~ air run fill ~-1 ~ ~-1 ~1 ~ ~1 minecraft:frosted_ice replace minecraft:water[level=0]
-#ハスクe
+#execute at @e[type=minecraft:drowned] at @e[distance=..25] anchored eyes positioned ~ ~1.5 ~ if block ~ ~1 ~ air run fill ~-1 ~ ~-1 ~1 ~ ~1 minecraft:frosted_ice replace minecraft:water[level=0]
+execute at @e[type=minecraft:drowned] run effect give @e[distance..25] levitation 20 128
+#ハスク
 #execute as @e[type=minecraft:husk] at @s as @e[nbt=!{DeathTime:0s},distance=..10] at @s positioned ~ ~-7 ~ unless entity @e[type=minecraft:area_effect_cloud,distance=..1] positioned as @s positioned ~ ~1 ~ unless entity @e[type=minecraft:area_effect_cloud,distance=..0.5] run summon area_effect_cloud ~ ~ ~ {Particle:"falling_dust sand",Radius:5f,RadiusPerTick:-0.1f,Duration:40,Effects:[{Id:25b,Amplifier:2b,Duration:5}]}
-execute as @e[type=minecraft:husk] at @s unless entity @e[nbt={SelectedItem:{tag:{Enchantments:[{id:"minecraft:smite"}]}}},distance=..40] unless entity @e[nbt={HandItems:[{tag:{Enchantments:[{id:"minecraft:smite"}]}},{}]},distance=..40] unless entity @e[type=minecraft:area_effect_cloud,distance=..0.5] run summon area_effect_cloud ~ ~ ~ {Particle:"item sand",Radius:1f,Duration:60,Effects:[{Id:1,Amplifier:0b,Duration:20},{Id:11,Amplifier:0b,Duration:20},{Id:12,Amplifier:0b,Duration:20},{Id:14,Amplifier:0b,Duration:20}]}
+#execute as @e[type=minecraft:husk] at @s unless entity @e[nbt={SelectedItem:{tag:{Enchantments:[{id:"minecraft:smite"}]}}},distance=..40] unless entity @e[nbt={HandItems:[{tag:{Enchantments:[{id:"minecraft:smite"}]}},{}]},distance=..40] unless entity @e[type=minecraft:area_effect_cloud,distance=..0.5] run summon area_effect_cloud ~ ~ ~ {Particle:"item sand",Radius:1f,Duration:60,Effects:[{Id:1,Amplifier:0b,Duration:20},{Id:11,Amplifier:0b,Duration:20},{Id:12,Amplifier:0b,Duration:20},{Id:14,Amplifier:0b,Duration:20}]}
+execute at @e[type=husk,sort=random,limit=1] unless block ~ ~ ~ water at @e[distance=..10,type=!item] if block ~ ~-1 ~ sand unless entity @e[type=area_effect_cloud,distance=..1] run summon area_effect_cloud ~ ~ ~ {Particle:"flame",ReapplicationDelay:5,Radius:1f,Duration:6,Effects:[{Id:7b,Amplifier:0b,Duration:1}]}
 #ジャイアント
 execute at @e[type=giant] if entity @p[distance=..30] run time set midnight
-#ストレイe
-execute as @e[type=minecraft:stray] at @s if entity @e[distance=0.1..3] positioned ^ ^ ^2 if block ~ ~ ~ minecraft:snow run fill ~ ~ ~ ~ ~1 ~ minecraft:powder_snow destroy
+#ストレイ
+#execute as @e[type=minecraft:stray] at @s if entity @e[distance=0.1..3] positioned ^ ^ ^2 if block ~ ~ ~ minecraft:snow run fill ~ ~ ~ ~ ~1 ~ minecraft:powder_snow destroy
+execute at @e[type=stray] at @e[distance=..20,type=arrow,nbt={inGround:true}] if block ~ ~ ~ snow unless entity @e[type=area_effect_cloud,distance=..1] run summon area_effect_cloud ~ ~ ~ {Particle:"soul_fire_flame",ReapplicationDelay:0,Radius:1f,RadiusPerTick:0.005f,RadiusOnUse:0.01f,Duration:1200,Effects:[{Id:7b,Amplifier:1b,Duration:1}]}
 #ウィザースケルトン
 execute at @e[type=wither_skeleton] positioned ^ ^ ^5 at @e[type=!wither_skeleton,distance=..3] unless entity @e[type=wither_skeleton,nbt={HandItems:[{id:"minecraft:bow"},{}]},distance=..15] positioned ^ ^ ^5 if entity @e[type=wither_skeleton,distance=..3] positioned ^ ^ ^-5 positioned ^ ^1 ^-10 if block ~ ~2 ~ air run summon wither_skeleton ~ ~ ~ {HandItems:[{id:"bow",Count:1b},{}],NoGravity:true,Attributes:[{Name:generic.follow_range,Base:30},{Name:generic.movement_speed,Base:0.4}]}
 #洞窟グモ

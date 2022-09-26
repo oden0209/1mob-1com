@@ -42,7 +42,7 @@ execute as @e[type=wolf] at @s run tp @e[type=item,distance=..2] @s
 #execute at @e[nbt={ShoulderEntityLeft:{}}] at @e[type=!player,type=!item,type=!experience_orb,type=!villager,type=!wandering_trader,nbt=!{InLove:0},nbt={OnGround:true},distance=..25] unless entity @e[type=firework_rocket,distance=..5] unless block ~ ~ ~ water run summon firework_rocket ~ ~ ~ {LifeTime:100,Motion:[0.0,-5.0,0.0]}
 effect give @e[nbt={ShoulderEntityLeft:{}}] levitation 10 254
 #アレイ
-execute as @e[sort=nearest,limit=1,type=minecraft:allay,nbt={HandItems:[{id:"minecraft:echo_shard",Count:1b},{}]}] at @p[distance=..20,nbt={SelectedItem:{id:"minecraft:echo_shard"}}] as @e[distance=..60] store result entity @s ActiveEffects[0].Id byte 24 run effect give @s minecraft:blindness 3 0
+execute as @e[sort=nearest,type=minecraft:allay,nbt={HandItems:[{id:"minecraft:echo_shard",Count:1b},{}]}] at @p[distance=..20,nbt={SelectedItem:{id:"minecraft:echo_shard"}}] as @e[distance=..60] store result entity @s ActiveEffects[0].Id byte 24 run effect give @s minecraft:blindness 3 0
 #ミツバチ
 #execute as @e[type=bee] at @s positioned ^ ^ ^ if block ^ ^ ^2 #beehives[honey_level=5] unless block ~ ~1 ~ air run setblock ~ ~ ~ bee_nest{Bees:[{EntityData:{id:"bee",Age:-12000}},{EntityData:{id:"bee",Age:-12000}}]} keep
 execute at @e[type=bee,nbt={HasNectar:true},nbt=!{HivePos:{}}] positioned ~ ~1 ~1 unless block ~ ~1 ~ air if block ~ ~ ~ air run setblock ~ ~ ~ bee_nest{Bees:[{EntityData:{id:"bee",Age:-12000}}]}
