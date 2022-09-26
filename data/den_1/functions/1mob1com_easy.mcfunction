@@ -37,7 +37,7 @@ execute as @e[type=minecraft:bee,nbt={HasStung:0b}] at @s positioned ^ ^ ^0.5 as
 #コウモリe
 execute as @e[type=bat,nbt=!{Motion:[0.0,0.0,0.0]}] at @s run data modify entity @s BatFlags set value 1
 #キツネ
-execute as @e[type=fox,nbt={Age:0,Sitting:0b,Sleeping:0b,HurtTime:0s},nbt=!{HandItems:[{Count:1b},{}]}] at @s run summon area_effect_cloud ~ ~0.3 ~ {Particle:"soul_fire_flame",Radius:0.5f,Duration:15,Effects:[{Id:10,Amplifier:0b,Duration:40},{Id:12,Amplifier:0b,Duration:40},{Id:14,Amplifier:0b,Duration:40},{Id:28,Amplifier:0b,Duration:40}]}
+execute as @e[type=fox,tag=!fire_fox,nbt={Age:0,Sitting:0b,Sleeping:0b,HurtTime:0s},nbt=!{HandItems:[{Count:1b},{}]}] at @s run summon area_effect_cloud ~ ~0.3 ~ {Particle:"soul_fire_flame",Radius:0.5f,Duration:15,Effects:[{Id:10,Amplifier:0b,Duration:40},{Id:12,Amplifier:0b,Duration:40},{Id:14,Amplifier:0b,Duration:40},{Id:28,Amplifier:0b,Duration:40}]}
 #ウサギe
 execute as @e[type=minecraft:rabbit,nbt=!{RabbitType:99},nbt={HurtTime:10s}] run data modify entity @s RabbitType set value 99
 #パンダ
@@ -102,7 +102,7 @@ execute as @e[type=minecraft:strider] at @s unless entity @e[tag=stranger,distan
 execute as @e[type=villager] at @s facing entity @e[type=zombie_villager,nbt=!{ActiveEffects:[{Id:14b}]},distance=..7,sort=nearest,limit=1] feet if block ^ ^ ^0.01 air unless block ~ ~-0.5 ~ air run tp ^ ^ ^0.01
 #ドラウンドe
 #execute at @e[type=minecraft:drowned] at @e[distance=..25] anchored eyes positioned ~ ~1.5 ~ if block ~ ~1 ~ air run fill ~-1 ~ ~-1 ~1 ~ ~1 minecraft:frosted_ice replace minecraft:water[level=0]
-execute at @e[type=minecraft:drowned] run effect give @a[distance=..25] levitation 20 128
+execute at @e[type=minecraft:drowned] run effect give @a[distance=..25] levitation 3 128
 #ハスク
 #execute as @e[type=minecraft:husk] at @s as @e[nbt=!{DeathTime:0s},distance=..10] at @s positioned ~ ~-7 ~ unless entity @e[type=minecraft:area_effect_cloud,distance=..1] positioned as @s positioned ~ ~1 ~ unless entity @e[type=minecraft:area_effect_cloud,distance=..0.5] run summon area_effect_cloud ~ ~ ~ {Particle:"falling_dust sand",Radius:5f,RadiusPerTick:-0.1f,Duration:40,Effects:[{Id:25b,Amplifier:2b,Duration:5}]}
 #execute as @e[type=minecraft:husk] at @s unless entity @e[nbt={SelectedItem:{tag:{Enchantments:[{id:"minecraft:smite"}]}}},distance=..40] unless entity @e[nbt={HandItems:[{tag:{Enchantments:[{id:"minecraft:smite"}]}},{}]},distance=..40] unless entity @e[type=minecraft:area_effect_cloud,distance=..0.5] run summon area_effect_cloud ~ ~ ~ {Particle:"item sand",Radius:1f,Duration:60,Effects:[{Id:1,Amplifier:0b,Duration:20},{Id:11,Amplifier:0b,Duration:20},{Id:12,Amplifier:0b,Duration:20},{Id:14,Amplifier:0b,Duration:20}]}
@@ -145,7 +145,7 @@ execute as @e[type=minecraft:zoglin,nbt=!{HandItems:[{},{id:"minecraft:shield"}]
 #ブレイズe
 #execute at @e[type=minecraft:small_fireball] run fill ~-1 ~-1 ~-1 ~1 ~1 ~1 lava[level=1] replace fire
 #execute at @e[type=minecraft:small_fireball] if block ~ ~-0.5 ~ fire run fill ~-0.5 ~-0.5 ~-0.5 ~0.5 ~0.5 ~0.5 lava[level=1] keep
-execute as @e[type=minecraft:blaze] at @s unless entity @e[type=minecraft:fox,distance=..20] run summon firework_rocket ~ ~ ~ {HasVisualFire:1b,LifeTime:10,Motion:[0.0,0.5,0.0],Passengers:[{id:"minecraft:fox",HasVisualFire:1b,Motion:[0.0,0.5,0.0],Passengers:[{id:"minecraft:silverfish",HasVisualFire:1b,Silent:1b,HandItems:[{id:"minecraft:golden_sword",Count:1b,tag:{Enchantments:[{id:"minecraft:fire_aspect",lvl:1s}]}},{}],HandDropChances:[0.000F,0.085F],ActiveEffects:[{Id:12b,Amplifier:0b,Duration:99999},{Id:14b,Amplifier:0b,Duration:99999}]}],ActiveEffects:[{Id:28b,Amplifier:0b,Duration:99999}]}]}
+execute as @e[type=minecraft:blaze] at @s unless entity @e[type=minecraft:fox,distance=..20] run summon firework_rocket ~ ~ ~ {Tags:["fire_fox"]HasVisualFire:1b,LifeTime:10,Motion:[0.0,0.5,0.0],Passengers:[{id:"minecraft:fox",HasVisualFire:1b,Motion:[0.0,0.5,0.0],Passengers:[{id:"minecraft:silverfish",HasVisualFire:1b,Silent:1b,HandItems:[{id:"minecraft:golden_sword",Count:1b,tag:{Enchantments:[{id:"minecraft:fire_aspect",lvl:1s}]}},{}],HandDropChances:[0.000F,0.085F],ActiveEffects:[{Id:12b,Amplifier:0b,Duration:99999},{Id:14b,Amplifier:0b,Duration:99999}]}],ActiveEffects:[{Id:28b,Amplifier:0b,Duration:99999}]}]}
 #ガスト
 execute at @e[type=ghast] run kill @e[distance=..10,type=!fireball,type=!wither,type=!ghast,type=!enderman,type=!skeleton,type=!wither_skeleton,type=!blaze,type=!magma_cube,type=!hoglin,type=!piglin,type=!piglin_brute,type=!zombified_piglin,type=!strider]
 #シュルカー
