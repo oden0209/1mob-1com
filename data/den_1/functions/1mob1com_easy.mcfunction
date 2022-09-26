@@ -102,7 +102,7 @@ execute as @e[type=minecraft:strider] at @s unless entity @e[tag=stranger,distan
 execute as @e[type=villager] at @s facing entity @e[type=zombie_villager,nbt=!{ActiveEffects:[{Id:14b}]},distance=..7,sort=nearest,limit=1] feet if block ^ ^ ^0.01 air unless block ~ ~-0.5 ~ air run tp ^ ^ ^0.01
 #ドラウンドe
 #execute at @e[type=minecraft:drowned] at @e[distance=..25] anchored eyes positioned ~ ~1.5 ~ if block ~ ~1 ~ air run fill ~-1 ~ ~-1 ~1 ~ ~1 minecraft:frosted_ice replace minecraft:water[level=0]
-execute at @e[type=minecraft:drowned] run effect give @e[distance..25] levitation 20 128
+execute at @e[type=minecraft:drowned] run effect give @e[distance=..25] levitation 20 128
 #ハスク
 #execute as @e[type=minecraft:husk] at @s as @e[nbt=!{DeathTime:0s},distance=..10] at @s positioned ~ ~-7 ~ unless entity @e[type=minecraft:area_effect_cloud,distance=..1] positioned as @s positioned ~ ~1 ~ unless entity @e[type=minecraft:area_effect_cloud,distance=..0.5] run summon area_effect_cloud ~ ~ ~ {Particle:"falling_dust sand",Radius:5f,RadiusPerTick:-0.1f,Duration:40,Effects:[{Id:25b,Amplifier:2b,Duration:5}]}
 #execute as @e[type=minecraft:husk] at @s unless entity @e[nbt={SelectedItem:{tag:{Enchantments:[{id:"minecraft:smite"}]}}},distance=..40] unless entity @e[nbt={HandItems:[{tag:{Enchantments:[{id:"minecraft:smite"}]}},{}]},distance=..40] unless entity @e[type=minecraft:area_effect_cloud,distance=..0.5] run summon area_effect_cloud ~ ~ ~ {Particle:"item sand",Radius:1f,Duration:60,Effects:[{Id:1,Amplifier:0b,Duration:20},{Id:11,Amplifier:0b,Duration:20},{Id:12,Amplifier:0b,Duration:20},{Id:14,Amplifier:0b,Duration:20}]}
