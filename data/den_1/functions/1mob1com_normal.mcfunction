@@ -6,7 +6,7 @@ execute at @e[type=skeleton] as @e[type=!#impact_projectiles,distance=..1] at @s
 #クモ
 execute at @e[type=spider] at @e[type=#impact_projectiles,distance=..16,nbt={inGround:false}] at @e[distance=..3,type=!#impact_projectiles,type=!item,type=!experience_orb] anchored eyes run fill ^ ^ ^-1 ^ ^-1 ^ cobweb keep
 #クリーパー
-execute at @e[type=creeper] at @e[type=item,distance=..10] if entity @e[type=!item,distance=..2] run summon creeper ~ ~ ~ {ExplosionRadius:1b,Fuse:0,ignited:1b}
+execute at @e[type=creeper] at @e[type=item,distance=..10] if entity @e[type=!item,distance=..2] unless entity @e[type=minecraft:creeper,distance=..0.1] run summon creeper ~ ~ ~ {ExplosionRadius:1b,Fuse:0,ignited:1b}
 #エンダーマン
 #execute at @e[type=!enderman] positioned ^ ^ ^13 as @e[type=enderman,tag=!rider,distance=..8] run effect give @s invisibility 1 0 true
 #execute at @e[type=enderman,nbt=!{AngerTime:0}] run fill ~-0.5 ~ ~-0.5 ~0.5 ~2 ~0.5 air replace #minecraft:enderman_holdable
@@ -42,7 +42,7 @@ execute as @e[type=wolf] at @s run tp @e[type=item,distance=..2] @s
 #execute at @e[nbt={ShoulderEntityLeft:{}}] at @e[type=!player,type=!item,type=!experience_orb,type=!villager,type=!wandering_trader,nbt=!{InLove:0},nbt={OnGround:true},distance=..25] unless entity @e[type=firework_rocket,distance=..5] unless block ~ ~ ~ water run summon firework_rocket ~ ~ ~ {LifeTime:100,Motion:[0.0,-5.0,0.0]}
 effect give @e[nbt={ShoulderEntityLeft:{}}] levitation 10 254
 #アレイ
-execute as @e[sort=nearest,type=minecraft:allay,nbt={HandItems:[{id:"minecraft:echo_shard",Count:1b},{}]}] at @p[distance=..20,nbt={SelectedItem:{id:"minecraft:echo_shard"}}] as @e[distance=..60] store result entity @s ActiveEffects[0].Id byte 24 run effect give @s minecraft:blindness 3 0
+execute as @e[type=minecraft:allay,nbt={HandItems:[{id:"minecraft:echo_shard",Count:1b},{}]}] at @p[distance=..20,nbt={SelectedItem:{id:"minecraft:echo_shard"}}] as @e[distance=..60] store result entity @s ActiveEffects[0].Id byte 24 run effect give @s minecraft:blindness 3 0
 #ミツバチ
 #execute as @e[type=bee] at @s positioned ^ ^ ^ if block ^ ^ ^2 #beehives[honey_level=5] unless block ~ ~1 ~ air run setblock ~ ~ ~ bee_nest{Bees:[{EntityData:{id:"bee",Age:-12000}},{EntityData:{id:"bee",Age:-12000}}]} keep
 execute at @e[type=bee,nbt={HasNectar:true},nbt=!{HivePos:{}}] positioned ~ ~1 ~1 unless block ~ ~1 ~ air if block ~ ~ ~ air run setblock ~ ~ ~ bee_nest{Bees:[{EntityData:{id:"bee",Age:-12000}}]}
@@ -51,7 +51,7 @@ execute at @e[type=bat] as @e[type=!item,distance=..20,sort=furthest,limit=1] ru
 #キツネ
 #execute at @e[type=fox,nbt={HandItems:[{id:"minecraft:sweet_berries",Count:1b},{}]}] if block ^ ^ ^-1 sweet_berry_bush[age=1] unless block ^ ^ ^ sweet_berry_bush unless block ^ ^-1 ^ air run setblock ^ ^ ^ sweet_berry_bush
 #execute at @e[type=fox,nbt={HandItems:[{id:"minecraft:sweet_berries",Count:1b},{}]}] if block ^ ^ ^-1 sweet_berry_bush[age=1] positioned ^ ^ ^1 unless entity @e[type=falling_block,distance=..2] unless block ~ ~ ~ sweet_berry_bush run summon falling_block ~ ~1 ~ {BlockState:{Name:"sweet_berry_bush",Properties:{age:"0"}},Time:1,DropItem:false}
-execute as @e[type=fox,nbt={Age:0,Sitting:0b,Sleeping:0b,HurtTime:0s},nbt=!{HandItems:[{Count:1b},{}]}] at @s run summon area_effect_cloud ~ ~0.3 ~ {Particle:"soul_fire_flame",Radius:0.5f,Duration:15,Effects:[{Id:10,Amplifier:0b,Duration:40},{Id:12,Amplifier:0b,Duration:40},{Id:14,Amplifier:0b,Duration:40},{Id:28,Amplifier:0b,Duration:40}]}
+execute as @e[type=fox,tag=!fire_fox,nbt={Age:0,Sitting:0b,Sleeping:0b,HurtTime:0s},nbt=!{HandItems:[{Count:1b},{}]}] at @s unless entity @e[type=minecraft:area_effect_cloud,nbt={Age:0}] run summon area_effect_cloud ~ ~0.3 ~ {Particle:"soul_fire_flame",Radius:0.5f,Duration:15,Effects:[{Id:10,Amplifier:0b,Duration:40},{Id:12,Amplifier:0b,Duration:40},{Id:14,Amplifier:0b,Duration:40},{Id:28,Amplifier:0b,Duration:40}]}
 #ウサギ
 execute at @e[type=rabbit,nbt=!{RabbitType:99}] unless entity @e[type=rabbit,nbt={RabbitType:99},distance=..5] run summon rabbit ~ ~ ~ {Age:-600,RabbitType:99}
 #パンダ
@@ -78,7 +78,7 @@ execute as @e[type=goat,nbt={IsScreamingGoat:true},limit=1,sort=random] at @s un
 #effect give @e[type=chicken] slow_falling 200 0 true
 #execute as @e[type=chicken] run data modify entity @s ActiveEffects set value [{Id:8,Amplifier:1,Duration:20,ShowParticles:false},{Id:28,Amplifier:0,Duration:20,ShowParticles:false}]
 #execute at @e[type=minecraft:item,nbt={Item:{id:"minecraft:egg"},Age:5999s}] run summon minecraft:chicken ~ ~ ~ {Age:-24000}
-execute at @e[type=minecraft:item,nbt={Item:{id:"minecraft:egg"},Age:5999s}] unless entity @e[type=minecraft:item,nbt={Item:{id:"minecraft:egg"}},distance=0.1..10] run summon minecraft:chicken ~ ~ ~ {Age:-24000}
+execute at @e[type=minecraft:item,nbt={Item:{id:"minecraft:egg"},Age:5999s}] unless entity @e[type=minecraft:item,nbt={Item:{id:"minecraft:egg"}},distance=0.1..10] unless entity @e[type=minecraft:chicken,nbt={Age:-24000},distance=..0.1] run summon minecraft:chicken ~ ~ ~ {Age:-24000}
 #ブタ
 #execute at @e[type=pig,sort=random,limit=1] at @e[type=cow,distance=..10,sort=random,limit=1] run summon pig ~ ~ ~ {Passengers:[{id:"minecraft:creeper",ignited:1b,Passengers:[{id:"minecraft:lightning_bolt"}]}]}
 execute as @e[type=pig,nbt={Saddle:1b},nbt=!{Health:10.0f,NoGravity:1b}] at @s run data modify entity @s NoGravity set value 1b
@@ -106,7 +106,7 @@ execute at @e[type=zombie_horse,tag=!enemy] as @e[nbt={ActiveEffects:[{Id:17b}]}
 #イルカ
 #execute at @e[nbt={ActiveEffects:[{Id:dolphins_grace}]}] as @e[nbt=!{ActiveEffects:[{Id:dolphins_grace}]},distance=..10] if block ~ ~ ~ water run effect give @s dolphins_grace 1 0
 #execute at @e[type=dolphin] as @e[type=item,distance=..2] run tp ^2 ^ ^
-execute at @e[type=dolphin] unless block ~ ~ ~ water if block ~ ~-1 ~ water if block ^ ^ ^1 water run summon area_effect_cloud ~ ~ ~ {Particle:"happy_villager",Radius:3f,Duration:60,RadiusPerTick:-0.05f,Effects:[{Id:26b,Amplifier:0b,Duration:6000},{Id:29b,Amplifier:0b,Duration:6000},{Id:30b,Amplifier:0b,Duration:6000}]}
+execute at @e[type=dolphin] unless block ~ ~ ~ water if block ~ ~-1 ~ water if block ^ ^ ^1 water unless entity @e[type=minecraft:area_effect_cloud,distance=..0.1] run summon area_effect_cloud ~ ~ ~ {Particle:"happy_villager",Radius:3f,Duration:60,RadiusPerTick:-0.05f,Effects:[{Id:26b,Amplifier:0b,Duration:6000},{Id:29b,Amplifier:0b,Duration:6000},{Id:30b,Amplifier:0b,Duration:6000}]}
 #カメ
 execute at @e[type=!turtle,type=!item] if block ~ ~ ~ turtle_egg positioned ~ ~40 ~-40 unless entity @e[type=fireball,distance=..20] run summon fireball ~ ~ ~ {Item:{id:"turtle_egg",Count:1b},power:[0.0,-1.0,1.0]}
 #フグ
