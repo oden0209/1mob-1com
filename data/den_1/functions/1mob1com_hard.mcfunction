@@ -15,6 +15,7 @@ execute as @e[type=slime,nbt={Size:0}] at @s run tp @s @e[distance=..1,limit=1,s
 #友好・中立
 #スノーゴーレムh
 execute at @e[type=minecraft:snow_golem] at @e[type=minecraft:snowball,distance=..20] run fill ~-1 ~-1 ~-1 ~1 ~1 ~1 minecraft:snow[layers=8] replace minecraft:snow
+#execute as @e[type=minecraft:snow_golem,nbt={Pumpkin:1b,HurtTime:9s}] at @s store result entity @s Pumpkin byte 0 run summon item ~ ~ ~ {Motion:[0.0,0.5,0.0],Item:{id:"minecraft:carved_pumpkin",Count:1b}}
 #アイアンゴーレムh
 #execute at @e[type=iron_golem] as @e[distance=..15,type=!villager] at @s if block ~ ~-1.3 ~ air run data modify entity @s FallDistance set value 27
 execute as @e[type=minecraft:iron_golem,nbt={OnGround:1b}] at @s positioned ^ ^ ^3 positioned ~ ~5 ~ at @e[type=!minecraft:villager,type=!minecraft:iron_golem,distance=..5,nbt={OnGround:0b,HurtTime:0s}] if block ~ ~-1.5 ~ air positioned ^ ^ ^-2 if block ~ ~2 ~ air run tp ^ ^ ^
