@@ -194,7 +194,7 @@ execute at @e[type=minecraft:ender_dragon] as @e[type=minecraft:area_effect_clou
 #summon愛くるしいウサギ
 #summon rabbit ~ ~ ~ {CustomName:'{"text":"愛くるしいウサギ","color":"light_purple"}',CustomNameVisible:true,Glowing:true,Attributes:[{Name:generic.movement_speed,Base:0.5,Passengers:[{id:"guardian",ActiveEffects:[{Id:14b,Amplifier:0b,Duration:72000}]}]}]}
 
-#最強装備
+#装備
 #防具、ロバ
 #武器近、ゾグリン
 #武器遠、
