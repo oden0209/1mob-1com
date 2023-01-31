@@ -1,6 +1,6 @@
 #基本
 #ゾンビh
-execute as @e[type=minecraft:zombie] at @s store result entity @s Attributes[0].Base double 0.1 if entity @e[distance=0.5..20,type=!item,type=!player]
+execute as @e[type=minecraft:zombie,sort=random,limit=1] at @s store result entity @s Attributes[1].Base double 0.1 if entity @e[distance=0.5..20,type=!item,type=!player]
 #スケルトン
 execute at @e[type=skeleton] as @e[type=!#impact_projectiles,distance=..1] at @s if entity @e[type=arrow,distance=..3,nbt={inGround:false}] run tp @s @e[type=arrow,distance=..16,limit=1,sort=random,nbt={inGround:true}]
 #クモh
@@ -212,7 +212,7 @@ execute at @e[type=minecraft:ender_dragon] at @e[type=minecraft:end_crystal] pos
 
 #装備
 #防具、
-#武器近、
+#武器近、ウシ
 #武器遠、カエル
 #食料
 #バフ、エルダーガーディアン、カエル
