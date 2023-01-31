@@ -90,7 +90,7 @@ execute at @e[type=tropical_fish] as @e[nbt={SelectedItem:{id:"minecraft:water_b
 #サケh
 execute at @e[type=salmon] unless entity @e[type=area_effect_cloud,distance=..5] run summon area_effect_cloud ~ ~ ~ {Radius:6f,RadiusPerTick:-0.03f,Duration:200,Effects:[{Id:5b,Amplifier:0b,Duration:200},{Id:9b,Amplifier:0b,Duration:200}]}
 #タラh
-
+execute as @e[type=minecraft:item,nbt={Item:{id:"minecraft:cod_bucket"},OnGround:true}] at @s store result entity @s Age int 6000 run summon item ~ ~ ~ {Passengers:[{id:"minecraft:area_effect_cloud",Passengers:[{id:"minecraft:item",Fire:10,Health:20,Motion:[0.0,0.2,0.0],Item:{id:"minecraft:cooked_cod",Count:1b}}]}],Item:{id:"minecraft:powder_snow_bucket",Count:1b}}
 #ウーパールーパーh
 execute as @e[type=minecraft:axolotl] at @s store result entity @s ActiveEffects[0].Id byte 1 run execute if entity @e[distance=..10]
 #オタマジャクシ
