@@ -68,9 +68,9 @@ execute at @e[type=pig,sort=random,limit=1] at @e[type=cow,distance=..10,sort=ra
 #ウマh
 execute as @e[type=minecraft:horse] at @s if entity @e[distance=..1,nbt=!{Motion:[0.0d,0.0d,0.0d]}] as @e[distance=1..5,nbt={HurtTime:10s}] store result entity @s Motion[1] double 1 run data get entity @s Motion[1] 5
 #ロバh
-execute as @e[type=minecraft:donkey] at @s unless block ~ ~ ~ air as @e[distance=..1] run execute as @e[type=minecraft:donkey] at @s unless block ~ ~ ~ air as @e[distance=..1] run effect give @s minecraft:invisibility 3 0
+execute as @e[type=minecraft:donkey] at @s unless block ~ ~ ~ air as @e[distance=..1] run effect give @s minecraft:invisibility 3 0
 #ラバh
-
+execute as @e[type=minecraft:mule] at @s as @p[distance=..0.8,nbt=!{Inventory:[{Slot:0b}]}] run item replace entity @s hotbar.0 with bow{RepairCost:100,Damage:383,Enchantments:[{id:"minecraft:power",lvl:5s},{id:"minecraft:punch",lvl:3s},{id:"minecraft:flame",lvl:1s},{id:"minecraft:vanishing_curse",lvl:1s}],AttributeModifiers:[{AttributeName:"generic.movement_speed",Name:"generic.movement_speed",Amount:-1,Operation:1,UUID:[I;-1184522423,-881572019,-1487782410,883388980],Slot:"mainhand"}]} 1
 #ラマh
 
 #スケルトンホース
