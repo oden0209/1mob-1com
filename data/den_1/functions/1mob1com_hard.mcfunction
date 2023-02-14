@@ -214,7 +214,7 @@ execute at @e[type=minecraft:ender_dragon] at @e[type=minecraft:end_crystal] pos
 #装備
 #防具、
 #武器近、ウシ
-#武器遠、カエル
+#武器遠、カエル、ラバ
 #食料
 #バフ、エルダーガーディアン、カエル
 #特殊武器、カエル
