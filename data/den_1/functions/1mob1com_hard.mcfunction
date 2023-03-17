@@ -47,8 +47,9 @@ execute at @e[type=fox,nbt={HandItems:[{id:"minecraft:sweet_berries",Count:1b},{
 execute at @e[type=rabbit,nbt=!{RabbitType:99}] unless entity @e[type=rabbit,nbt={RabbitType:99},distance=..5] run summon rabbit ~ ~ ~ {Age:-600,RabbitType:99}
 #パンダh
 execute at @e[type=panda] as @e[type=item,nbt=!{Item:{id:"minecraft:bamboo"}},distance=..10] run data modify entity @s Item set value {id:"minecraft:bamboo",Count:1b}
-#シロクマh
-execute at @e[type=polar_bear,nbt={Age:0}] at @e[type=polar_bear,nbt=!{Age:0}] at @e[distance=..4] unless entity @e[type=polar_bear,distance=..3] run fill ~-1 ~-1 ~-1 ~1 ~4 ~1 ice
+#シロクマ
+#execute at @e[type=polar_bear,nbt={Age:0}] at @e[type=polar_bear,nbt=!{Age:0}] at @e[distance=..4] unless entity @e[type=polar_bear,distance=..3] run fill ~-1 ~-1 ~-1 ~1 ~4 ~1 ice
+execute as @e[type=minecraft:polar_bear] at @s on target on attacker if entity @e[type=minecraft:polar_bear,distance=..0.1] on target at @s[nbt={HurtTime:8s}] run tp @s ~ ~-1 ~
 #ウシh
 execute at @e[type=cow,nbt={InLove:1,OnGround:1b}] unless entity @e[type=minecraft:area_effect_cloud,distance=..5] run summon area_effect_cloud ~ ~ ~ {Particle:"glow",Radius:1.5f,Duration:100,Passengers:[{id:"minecraft:item",Age:4800,Item:{id:"minecraft:stone_sword",Count:1b,tag:{display:{Name:'{"text":"灰色の剣"}'},Enchantments:[{id:"minecraft:sharpness",lvl:7s},{id:"minecraft:knockback",lvl:1s}]}}}],Effects:[{Id:24,Amplifier:0b,Duration:1200},{Id:25,Amplifier:0b,Duration:1200}]}
 #ムーシュルーム

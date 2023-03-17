@@ -44,8 +44,10 @@ execute as @e[type=fox,tag=!fire_fox,nbt={Age:0,Sitting:0b,Sleeping:0b,HurtTime:
 execute as @e[type=minecraft:rabbit,nbt=!{RabbitType:99},nbt={HurtTime:10s}] run data modify entity @s RabbitType set value 99
 #パンダ
 execute at @e[type=minecraft:panda] at @e[type=item,distance=..10,sort=nearest,limit=1,nbt={Item:{id:"minecraft:bamboo"}}] align xyz positioned ~0.5 ~0.5 ~0.5 if block ~ ~ ~ air unless entity @e[distance=..20,type=minecraft:falling_block] run summon area_effect_cloud ~ ~1 ~ {Passengers:[{id:"minecraft:falling_block",BlockState:{Name:"minecraft:bamboo_sapling"},Time:1,DropItem:0b},{id:"minecraft:falling_block",BlockState:{Name:"minecraft:pointed_dripstone",Properties:{vertical_direction:"up"}},Time:1,DropItem:0b}]}
-#シロクマ
-execute as @e[type=minecraft:polar_bear,nbt={Age:-23999}] at @s run summon firework_rocket ~ ~1 ~ {LifeTime:60,Passengers:[{id:"minecraft:item",Item:{id:"minecraft:cake",Count:1b}},{id:"minecraft:item",Item:{id:"minecraft:wolf_spawn_egg",Count:1b}},{id:"minecraft:item",Item:{id:"minecraft:mojang_banner_pattern",Count:1b}},{id:"minecraft:item",Item:{id:"minecraft:lily_of_the_valley",Count:1b}},{id:"minecraft:item",Item:{id:"minecraft:azure_bluet",Count:1b}},{id:"minecraft:item",Item:{id:"minecraft:oxeye_daisy",Count:1b}}],FireworksItem:{id:firework_rocket,Count:1,tag:{Fireworks:{Explosions:[{Type:4,Trail:1b,Colors:[I;16777215],FadeColors:[I;27303,16698368]}]}}}}
+#シロクマe
+#execute as @e[type=minecraft:polar_bear,nbt={Age:-23999}] at @s run summon firework_rocket ~ ~1 ~ {LifeTime:60,Passengers:[{id:"minecraft:item",Item:{id:"minecraft:cake",Count:1b}},{id:"minecraft:item",Item:{id:"minecraft:wolf_spawn_egg",Count:1b}},{id:"minecraft:item",Item:{id:"minecraft:mojang_banner_pattern",Count:1b}},{id:"minecraft:item",Item:{id:"minecraft:lily_of_the_valley",Count:1b}},{id:"minecraft:item",Item:{id:"minecraft:azure_bluet",Count:1b}},{id:"minecraft:item",Item:{id:"minecraft:oxeye_daisy",Count:1b}}],FireworksItem:{id:firework_rocket,Count:1,tag:{Fireworks:{Explosions:[{Type:4,Trail:1b,Colors:[I;16777215],FadeColors:[I;27303,16698368]}]}}}}
+#execute as @e[type=minecraft:polar_bear] at @s on target on attacker if entity @e[type=minecraft:polar_bear,distance=..0.1] on target at @s[nbt={HurtTime:8s}] run tp @s ~ ~-1 ~
+execute as @e[nbt=!{HurtTime:0s}] at @s on attacker run damage @e[type=minecraft:polar_bear,nbt={AngerTime:0,HurtTime:0s},limit=1,sort=random,distance=..20] 0 minecraft:mob_attack by @s
 #ウシ
 execute at @e[type=cow] run effect clear @e[distance=..2]
 #ムーシュルームe
