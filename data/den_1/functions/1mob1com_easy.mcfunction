@@ -27,7 +27,8 @@ execute at @e[type=cat,nbt=!{InLove:0}] unless entity @e[nbt={ActiveEffects:[{Id
 #ヤマネコ
 execute at @e[type=ocelot] as @e[type=creeper,distance=..20] run data modify entity @s ExplosionRadius set value 0b
 #オオカミ
-execute as @e[type=wolf] at @s run tp @e[type=item,distance=..2] @s
+#execute as @e[type=wolf] at @s run tp @e[type=item,distance=..2] @s
+execute as @e[type=minecraft:wolf,nbt={Health:20.0f}] at @s run ride @e[type=item,distance=..4,limit=1,sort=random] mount @s
 #オウム
 effect give @e[nbt={ShoulderEntityLeft:{}}] levitation 10 254
 #アレイ
@@ -148,7 +149,8 @@ execute as @e[type=minecraft:zoglin,nbt=!{HandItems:[{},{id:"minecraft:shield"}]
 #ブレイズe
 #execute at @e[type=minecraft:small_fireball] run fill ~-1 ~-1 ~-1 ~1 ~1 ~1 lava[level=1] replace fire
 #execute at @e[type=minecraft:small_fireball] if block ~ ~-0.5 ~ fire run fill ~-0.5 ~-0.5 ~-0.5 ~0.5 ~0.5 ~0.5 lava[level=1] keep
-execute as @e[type=minecraft:blaze] at @s unless entity @e[type=minecraft:fox,distance=..20] run summon firework_rocket ~ ~ ~ {Tags:["fire_fox"],HasVisualFire:1b,LifeTime:10,Motion:[0.0,0.5,0.0],Passengers:[{id:"minecraft:fox",Tags:["fire_fox"],HasVisualFire:1b,Motion:[0.0,0.5,0.0],Passengers:[{id:"minecraft:silverfish",Tags:["fire_fox"],HasVisualFire:1b,Silent:1b,HandItems:[{id:"minecraft:golden_sword",Count:1b,tag:{Enchantments:[{id:"minecraft:fire_aspect",lvl:1s}]}},{}],HandDropChances:[0.000F,0.085F],ActiveEffects:[{Id:12b,Amplifier:0b,Duration:99999},{Id:14b,Amplifier:0b,Duration:99999}]}],ActiveEffects:[{Id:28b,Amplifier:0b,Duration:99999}]}]}
+#execute as @e[type=minecraft:blaze] at @s unless entity @e[type=minecraft:fox,distance=..20] run summon firework_rocket ~ ~ ~ {Tags:["fire_fox"],HasVisualFire:1b,LifeTime:10,Motion:[0.0,0.5,0.0],Passengers:[{id:"minecraft:fox",Tags:["fire_fox"],HasVisualFire:1b,Motion:[0.0,0.5,0.0],Passengers:[{id:"minecraft:silverfish",Tags:["fire_fox"],HasVisualFire:1b,Silent:1b,HandItems:[{id:"minecraft:golden_sword",Count:1b,tag:{Enchantments:[{id:"minecraft:fire_aspect",lvl:1s}]}},{}],HandDropChances:[0.000F,0.085F],ActiveEffects:[{Id:12b,Amplifier:0b,Duration:99999},{Id:14b,Amplifier:0b,Duration:99999}]}],ActiveEffects:[{Id:28b,Amplifier:0b,Duration:99999}]}]}
+execute as @e[type=minecraft:small_fireball] at @s on origin facing entity @s[distance=3..] eyes as @e[type=minecraft:small_fireball,sort=nearest,limit=1] unless block ^ ^ ^-1.5 air unless block ^ ^ ^-1.5 minecraft:lava store result entity @s life byte 0 summon minecraft:magma_cube store result entity @s Size int 0.75 run kill @e[type=minecraft:magma_cube,distance=0.1..5]
 #ガスト
 execute at @e[type=ghast] run kill @e[distance=..10,type=!fireball,type=!wither,type=!ghast,type=!enderman,type=!skeleton,type=!wither_skeleton,type=!blaze,type=!magma_cube,type=!hoglin,type=!piglin,type=!piglin_brute,type=!zombified_piglin,type=!strider]
 #シュルカー
@@ -199,7 +201,7 @@ execute at @e[type=minecraft:ender_dragon] as @e[type=minecraft:area_effect_clou
 #装備
 #防具、ロバ
 #武器近、ゾグリン
-#武器遠、
+#武器遠、スケルトンホース
 #食料、タラ
 #バフ、ホグリン、（ゾンビホース）、カメ、エンダーマイト
 #特殊武器、カエル、イカ、ヒカリイカ

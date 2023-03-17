@@ -36,7 +36,8 @@ execute at @e[type=cat,nbt=!{InLove:0}] unless entity @e[nbt={ActiveEffects:[{Id
 execute at @e[type=ocelot] as @e[type=creeper,distance=..20] run data modify entity @s ExplosionRadius set value 0b
 #オオカミ
 #execute as @e[type=wolf,nbt={Sitting:true},nbt=!{ActiveEffects:[{}]}] run effect give @s regeneration 11 1
-execute as @e[type=wolf] at @s run tp @e[type=item,distance=..2] @s
+#execute as @e[type=wolf] at @s run tp @e[type=item,distance=..2] @s
+execute as @e[type=minecraft:wolf,nbt={Health:20.0f}] at @s run ride @e[type=item,distance=..4,limit=1,sort=random] mount @s
 #オウム
 #execute at @e[nbt={ShoulderEntityLeft:{}}] at @e[type=!item,type=!villager,type=!player,type=!sheep,type=!cow,type=!pig,type=!chicken,distance=..25] unless entity @e[type=firework_rocket,distance=..5] unless block ~ ~ ~ water run summon firework_rocket ~ ~ ~ {LifeTime:100,Motion:[0.0,-5.0,0.0]}
 #execute at @e[nbt={ShoulderEntityLeft:{}}] at @e[type=!player,type=!item,type=!experience_orb,type=!villager,type=!wandering_trader,nbt=!{InLove:0},nbt={OnGround:true},distance=..25] unless entity @e[type=firework_rocket,distance=..5] unless block ~ ~ ~ water run summon firework_rocket ~ ~ ~ {LifeTime:100,Motion:[0.0,-5.0,0.0]}
