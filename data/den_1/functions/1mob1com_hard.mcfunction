@@ -194,7 +194,7 @@ execute as @e[type=minecraft:illusioner,nbt={HurtTime:1s},tag=!illusion] at @s a
 #ウォーデン
 #execute at @p if block ~ ~ ~ minecraft:sculk_vein run fill ~-20 ~-5 ~-20 ~20 ~5 ~20 spawner{SpawnCount:2,SpawnRange:10,Delay:20,MinSpawnDelay:10,MaxSpawnDelay:20,MaxNearbyEntities:5,RequiredPlayerRange:3,SpawnData:{entity:{id:"minecraft:zombie",Silent:1b}}} replace minecraft:polished_basalt[axis=y]
 execute as @e[type=minecraft:warden,nbt={anger:{suspects:[]}},sort=random,limit=1] at @s positioned as @e[type=!minecraft:warden,type=!#minecraft:impact_projectiles,type=!item,type=!minecraft:experience_orb,sort=nearest,limit=1] unless entity @e[type=minecraft:warden,distance=..5] if block ~ ~ ~ minecraft:sculk_vein store result entity @s Brain.memories long 1 store result entity @s Motion byte 0 run summon warden ^ ^ ^-1 {Brain:{memories:{"minecraft:dig_cooldown":{value:{},ttl:1200L},"minecraft:is_emerging":{value:{},ttl:125L}}}}
-#ガーディアン
+#ガーディアンh
 #execute at @e[type=guardian,nbt={Motion:[0.0,0.0,0.0]},tag=!dragon] as @e[type=!elder_guardian,type=!guardian,tag=!guardian,distance=..5] at @s facing entity @e[type=guardian,limit=1,sort=nearest] eyes positioned ^ ^ ^-0.1 rotated as @s run tp ~ ~ ~
 #execute as @e[type=minecraft:item,nbt={Item:{id:"minecraft:pufferfish"}}] at @s if block ~ ~ ~ minecraft:water unless entity @e[type=minecraft:guardian,distance=..10] store success entity @s Age short 5999 run summon minecraft:guardian
 execute as @e[type=minecraft:guardian,nbt={Health:30.0f},nbt=!{Motion:[0.0,0.0,0.0]}] run effect give @s minecraft:invisibility 1 0
