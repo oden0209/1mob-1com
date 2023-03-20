@@ -129,7 +129,8 @@ execute as @e[type=minecraft:stray] at @s if entity @e[distance=0.1..3] position
 execute at @e if block ~ ~-1 ~ minecraft:nether_bricks positioned ~ ~-1 ~ run fill ~-2 ~ ~-2 ~2 ~-3 ~2 spawner{SpawnCount:3,SpawnRange:4,Delay:30,MinSpawnDelay:300,MaxSpawnDelay:600,MaxNearbyEntities:9,RequiredPlayerRange:30,SpawnData:{entity:{id:"minecraft:wither_skeleton",CanPickUpLoot:1b,HandItems:[{id:"minecraft:stone_sword",Count:1b},{}]},custom_spawn_rules:{sky_light_limit:{min_inclusive:0,max_inclusive:12},block_light_limit:{min_inclusive:0,max_inclusive:12}}},SpawnPotentials:[{weight:30,data:{custom_spawn_rules:{sky_light_limit:{min_inclusive:0,max_inclusive:12},block_light_limit:{min_inclusive:0,max_inclusive:12}},entity:{id:"minecraft:wither_skeleton",CanPickUpLoot:1b,HandItems:[{id:"minecraft:stone_sword",Count:1b},{}]}}},{weight:10,data:{custom_spawn_rules:{sky_light_limit:{min_inclusive:0,max_inclusive:12},block_light_limit:{min_inclusive:0,max_inclusive:12}},entity:{id:"minecraft:wither_skeleton",CanPickUpLoot:1b,Passengers:[{id:"minecraft:area_effect_cloud",Passengers:[{id:"minecraft:wither_skeleton",NoGravity:1b,LeftHanded:1b,Motion:[0.0,0.5,0.0],HandItems:[{id:"minecraft:bow",Count:1b},{}],ArmorItems:[{},{},{id:"minecraft:leather_chestplate",Count:1b,tag:{display:{color:2167060}}},{id:"minecraft:leather_helmet",Count:1b,tag:{display:{color:2167060}}}]}]}],HandItems:[{id:"minecraft:bow",Count:1b},{}],ArmorItems:[{id:"minecraft:leather_boots",Count:1b,tag:{display:{color:2167060}}},{id:"minecraft:leather_leggings",Count:1b,tag:{display:{color:2167060}}},{},{}]}}},{weight:10,data:{custom_spawn_rules:{sky_light_limit:{min_inclusive:0,max_inclusive:12},block_light_limit:{min_inclusive:0,max_inclusive:12}},entity:{id:"minecraft:spider",Passengers:[{id:"minecraft:wither_skeleton",HandItems:[{id:"minecraft:stone_axe",Count:1b,tag:{Enchantments:[{id:"minecraft:fire_aspect",lvl:1s}]}},{}],ArmorItems:[{},{},{id:"minecraft:netherite_chestplate",Count:1b},{}],ArmorDropChances:[0.085F,0.085F,0.000F,0.085F]}]}}},{weight:1,data:{custom_spawn_rules:{sky_light_limit:{min_inclusive:0,max_inclusive:12},block_light_limit:{min_inclusive:0,max_inclusive:12}},entity:{id:"minecraft:skeleton_horse",SkeletonTrap:1b}}},{weight:5,data:{entity:{id:"minecraft:magma_cube"}}},{weight:3,data:{entity:{id:"minecraft:area_effect_cloud",Passengers:[{id:"minecraft:piglin_brute",HandItems:[{id:"minecraft:golden_axe",Count:1b},{}]},{id:"minecraft:piglin",HandItems:[{id:"minecraft:crossbow",Count:1b},{}],ArmorItems:[{},{},{},{id:"minecraft:golden_helmet",Count:1b}]}]}}}]} replace lava[level=8]
 #洞窟グモh
 #execute as @e[nbt={ActiveEffects:[{Duration:1},{Id:19b}]}] at @s if entity @s[y=-64,dy=94] at @s run setblock ~ ~ ~ spawner{Delay:0,SpawnData:{entity:{id:"minecraft:falling_block",BlockState:{Name:"minecraft:cobweb"},Time:1,DropItem:0b,Passengers:[{id:"minecraft:cave_spider",Health:2f}]}}} destroy
-execute as @e[nbt={ActiveEffects:[{Duration:1},{Id:19b}]}] at @s if entity @s[y=-64,dy=94] at @s unless entity @e[type=minecraft:spawner_minecart,distance=..0.1] run summon spawner_minecart ~ ~ ~ {Delay:0,SpawnData:{entity:{id:"minecraft:falling_block",BlockState:{Name:"minecraft:cobweb"},Time:1,DropItem:0b,Passengers:[{id:"minecraft:cave_spider",Health:2f}]}}}
+#execute as @e[nbt={ActiveEffects:[{Duration:1},{Id:19b}]}] at @s if entity @s[y=-64,dy=94] at @s unless entity @e[type=minecraft:spawner_minecart,distance=..0.1] run summon spawner_minecart ~ ~ ~ {Delay:0,SpawnData:{entity:{id:"minecraft:falling_block",BlockState:{Name:"minecraft:cobweb"},Time:1,DropItem:0b,Passengers:[{id:"minecraft:cave_spider",Health:2f}]}}}
+execute as @e[nbt={ActiveEffects:[{Duration:1},{Id:19}]}] at @s if entity @s[y=-64,dy=94] at @s unless entity @e[type=minecraft:spawner_minecart,distance=..0.1] run summon spawner_minecart ~ ~ ~ {Delay:0,SpawnData:{entity:{id:"minecraft:falling_block",BlockState:{Name:"minecraft:cobweb"},Time:1,DropItem:0b,Passengers:[{id:"minecraft:cave_spider",Health:2f}]}}}
 #マグマキューブ
 execute as @e[type=magma_cube,nbt={Size:0}] at @s run tp @s @e[distance=..2,limit=1,sort=furthest,type=!magma_cube,type=!item,type=!item,type=!experience_orb]
 #-----
@@ -160,9 +161,9 @@ execute at @e[type=blaze,tag=!dragon_eye] at @e[type=small_fireball,distance=..3
 #execute at @e[type=ghast] run kill @e[distance=..10,type=!fireball,type=!wither,type=!ghast,type=!enderman,type=!skeleton,type=!wither_skeleton,type=!blaze,type=!magma_cube,type=!hoglin,type=!piglin,type=!piglin_brute,type=!zombified_piglin,type=!strider]
 #execute as @e[type=minecraft:ghast] at @s positioned as @e[type=minecraft:fireball,distance=5..100] positioned ^ ^ ^15 run summon tnt
 execute as @e[type=minecraft:ghast] at @s as @e[type=minecraft:fireball,distance=..100,sort=nearest,limit=1] facing entity @s eyes positioned as @s unless entity @e[type=minecraft:ghast,distance=..50] positioned ^ ^ ^15 run summon tnt
-#シュルカーh
-#execute at @e[type=!shulker,type=!end_crystal] at @e[type=shulker,tag=!rider,distance=1..2] run setblock ~ ~ ~ purple_stained_glass
-execute at @e[type=minecraft:shulker,nbt={Peek:30b},tag=!rider] unless entity @e[type=minecraft:endermite,distance=..5] run summon endermite ~ ~ ~ {Lifetime:2300}
+#シュルカー
+execute at @e[type=!shulker,type=!end_crystal] at @e[type=shulker,tag=!rider,distance=1..2] run setblock ~ ~ ~ purple_stained_glass
+#execute at @e[type=minecraft:shulker,nbt={Peek:30b},tag=!rider] unless entity @e[type=minecraft:endermite,distance=..5] run summon endermite ~ ~ ~ {Lifetime:2300}
 #-----
 #略奪
 #ヴィンディケーター
@@ -218,6 +219,6 @@ execute at @e[type=minecraft:ender_dragon] at @e[type=minecraft:end_crystal] pos
 #防具、
 #武器近、ウシ
 #武器遠、カエル、ラバ
-#食料
+#食料、
 #バフ、エルダーガーディアン、カエル
 #特殊武器、カエル
