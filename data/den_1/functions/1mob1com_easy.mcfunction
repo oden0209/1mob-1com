@@ -110,10 +110,10 @@ execute as @e[type=villager] at @s facing entity @e[type=zombie_villager,nbt=!{A
 #ドラウンドe
 #execute at @e[type=minecraft:drowned] at @e[distance=..25] anchored eyes positioned ~ ~1.5 ~ if block ~ ~1 ~ air run fill ~-1 ~ ~-1 ~1 ~ ~1 minecraft:frosted_ice replace minecraft:water[level=0]
 execute at @e[type=minecraft:drowned] run effect give @a[distance=..25] levitation 3 128
-#ハスクe
+#ハスク
 #execute as @e[type=minecraft:husk] at @s as @e[nbt=!{DeathTime:0s},distance=..10] at @s positioned ~ ~-7 ~ unless entity @e[type=minecraft:area_effect_cloud,distance=..1] positioned as @s positioned ~ ~1 ~ unless entity @e[type=minecraft:area_effect_cloud,distance=..0.5] run summon area_effect_cloud ~ ~ ~ {Particle:"falling_dust sand",Radius:5f,RadiusPerTick:-0.1f,Duration:40,Effects:[{Id:25b,Amplifier:2b,Duration:5}]}
-execute as @e[type=minecraft:husk] at @s unless entity @e[nbt={SelectedItem:{tag:{Enchantments:[{id:"minecraft:smite"}]}}},distance=..40] unless entity @e[nbt={HandItems:[{tag:{Enchantments:[{id:"minecraft:smite"}]}},{}]},distance=..40] unless entity @e[type=minecraft:area_effect_cloud,distance=..0.5] run summon area_effect_cloud ~ ~ ~ {Particle:"item sand",Radius:1f,Duration:60,Effects:[{Id:1,Amplifier:0b,Duration:20},{Id:11,Amplifier:0b,Duration:20},{Id:12,Amplifier:0b,Duration:20},{Id:14,Amplifier:0b,Duration:20}]}
-#execute at @e[type=husk,sort=random,limit=1] unless block ~ ~ ~ water at @e[distance=..10,type=!item] if block ~ ~-1 ~ sand unless entity @e[type=area_effect_cloud,distance=..1] run summon area_effect_cloud ~ ~ ~ {Particle:"flame",ReapplicationDelay:5,Radius:1f,Duration:6,Effects:[{Id:7b,Amplifier:0b,Duration:1}]}
+#execute as @e[type=minecraft:husk] at @s unless entity @e[nbt={SelectedItem:{tag:{Enchantments:[{id:"minecraft:smite"}]}}},distance=..40] unless entity @e[nbt={HandItems:[{tag:{Enchantments:[{id:"minecraft:smite"}]}},{}]},distance=..40] unless entity @e[type=minecraft:area_effect_cloud,distance=..0.5] run summon area_effect_cloud ~ ~ ~ {Particle:"item sand",Radius:1f,Duration:60,Effects:[{Id:1,Amplifier:0b,Duration:20},{Id:11,Amplifier:0b,Duration:20},{Id:12,Amplifier:0b,Duration:20},{Id:14,Amplifier:0b,Duration:20}]}
+execute at @e[type=husk,sort=random,limit=1] unless block ~ ~ ~ water at @e[distance=..10,type=!item] if block ~ ~-1 ~ sand unless entity @e[type=area_effect_cloud,distance=..1] run summon area_effect_cloud ~ ~ ~ {Particle:"flame",ReapplicationDelay:5,Radius:1f,Duration:6,Effects:[{Id:7b,Amplifier:0b,Duration:1}]}
 #ジャイアント
 execute at @e[type=giant] if entity @p[distance=..30] run time set midnight
 #ストレイ
