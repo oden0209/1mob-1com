@@ -2,7 +2,7 @@
 #ゾンビ
 execute at @e[type=zombie] run effect give @e[distance=..5] poison 3 0
 #スケルトン
-execute at @e[type=skeleton] as @e[type=!#impact_projectiles,distance=..1] at @s if entity @e[type=arrow,distance=..3,nbt={inGround:false}] run tp @s @e[type=arrow,distance=..16,limit=1,sort=random,nbt={inGround:true}]
+execute at @e[type=skeleton,tag=!noTP] as @e[type=!#impact_projectiles,distance=..1] at @s if entity @e[type=arrow,distance=..3,nbt={inGround:false}] run tp @s @e[type=arrow,distance=..16,limit=1,sort=random,nbt={inGround:true}]
 #クモ
 execute at @e[type=spider] at @e[type=#impact_projectiles,distance=..16,nbt={inGround:false}] at @e[distance=..3,type=!#impact_projectiles,type=!item,type=!experience_orb] anchored eyes run fill ^ ^ ^-1 ^ ^-1 ^ cobweb keep
 #クリーパー

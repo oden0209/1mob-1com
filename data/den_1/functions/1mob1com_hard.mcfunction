@@ -28,7 +28,8 @@ execute at @e[nbt={Gossips:[{Type:"major_negative"}]}] if entity @p[distance=..1
 execute as @e[type=minecraft:wandering_trader,nbt=!{Offers:{Recipes:[{buy:{id:"minecraft:emerald",Count:64b},buyB:{id:"minecraft:bundle",Count:1b,tag:{}},sell:{id:"minecraft:bundle",Count:1b,tag:{Items:[{id:"minecraft:emerald_block",Count:7b}]}}}]}}] run data modify entity @s Offers.Recipes append value {buy:{id:"minecraft:emerald",Count:64b},buyB:{id:"minecraft:bundle",Count:1b,tag:{}},sell:{id:"minecraft:bundle",Count:1b,tag:{Items:[{id:"minecraft:emerald_block",Count:7b}]}}}
 #ネコh
 #execute as @e[type=cat] at @s run effect give @e[type=minecraft:witch,distance=..20,limit=1,sort=nearest] minecraft:health_boost 5 5
-execute as @e[type=minecraft:cat] at @s if entity @e[type=minecraft:potion,distance=..20] unless entity @e[type=minecraft:ghast,distance=..80] run summon minecraft:ghast ~ ~50 ~
+#execute as @e[type=minecraft:cat] at @s if entity @e[type=minecraft:potion,distance=..20] unless entity @e[type=minecraft:ghast,distance=..80] run summon minecraft:ghast ~ ~50 ~
+execute as @e[type=minecraft:cat,nbt={variant:"minecraft:all_black"}] at @s unless entity @e[type=minecraft:area_effect_cloud,distance=..0.5] run summon area_effect_cloud ~ ~ ~ {Particle:"smoke",Radius:1f,Duration:20,Effects:[{Id:16,Amplifier:0b,Duration:12000},{Id:22,Amplifier:0b,Duration:12000},{Id:26,Amplifier:0b,Duration:20},{Id:27,Amplifier:0b,Duration:20},{Id:33,Amplifier:0b,Duration:20}]}
 #ヤマネコh
 #execute at @e[type=minecraft:ocelot] run fill ~-3 ~-3 ~-3 ~3 ~3 ~3 minecraft:skulk_catalyst replace minecraft:melon
 execute at @e[type=minecraft:ocelot] run fill ~-10 ~-3 ~-10 ~10 ~3 ~10 minecraft:sculk_catalyst replace minecraft:melon
