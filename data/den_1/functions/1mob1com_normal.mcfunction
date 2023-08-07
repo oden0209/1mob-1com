@@ -106,6 +106,8 @@ execute at @e[type=skeleton_horse,nbt={SkeletonTrap:true}] at @p[distance=..10] 
 #ゾンビホース
 #execute at @e[type=zombie_horse,tag=!enemy] as @e[nbt={ActiveEffects:[{Id:17b}]}] at @s unless entity @e[type=area_effect_cloud,distance=..0] run summon area_effect_cloud ~ ~ ~ {Particle:"sneeze",Radius:0.5f,Duration:10,Effects:[{Id:1b,Amplifier:2b,Duration:100},{Id:8b,Amplifier:1b,Duration:100},{Id:16b,Amplifier:0b,Duration:300}]}
 execute at @e[type=zombie_horse,tag=!enemy] as @e[nbt={ActiveEffects:[{Id:17}]}] at @s unless entity @e[type=area_effect_cloud,distance=..0] run summon area_effect_cloud ~ ~ ~ {Particle:"sneeze",Radius:0.5f,Duration:10,Effects:[{Id:1b,Amplifier:2b,Duration:100},{Id:8b,Amplifier:1b,Duration:100},{Id:16b,Amplifier:0b,Duration:300}]}
+#ラクダ
+execute at @e[type=minecraft:camel] as @e[type=item,nbt={Item:{id:"minecraft:water_bucket",Count:1b}},distance=..3] store result entity @s Age int 6000 run summon arrow ~ ~ ~ {life:1200,Passengers:[{id:"minecraft:item",Item:{id:"minecraft:bucket",Count:1b}},{id:"minecraft:area_effect_cloud",Particle:"happy_villager",Radius:1.5f,Duration:10,Effects:[{Id:11,Amplifier:0b,Duration:168000},{Id:12,Amplifier:0b,Duration:168000},{Id:21,Amplifier:1b,Duration:168000}]}],SoundEvent:"entity.player.burp"}
 #イルカ
 #execute at @e[nbt={ActiveEffects:[{Id:dolphins_grace}]}] as @e[nbt=!{ActiveEffects:[{Id:dolphins_grace}]},distance=..10] if block ~ ~ ~ water run effect give @s dolphins_grace 1 0
 #execute at @e[type=dolphin] as @e[type=item,distance=..2] run tp ^2 ^ ^
@@ -143,6 +145,8 @@ execute at @e[type=squid] positioned ~-10 ~ ~-10 at @e[type=boat,dx=20,dy=100,dz
 execute at @e[type=glow_squid] as @e[distance=..10] at @s anchored eyes run setblock ^ ^1 ^ water[level=9] keep
 #ストライダー
 execute at @e[type=strider] run fill ~-1 ~-1 ~-1 ~1 ~1 ~1 lava replace lava
+#スニッファー
+
 #-----
 #上位
 #村人ゾンビ
@@ -158,7 +162,7 @@ execute at @e[type=minecraft:trident,nbt={life:1s,pickup:0b}] unless entity @e[t
 #ハスク
 #execute at @e[type=husk] at @e[distance=..10,type=!item] if block ~ ~-1 ~ sand unless entity @e[type=area_effect_cloud,distance=..1] run summon area_effect_cloud ~ ~ ~ {Particle:"flame",ReapplicationDelay:5,Radius:1f,Duration:6,Effects:[{Id:7b,Amplifier:0b,Duration:1}]}
 #execute at @e[type=husk,sort=random,limit=1] at @e[distance=..10,type=!item] if block ~ ~-1 ~ sand unless entity @e[type=area_effect_cloud,distance=..1] run summon area_effect_cloud ~ ~ ~ {Particle:"flame",ReapplicationDelay:5,Radius:1f,Duration:6,Effects:[{Id:7b,Amplifier:0b,Duration:1}]}
-execute at @e[type=husk,sort=random,limit=1] unless block ~ ~ ~ water at @e[distance=..10,type=!item] if block ~ ~-1 ~ sand unless entity @e[type=area_effect_cloud,distance=..1] run summon area_effect_cloud ~ ~ ~ {Particle:"flame",ReapplicationDelay:5,Radius:1f,Duration:6,Effects:[{Id:7b,Amplifier:0b,Duration:1}]}
+execute at @e[type=husk,sort=random,limit=1] unless block ~ ~ ~ water at @e[distance=..10,type=!item,type=!camel] if block ~ ~-1 ~ sand unless entity @e[type=area_effect_cloud,distance=..1] run summon area_effect_cloud ~ ~ ~ {Particle:"flame",ReapplicationDelay:5,Radius:1f,Duration:6,Effects:[{Id:7b,Amplifier:0b,Duration:1}]}
 #ジャイアント
 #execute at @e[type=giant] as @e[distance=..30] run data modify entity @s ActiveEffects set value [{Id:14b,Amplifier:0b,Duration:18,ShowParticles:false},{Id:24b,Amplifier:0b,Duration:18,ShowParticles:false}]
 execute at @e[type=giant] if entity @p[distance=..30] run time set midnight
@@ -303,5 +307,5 @@ execute at @e[type=minecraft:ender_dragon] at @e[type=minecraft:end_crystal] pos
 #武器近、ゾグリン
 #武器遠、
 #食料、タラ、オタマジャクシ
-#バフ、ホグリン、（ゾンビホース）、エルダーガーディアン
+#バフ、ホグリン、（ゾンビホース）、エルダーガーディアン、ラクダ
 #特殊武器、カエル

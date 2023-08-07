@@ -85,6 +85,8 @@ execute at @e[type=skeleton_horse,nbt={SkeletonTrap:true}] at @p[distance=..10] 
 #ゾンビホースh
 #execute as @e[type=minecraft:zombie,nbt={Attributes:[{Base:1.0d}]}] at @s unless entity @e[type=minecraft:zombie_horse,distance=..15] run summon zombie_horse ~ ~ ~ {Tags:["enemy"],Passengers:[{id:"minecraft:zombie",CanPickUpLoot:1b,HandItems:[{id:"minecraft:wooden_axe",Count:1b},{}],ArmorItems:[{},{},{},{id:"minecraft:iron_helmet",Count:1b}],Attributes:[{Name:generic.armor,Base:25}]}],ArmorItems:[{id:"minecraft:leather_boots",Count:1b,tag:{display:{color:17408},Enchantments:[{id:"minecraft:thorns",lvl:1s},{id:"minecraft:frost_walker",lvl:1s},{id:"minecraft:soul_speed",lvl:1s}]}},{},{},{}],ActiveEffects:[{Id:8b,Amplifier:1b,Duration:99999,ShowParticles:0b},{Id:17b,Amplifier:0b,Duration:99999,ShowParticles:0b}]}
 execute as @e[type=minecraft:item,nbt={Item:{id:"minecraft:saddle",tag:{display:{Name:'{"text":"zombie_trap"}'}}}}] at @s store result entity @s Age short 6000 summon minecraft:lightning_bolt at @e[type=!minecraft:player,type=!minecraft:item,sort=nearest,limit=2] summon minecraft:husk at @e[type=!minecraft:player,type=!minecraft:item,sort=nearest,limit=2] summon minecraft:zombie as @e[type=minecraft:lightning_bolt,limit=1] run summon zombie_horse ~ ~ ~ {Tame:1b,Passengers:[{id:"minecraft:zombie",CanPickUpLoot:1b,Health:30f,CanBreakDoors:1b,Tags:["DeepDead"],HandItems:[{id:"minecraft:iron_axe",Count:1b},{}],ArmorItems:[{id:"minecraft:saddle",Count:1b,tag:{display:{Name:'{"text":"zombie_trap"}'}}},{id:"minecraft:iron_leggings",Count:1b,tag:{Enchantments:[{id:"minecraft:projectile_protection",lvl:1s}]}},{},{}],ArmorDropChances:[0.100F,0.085F,0.085F,0.085F],ActiveEffects:[{Id:11,Amplifier:4b,Duration:20},{Id:12,Amplifier:0b,Duration:999999}],Attributes:[{Name:generic.max_health,Base:30},{Name:generic.armor,Base:10},{Name:zombie.spawn_reinforcements,Base:1}]}],ActiveEffects:[{Id:11,Amplifier:4b,Duration:20},{Id:12,Amplifier:0b,Duration:999999}]}
+#ラクダh
+
 #イルカh
 #execute as @e[type=minecraft:dolphin,tag=!dolphin_jockey] at @s store result entity @s Health float 0 unless entity @e[type=minecraft:drowned,distance=..0.5] run summon dolphin ~ ~ ~ {PersistenceRequired:1b,Tags:["dolphin_jockey"],Passengers:[{id:"minecraft:area_effect_cloud",Particle:"portal",Radius:1f,Duration:99999,Passengers:[{id:"minecraft:drowned",CanPickUpLoot:1b,ArmorItems:[{},{},{},{id:"minecraft:turtle_helmet",Count:1b}]}],Effects:[{Id:9b,Amplifier:0b,Duration:100}]},{id:"minecraft:area_effect_cloud",Passengers:[{id:"minecraft:item",PickupDelay:400,Item:{id:"minecraft:wooden_sword",Count:1b}}]}]}
 execute as @e[type=minecraft:dolphin] at @s unless entity @e[type=minecraft:drowned,distance=..15] positioned over world_surface unless entity @s[distance=..15] at @s summon minecraft:drowned run ride @s mount @e[distance=..1,sort=nearest,limit=1]
@@ -112,6 +114,8 @@ execute at @e[type=squid] positioned ~-10 ~ ~-10 at @e[type=boat,dx=20,dy=100,dz
 execute at @e[type=glow_squid] as @e[distance=..10] at @s anchored eyes run setblock ^ ^1 ^ water[level=9] keep
 #ストライダー
 execute at @e[type=strider] run fill ~-1 ~-1 ~-1 ~1 ~1 ~1 lava replace lava
+#スニッファー
+
 #-----
 #上位
 #村人ゾンビh
