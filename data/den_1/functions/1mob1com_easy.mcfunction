@@ -13,8 +13,9 @@ execute as @e[type=minecraft:enderman,nbt=!{AngerTime:0}] at @s run effect give 
 execute at @e[type=minecraft:slime,nbt={OnGround:0b},nbt=!{FallDistance:0f}] unless block ~ ~-0.3 ~ air unless block ~ ~-0.3 ~ minecraft:cave_air unless block ~ ~-0.3 ~ water unless block ~ ~-0.3 ~ lava unless entity @e[type=minecraft:area_effect_cloud,nbt={Age:0}] run summon area_effect_cloud ~ ~ ~ {Particle:"bubble_pop",Radius:0f,RadiusPerTick:0.5f,Duration:10,Effects:[{Id:25b,Amplifier:10b,Duration:5}]}
 #-----
 #友好・中立
-#スノーゴーレム
-execute at @e[type=snow_golem] at @e[type=snowball,distance=..5] as @e[type=!snow_golem,type=!polar_bear,type=!stray,nbt=!{VillagerData:{type:"minecraft:snow"}},nbt=!{Type:"snow"},distance=..2] run item replace entity @s armor.head with ice{AttributeModifiers:[{AttributeName:"generic.follow_range",Name:"generic.follow_range",Amount:-0.5,Operation:2,UUID:[I;754064627,-1304345982,-2044253836,1119759208]},{AttributeName:"generic.movement_speed",Name:"generic.movement_speed",Amount:-0.5,Operation:2,UUID:[I;-1827194926,-970438675,-2038461094,-78379753]}]} 1
+#スノーゴーレムe
+#execute at @e[type=snow_golem] at @e[type=snowball,distance=..5] as @e[type=!snow_golem,type=!polar_bear,type=!stray,nbt=!{VillagerData:{type:"minecraft:snow"}},nbt=!{Type:"snow"},distance=..2] run item replace entity @s armor.head with ice{AttributeModifiers:[{AttributeName:"generic.follow_range",Name:"generic.follow_range",Amount:-0.5,Operation:2,UUID:[I;754064627,-1304345982,-2044253836,1119759208]},{AttributeName:"generic.movement_speed",Name:"generic.movement_speed",Amount:-0.5,Operation:2,UUID:[I;-1827194926,-970438675,-2038461094,-78379753]}]} 1
+execute at @e[type=minecraft:snow_golem] run fill ~-1 ~ ~-1 ~1 ~ ~1 minecraft:pink_petals[flower_amount=4] replace minecraft:snow
 #アイアンゴーレム
 execute at @e[type=iron_golem] as @e[distance=..15,type=!villager] at @s if block ~ ~-1.3 ~ air run data modify entity @s FallDistance set value 27
 #execute as @e[type=minecraft:iron_golem,nbt={OnGround:1b}] at @s positioned ^ ^ ^3 positioned ~ ~5 ~ at @e[type=!minecraft:villager,type=!minecraft:iron_golem,distance=..5,nbt={OnGround:0b,HurtTime:0s}] if block ~ ~-1.5 ~ air positioned ^ ^ ^-2 if block ~ ~2 ~ air run tp ^ ^ ^

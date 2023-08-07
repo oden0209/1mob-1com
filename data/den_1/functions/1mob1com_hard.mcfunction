@@ -15,9 +15,10 @@ execute at @e[type=enderman,nbt={HurtTime:10s},nbt=!{AngerTime:0}] as @e[distanc
 execute as @e[type=slime,nbt={Size:0}] at @s run tp @s @e[distance=..1,limit=1,sort=nearest,type=!slime,type=!item]
 #-----
 #友好・中立
-#スノーゴーレムh
-execute at @e[type=minecraft:snow_golem] at @e[type=minecraft:snowball,distance=..20] run fill ~-1 ~-1 ~-1 ~1 ~1 ~1 minecraft:snow[layers=8] replace minecraft:snow
+#スノーゴーレム
+#execute at @e[type=minecraft:snow_golem] at @e[type=minecraft:snowball,distance=..20] run fill ~-1 ~-1 ~-1 ~1 ~1 ~1 minecraft:snow[layers=8] replace minecraft:snow
 #execute as @e[type=minecraft:snow_golem,nbt={Pumpkin:1b,HurtTime:9s}] at @s store result entity @s Pumpkin byte 0 run summon item ~ ~ ~ {Motion:[0.0,0.5,0.0],Item:{id:"minecraft:carved_pumpkin",Count:1b}}
+execute at @e[type=snow_golem] at @e[type=snowball,distance=..5] as @e[type=!snow_golem,type=!polar_bear,type=!stray,nbt=!{VillagerData:{type:"minecraft:snow"}},nbt=!{Type:"snow"},distance=..2] run item replace entity @s armor.head with ice{AttributeModifiers:[{AttributeName:"generic.follow_range",Name:"generic.follow_range",Amount:-0.5,Operation:2,UUID:[I;754064627,-1304345982,-2044253836,1119759208]},{AttributeName:"generic.movement_speed",Name:"generic.movement_speed",Amount:-0.5,Operation:2,UUID:[I;-1827194926,-970438675,-2038461094,-78379753]}]} 1
 #アイアンゴーレムh
 #execute at @e[type=iron_golem] as @e[distance=..15,type=!villager] at @s if block ~ ~-1.3 ~ air run data modify entity @s FallDistance set value 27
 execute as @e[type=minecraft:iron_golem,nbt={OnGround:1b}] at @s positioned ^ ^ ^3 positioned ~ ~5 ~ at @e[type=!minecraft:villager,type=!minecraft:iron_golem,distance=..5,nbt={OnGround:0b,HurtTime:0s}] if block ~ ~-1.5 ~ air positioned ^ ^ ^-2 if block ~ ~2 ~ air run tp ^ ^ ^
