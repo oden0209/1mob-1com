@@ -114,8 +114,8 @@ execute at @e[type=squid] positioned ~-10 ~ ~-10 at @e[type=boat,dx=20,dy=100,dz
 execute at @e[type=glow_squid] as @e[distance=..10] at @s anchored eyes run setblock ^ ^1 ^ water[level=9] keep
 #ストライダー
 execute at @e[type=strider] run fill ~-1 ~-1 ~-1 ~1 ~1 ~1 lava replace lava
-#スニッファー
-
+#スニッファーh
+execute as @e[type=item] at @s if block ~ ~ ~ minecraft:pitcher_crop[age=4,half=upper] store success entity @s Age short 6000 summon minecraft:area_effect_cloud store success entity @s Radius float 1 store success entity @s Duration float 20 run setblock ~ ~-1 ~ spawner{SpawnCount:4,SpawnRange:4,Delay:200,MinSpawnDelay:1200,MaxSpawnDelay:4800,MaxNearbyEntities:8,RequiredPlayerRange:16,SpawnData:{entity:{id:"minecraft:skeleton",Silent:1b,DeathLootTable:"a",CanPickUpLoot:0b,Health:40f,HandItems:[{id:"minecraft:wooden_pickaxe",Count:1b,tag:{display:{Name:'{"text":"ウツボカズラの根"}'},Enchantments:[{id:"minecraft:bane_of_arthropods",lvl:6s},{id:"minecraft:efficiency",lvl:10s},{id:"minecraft:mending",lvl:1s}]}},{}],HandDropChances:[0.250F,0.085F],ArmorItems:[{id:"minecraft:pitcher_pod",Count:1b,tag:{Enchantments:[{id:"minecraft:thorns",lvl:1s}]}},{id:"minecraft:splash_potion",Count:1b,tag:{display:{Name:'{"text":"酸入り瓶"}'},CustomPotionEffects:[{Id:2,Amplifier:5b,Duration:200},{Id:4,Amplifier:0b,Duration:200},{Id:18,Amplifier:0b,Duration:200},{Id:19,Amplifier:0b,Duration:200}],Potion:"minecraft:empty",CustomPotionColor:16315875}},{id:"minecraft:leather_chestplate",Count:1b,tag:{display:{color:11264506},Trim:{material:"minecraft:lapis",pattern:"minecraft:silence"}}},{id:"minecraft:leather_helmet",Count:1b,tag:{display:{color:41193},Unbreakable:1b,Trim:{material:"minecraft:amethyst",pattern:"minecraft:silence"}}}],ArmorDropChances:[0.010F,1.000F,0.000F,0.000F],ActiveEffects:[{Id:12,Amplifier:0b,Duration:999999,ShowParticles:0b},{Id:14,Amplifier:0b,Duration:999999,ShowParticles:0b}],Attributes:[{Name:generic.max_health,Base:40},{Name:generic.follow_range,Base:8},{Name:generic.knockback_resistance,Base:1},{Name:generic.movement_speed,Base:0.1},{Name:generic.attack_damage,Base:8}]},custom_spawn_rules:{sky_light_limit:{min_inclusive:13,max_inclusive:15},block_light_limit:{min_inclusive:0,max_inclusive:15}}}} destroy
 #-----
 #上位
 #村人ゾンビh
@@ -228,8 +228,8 @@ execute at @e[type=minecraft:ender_dragon] at @e[type=minecraft:end_crystal] pos
 
 #装備
 #防具、
-#武器近、ウシ
+#武器近、ウシ、スニッファー
 #武器遠、カエル、ラバ
 #食料、
 #バフ、エルダーガーディアン、カエル
-#特殊武器、カエル
+#特殊武器、カエル、スニッファー
