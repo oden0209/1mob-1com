@@ -10,7 +10,7 @@ execute as @e[type=minecraft:spider,nbt={FallDistance:0.0f,OnGround:0b},name=!sp
 #クリーパー
 execute at @e[type=creeper] at @e[type=item,distance=..10] if entity @e[type=!item,distance=..2] unless entity @e[type=minecraft:creeper,distance=..0.1] run summon creeper ~ ~ ~ {ExplosionRadius:1b,Fuse:0,ignited:1b}
 #エンダーマン
-execute at @e[type=enderman,nbt={HurtTime:10s},nbt=!{AngerTime:0}] as @e[distance=..10,type=!minecraft:spawner_minecart] run spreadplayers ~ ~ 2 15 false @s
+execute at @e[type=enderman,nbt={HurtTime:10s},nbt=!{AngerTime:0}] as @e[distance=..10,type=!minecraft:spawner_minecart] run spreadplayers ~ ~ 2 15 under 127 false @s
 #スライム
 execute as @e[type=slime,nbt={Size:0}] at @s run tp @s @e[distance=..1,limit=1,sort=nearest,type=!slime,type=!item]
 #-----
