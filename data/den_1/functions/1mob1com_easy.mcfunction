@@ -57,7 +57,8 @@ execute at @e[type=mooshroom] run effect give @e[distance=..2] regeneration 4 0
 #ヒツジ
 execute as @e[type=sheep,nbt=!{CustomName:'{"text":"jeb_"}'}] run data modify entity @s CustomName set value '{"text":"jeb_"}'
 #ヤギ
-execute as @e[type=goat,nbt={IsScreamingGoat:true},limit=1,sort=random] at @s unless entity @e[type=minecraft:goat,nbt={DeathLootTable:"minecraft:chests/stronghold_library"},distance=..10] run data modify entity @s DeathLootTable set value "minecraft:chests/stronghold_library"
+#execute as @e[type=goat,nbt={IsScreamingGoat:true},limit=1,sort=random] at @s unless entity @e[type=minecraft:goat,nbt={DeathLootTable:"minecraft:chests/stronghold_library"},distance=..10] run data modify entity @s DeathLootTable set value "minecraft:chests/stronghold_library"
+execute if entity @e[type=!minecraft:goat,distance=..5] run effect give @e[type=minecraft:goat] minecraft:speed 1200 14
 #ニワトリe
 execute as @e[type=chicken] run data modify entity @s ActiveEffects set value [{Id:8,Amplifier:1,Duration:20,ShowParticles:false},{Id:28,Amplifier:0,Duration:20,ShowParticles:false}]
 #ブタ
@@ -221,3 +222,4 @@ execute at @e[type=minecraft:ender_dragon] as @e[type=minecraft:area_effect_clou
 #食料、タラ
 #バフ、ホグリン、（ゾンビホース）、カメ、エンダーマイト、ラクダ
 #特殊武器、カエル、イカ、ヒカリイカ
+#その他、

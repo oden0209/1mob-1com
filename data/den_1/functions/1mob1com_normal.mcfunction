@@ -74,7 +74,8 @@ execute as @e[type=minecraft:mooshroom] at @s run fill ~-10 ~ ~-10 ~10 ~10 ~10 s
 #ヒツジ
 execute as @e[type=sheep,nbt=!{CustomName:'{"text":"jeb_"}'}] run data modify entity @s CustomName set value '{"text":"jeb_"}'
 #ヤギ
-execute as @e[type=goat,nbt={IsScreamingGoat:true},limit=1,sort=random] at @s unless entity @e[type=minecraft:goat,nbt={DeathLootTable:"minecraft:chests/stronghold_library"},distance=..10] run data modify entity @s DeathLootTable set value "minecraft:chests/stronghold_library"
+#execute as @e[type=goat,nbt={IsScreamingGoat:true},limit=1,sort=random] at @s unless entity @e[type=minecraft:goat,nbt={DeathLootTable:"minecraft:chests/stronghold_library"},distance=..10] run data modify entity @s DeathLootTable set value "minecraft:chests/stronghold_library"
+execute if entity @e[type=!minecraft:goat,distance=..5] run effect give @e[type=minecraft:goat] minecraft:speed 1200 14
 #ニワトリ
 #effect give @e[type=chicken] jump_boost 200 1 true
 #effect give @e[type=chicken] slow_falling 200 0 true
@@ -310,3 +311,4 @@ execute at @e[type=minecraft:ender_dragon] at @e[type=minecraft:end_crystal] pos
 #食料、タラ、オタマジャクシ
 #バフ、ホグリン、（ゾンビホース）、エルダーガーディアン、ラクダ
 #特殊武器、カエル
+#その他、

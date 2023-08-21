@@ -63,8 +63,9 @@ execute as @e[type=minecraft:mooshroom] at @s run fill ~-10 ~ ~-10 ~10 ~10 ~10 s
 #execute as @e[type=minecraft:sheep,sort=random,limit=10] at @s store result entity @s Color byte 1 at @e[distance=..20,sort=random,limit=1] if entity @e[distance=..10]
 execute as @e[type=minecraft:sheep,nbt=!{HurtTime:0s}] at @s store result entity @s Color byte 1 at @e[distance=..30,sort=random,limit=1] if entity @e[distance=..10,limit=16]
 #ヤギh
-execute at @e[type=minecraft:goat] positioned ^ ^ ^1 at @e[distance=..1,nbt=!{HurtTime:0s},type=!goat] run fill ~-0.5 ~-2 ~-0.5 ~0.5 ~-1 ~0.5 minecraft:powder_snow
+#execute at @e[type=minecraft:goat] positioned ^ ^ ^1 at @e[distance=..1,nbt=!{HurtTime:0s},type=!goat] run fill ~-0.5 ~-2 ~-0.5 ~0.5 ~-1 ~0.5 minecraft:powder_snow
 #effect give @e[type=minecraft:goat,nbt={HasLeftHorn:0b,HasRightHorn:0b}] minecraft:speed infinite 14
+execute as @e[type=goat,nbt={IsScreamingGoat:true},limit=1,sort=random] at @s unless entity @e[type=minecraft:goat,nbt={DeathLootTable:"minecraft:chests/stronghold_library"},distance=..10] run data modify entity @s DeathLootTable set value "minecraft:chests/stronghold_library"
 #ニワトリ
 #execute at @e[type=minecraft:item,nbt={Item:{id:"minecraft:egg"},Age:5999s}] run summon minecraft:chicken ~ ~ ~ {Age:-24000}
 execute at @e[type=minecraft:item,nbt={Item:{id:"minecraft:egg"},Age:5999s}] unless entity @e[type=minecraft:item,nbt={Item:{id:"minecraft:egg"}},distance=0.1..10] unless entity @e[type=minecraft:chicken,nbt={Age:-24000},distance=..0.1] run summon minecraft:chicken ~ ~ ~ {Age:-24000}
@@ -236,3 +237,4 @@ execute at @e[type=minecraft:ender_dragon] at @e[type=minecraft:end_crystal] pos
 #食料、
 #バフ、エルダーガーディアン、カエル
 #特殊武器、カエル、スニッファー
+#その他、ヤギ
