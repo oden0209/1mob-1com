@@ -6,7 +6,8 @@ execute at @e[type=minecraft:item,nbt={Item:{id:"minecraft:bone"},Age:5999s}] un
 #クモ
 execute at @e[type=spider] at @e[type=#impact_projectiles,distance=..16,nbt={inGround:false}] at @e[distance=..3,type=!#impact_projectiles,type=!item,type=!experience_orb] anchored eyes run fill ^ ^ ^-1 ^ ^-1 ^ cobweb keep
 #クリーパーe
-execute at @e[type=minecraft:creeper,tag=!time_bomb,nbt=!{Fire:-1s},nbt=!{Fire:0s}] unless entity @e[tag=time_bomb,distance=..15] run summon creeper ~ ~ ~ {Fire:1,powered:1b,ExplosionRadius:5b,Fuse:300,ignited:1b,Tags:["time_bomb"]}
+#execute at @e[type=minecraft:creeper,tag=!time_bomb,nbt=!{Fire:-1s},nbt=!{Fire:0s}] unless entity @e[tag=time_bomb,distance=..15] run summon creeper ~ ~ ~ {Fire:1,powered:1b,ExplosionRadius:5b,Fuse:300,ignited:1b,Tags:["time_bomb"]}
+execute as @e[type=minecraft:creeper] at @s if entity @e[distance=0.1..1.5,type=!minecraft:zombie,type=!minecraft:skeleton,type=!minecraft:spider,type=!minecraft:enderman,type=!minecraft:item,type=!minecraft:experience_orb,nbt=!{pickup:0b}] store success entity @s ExplosionRadius float 1 store success entity @s Fuse int 0 store success entity @s ignited byte 1 run effect give @s minecraft:levitation 1 19
 #エンダーマンe
 execute as @e[type=minecraft:enderman,nbt=!{AngerTime:0}] at @s run effect give @e[distance=..5] minecraft:blindness 2 0
 #スライムe
