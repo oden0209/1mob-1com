@@ -147,7 +147,7 @@ execute at @e[type=glow_squid] as @e[distance=..10] at @s anchored eyes run setb
 #ストライダー
 execute at @e[type=strider] run fill ~-1 ~-1 ~-1 ~1 ~1 ~1 lava replace lava
 #スニッファー
-
+execute as @e[type=minecraft:sniffer,nbt={Leash:{}}] at @s run fill ^-1 ^-0.6 ^-1 ^1 ^-0.4 ^0.5 minecraft:farmland replace minecraft:grass_block
 #-----
 #上位
 #村人ゾンビ
