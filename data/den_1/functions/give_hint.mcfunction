@@ -9,4 +9,4 @@ execute if score @p mode matches 3 run give @p written_book{display:{Lore:['{"te
 #e=77/78 (固有31種)
 #n=78/78
 #h=75/78
-#all=151/156
+#all=152/156
