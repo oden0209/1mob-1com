@@ -1,6 +1,6 @@
-scoreboard objectives add mode dummy
+scoreboard objectives add 1mob1com dummy
 
-scoreboard players set @a mode 2
+scoreboard players set mode 1mob1com 2
 
 function den_1:mode_set
 

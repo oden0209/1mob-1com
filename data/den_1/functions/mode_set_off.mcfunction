@@ -1,3 +1,3 @@
-scoreboard objectives add mode dummy
+scoreboard objectives add 1mob1com dummy
 
-scoreboard players set @p mode 0
+scoreboard players set mode 1mob1com 0
