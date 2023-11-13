@@ -1,6 +1,6 @@
 scoreboard objectives add mode dummy
 
-scoreboard players set @p mode 2
+scoreboard players set @a mode 2
 
 function den_1:mode_set
 
