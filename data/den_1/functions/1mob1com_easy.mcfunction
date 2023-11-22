@@ -92,7 +92,7 @@ execute at @e[type=minecraft:turtle] as @e[type=item,nbt={Item:{id:"minecraft:ra
 #フグ
 execute at @e[type=minecraft:pufferfish,nbt=!{Air:300s}] run setblock ~ ~-0.5 ~ minecraft:water[level=6] keep
 #熱帯魚e
-
+execute as @e[type=minecraft:tropical_fish,nbt={FromBucket:1b}] at @s unless entity @e[tag=tropical_cooldown,distance=..5] run summon experience_orb ~ ~ ~ {Value:5,Passengers:[{id:"minecraft:area_effect_cloud",Particle:"underwater",Radius:0f,Duration:200,Tags:["tropical_cooldown"]}]}
 #サケ
 execute at @e[type=salmon] at @e[type=!salmon,distance=..5] if block ~ ~ ~ air run fill ~-0.3 ~-1 ~-0.3 ~0.3 ~-1 ~0.3 frosted_ice replace water[level=0]
 #タラ
