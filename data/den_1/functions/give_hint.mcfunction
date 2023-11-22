@@ -8,5 +8,5 @@ execute if score mode 1mob1com matches 3 run give @p written_book{display:{Lore:
 #MOB数(1.20)=78
 #e=78/78 (固有31種)
 #n=78/78
-#h=75/78
+#h=76/78
 #all=153/156

@@ -39,7 +39,7 @@ execute as @e[type=minecraft:wolf,nbt={HurtTime:0s,FallDistance:0.0f},nbt=!{Ange
 #オウムh
 
 #アレイh
-#execute as @e[type=minecraft:allay,nbt={DuplicationCooldown:0L,HandItems:[{id:"minecraft:iron_sword",Count:1b},{}]}] at @s store success entity @s DuplicationCooldown int 30 positioned ^ ^ ^1 as @e[distance=..2,limit=3,sort=random,type=#minecraft:raiders] run damage @s 10 minecraft:mob_attack by @e[type=minecraft:allay,sort=nearest,limit=1] from @p
+execute as @e[type=minecraft:allay,nbt={DuplicationCooldown:0L,HandItems:[{id:"minecraft:iron_sword",Count:1b},{}]}] at @s store success entity @s DuplicationCooldown int 30 positioned ^ ^ ^1 as @e[distance=..2,limit=3,sort=random,type=#minecraft:raiders] run damage @s 20 minecraft:mob_attack by @e[type=minecraft:allay,sort=nearest,limit=1] from @p
 #ミツバチ
 execute at @e[type=bee,nbt={HasNectar:true},nbt=!{HivePos:{}}] positioned ~ ~1 ~1 unless block ~ ~1 ~ air if block ~ ~ ~ air run setblock ~ ~ ~ bee_nest{Bees:[{EntityData:{id:"bee",Age:-12000}}]}
 #コウモリ
