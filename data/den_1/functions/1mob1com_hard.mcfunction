@@ -48,7 +48,8 @@ execute at @e[type=bat] as @e[type=!item,distance=..20,sort=furthest,limit=1] ru
 #キツネh
 execute at @e[type=fox,nbt={HandItems:[{id:"minecraft:sweet_berries",Count:1b},{}]}] if block ^ ^ ^-1 sweet_berry_bush[age=1] positioned ^ ^ ^1 unless entity @e[type=falling_block,distance=..2] unless block ~ ~ ~ sweet_berry_bush run summon falling_block ~ ~1 ~ {BlockState:{Name:"sweet_berry_bush",Properties:{age:"0"}},Time:1,DropItem:false}
 #ウサギ
-execute at @e[type=rabbit,nbt=!{RabbitType:99}] unless entity @e[type=rabbit,nbt={RabbitType:99},distance=..5] run summon rabbit ~ ~ ~ {Age:-600,RabbitType:99}
+#execute at @e[type=rabbit,nbt=!{RabbitType:99}] unless entity @e[type=rabbit,nbt={RabbitType:99},distance=..5] run summon rabbit ~ ~ ~ {Age:-600,RabbitType:99}
+execute as @e[type=minecraft:rabbit,nbt=!{RabbitType:99},limit=1,sort=random] at @s unless entity @e[type=minecraft:rabbit,distance=0.1..0.5] unless entity @e[type=minecraft:rabbit,nbt={RabbitType:99},distance=..5] positioned ~ ~0.2 ~ summon minecraft:rabbit store result entity @s RabbitType int 99 positioned ~ ~-0.2 ~ as @e[type=minecraft:rabbit,nbt=!{RabbitType:99},limit=1,sort=nearest] store result entity @s Glowing byte 1 store result entity @s ArmorDropChances[0] float 1 run data modify entity @s ArmorItems[0] set value {id:"minecraft:golden_carrot",Count:1b,tag:{display:{Name:'{"text":"忍刃"}'},Enchantments:[{id:"minecraft:looting",lvl:1s},{id:"minecraft:silk_touch",lvl:1s}],AttributeModifiers:[{AttributeName:"generic.attack_damage",Name:"generic.attack_damage",Amount:5,Operation:0,UUID:[I;-283485,-281984760,-1321915219,-1810137375],Slot:"mainhand"},{AttributeName:"generic.attack_speed",Name:"generic.attack_speed",Amount:-1,Operation:0,UUID:[I;-942949258,-1581757570,-1818577008,-1394141804],Slot:"mainhand"}]}}
 #パンダh
 execute at @e[type=panda] as @e[type=item,nbt=!{Item:{id:"minecraft:bamboo"}},distance=..10] run data modify entity @s Item set value {id:"minecraft:bamboo",Count:1b}
 #シロクマ
@@ -234,9 +235,9 @@ execute at @e[type=minecraft:ender_dragon] at @e[type=minecraft:end_crystal] pos
 
 #装備
 #防具、
-#武器近、ウシ、スニッファー
+#武器近、ウサギ、スニッファー
 #武器遠、カエル、ラバ
-#食料、
+#食料、ウシ
 #バフ、エルダーガーディアン、カエル
 #特殊武器、カエル、スニッファー
 #その他、ヤギ
