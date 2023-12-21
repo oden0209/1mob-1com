@@ -99,7 +99,7 @@ execute as @e[type=minecraft:dolphin] at @s unless entity @e[type=minecraft:drow
 execute at @e[type=!turtle,type=!item] if block ~ ~ ~ turtle_egg positioned ~ ~40 ~-40 unless entity @e[type=fireball,distance=..20] run summon fireball ~ ~ ~ {Item:{id:"turtle_egg",Count:1b},power:[0.0,-1.0,1.0]}
 #フグh
 #execute at @e[type=pufferfish] if entity @e[type=minecraft:elder_guardian] unless entity @e[type=minecraft:guardian,distance=..20] run summon minecraft:guardian
-execute as @e[type=minecraft:item,nbt={Item:{id:"minecraft:pufferfish"}}] at @s if block ~ ~ ~ minecraft:water unless entity @e[type=minecraft:guardian,distance=..10] store success entity @s Age short 5999 run summon minecraft:guardian
+execute as @e[type=minecraft:item,nbt={Item:{id:"minecraft:pufferfish"}}] at @s if block ~ ~ ~ minecraft:water　if block ~ ~1.5 ~ minecraft:water unless entity @e[type=minecraft:guardian,distance=..10] store success entity @s Age short 5999 run summon minecraft:guardian
 #熱帯魚
 execute at @e[type=tropical_fish] as @e[nbt={SelectedItem:{id:"minecraft:water_bucket"}},distance=..10] run item replace entity @s weapon.mainhand with tropical_fish_bucket 1
 #サケh
