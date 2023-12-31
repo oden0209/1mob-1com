@@ -174,10 +174,11 @@ execute as @e[type=minecraft:hoglin,nbt={TimeInOverworld:0}] at @s in minecraft:
 execute as @e[type=minecraft:zoglin] at @s at @e[nbt=!{HurtTime:0s},distance=..20] positioned ~-7 ~ ~-7 store success entity @s[nbt=!{ActiveEffects:[{Id:7b}]}] ActiveEffects[0].Id byte 7 run place feature minecraft:lake_lava ~ ~ ~
 #ブレイズ
 execute at @e[type=blaze,tag=!dragon_eye] at @e[type=small_fireball,distance=..30] as @e[distance=..2,nbt=!{SelectedItem:{id:"minecraft:netherite_sword"}},nbt=!{SelectedItem:{id:"minecraft:snowball"}}] run item replace entity @s weapon.mainhand with baked_potato 1
-#ガストh
+#ガスト
 #execute at @e[type=ghast] run kill @e[distance=..10,type=!fireball,type=!wither,type=!ghast,type=!enderman,type=!skeleton,type=!wither_skeleton,type=!blaze,type=!magma_cube,type=!hoglin,type=!piglin,type=!piglin_brute,type=!zombified_piglin,type=!strider]
 #execute as @e[type=minecraft:ghast] at @s positioned as @e[type=minecraft:fireball,distance=5..100] positioned ^ ^ ^15 run summon tnt
-execute as @e[type=minecraft:ghast] at @s as @e[type=minecraft:fireball,distance=..100,sort=nearest,limit=1] facing entity @s eyes positioned as @s unless entity @e[type=minecraft:ghast,distance=..50] positioned ^ ^ ^15 run summon tnt
+#execute as @e[type=minecraft:ghast] at @s as @e[type=minecraft:fireball,distance=..100,sort=nearest,limit=1] facing entity @s eyes positioned as @s unless entity @e[type=minecraft:ghast,distance=..50] positioned ^ ^ ^15 run summon tnt
+execute at @e[type=ghast] run kill @e[distance=..10,type=!fireball,type=!wither,type=!ghast,type=!enderman,type=!skeleton,type=!wither_skeleton,type=!blaze,type=!magma_cube,type=!hoglin,type=!piglin,type=!piglin_brute,type=!zombified_piglin,type=!strider]
 #シュルカー
 execute at @e[type=!shulker,type=!end_crystal] at @e[type=shulker,tag=!rider,distance=1..2] run setblock ~ ~ ~ purple_stained_glass
 #execute at @e[type=minecraft:shulker,nbt={Peek:30b},tag=!rider] unless entity @e[type=minecraft:endermite,distance=..5] run summon endermite ~ ~ ~ {Lifetime:2300}
