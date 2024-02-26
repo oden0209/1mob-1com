@@ -45,7 +45,7 @@ setblock 0 0 0 minecraft:command_block{
 				auto:1b,
 				Command:
 					\"execute at @e[type=minecraft:end_crystal] run setblock ~ ~-4 ~ minecraft:repeating_command_block[facing=down]{auto:1b,Command:\\\"
-						execute if entity @e[type=minecraft:blaze,y=0,dx=0,dy=200,dz=0] run setblock ~ ~3 ~ spawner{SpawnCount:5,SpawnRange:10,Delay:200,MinSpawnDelay:20,MaxSpawnDelay:200,MaxNearbyEntities:20,RequiredPlayerRange:100,SpawnPotentials:[{weight:90,data:{entity:{id:\\\\\\\"minecraft:endermite\\\\\\\",Lifetime:2200,Tags:[\\\\\\\"dragon_eye\\\\\\\"],active_effects:[{id:\\\\\\\"minecraft:slow_falling\\\\\\\",amplifier:0b,duration:99999,show_particles:0b}]}}},{weight:6,data:{entity:{id:\\\\\\\"minecraft:dragon_fireball\\\\\\\",power:[0.0,-0.5,0.0]}}},{weight:2,data:{entity:{id:\\\\\\\"minecraft:magma_cube\\\\\\\",Tags:[\\\\\\\"dragon_eye\\\\\\\"],Size:2}}},{weight:2,data:{entity:{id:\\\\\\\"minecraft:phantom\\\\\\\",Tags:[\\\\\\\"dragon_eye\\\\\\\"]}}}]} replace
+						execute if entity @e[type=minecraft:blaze,y=0,dx=0,dy=200,dz=0] run setblock ~ ~3 ~ spawner{SpawnCount:5,SpawnRange:10,Delay:200,MinSpawnDelay:20,MaxSpawnDelay:100,MaxNearbyEntities:20,RequiredPlayerRange:100,SpawnPotentials:[{weight:90,data:{entity:{id:\\\\\\\"minecraft:endermite\\\\\\\",Lifetime:2200,Tags:[\\\\\\\"dragon_eye\\\\\\\"],active_effects:[{id:\\\\\\\"minecraft:slow_falling\\\\\\\",amplifier:0b,duration:99999,show_particles:0b}]}}},{weight:6,data:{entity:{id:\\\\\\\"minecraft:dragon_fireball\\\\\\\",power:[0.0,-0.5,0.0]}}},{weight:2,data:{entity:{id:\\\\\\\"minecraft:magma_cube\\\\\\\",Tags:[\\\\\\\"dragon_eye\\\\\\\"],Size:2}}},{weight:2,data:{entity:{id:\\\\\\\"minecraft:phantom\\\\\\\",Tags:[\\\\\\\"dragon_eye\\\\\\\"]}}}]} replace
 					\\\"}\"
 			},
 			Time:1,
@@ -138,8 +138,7 @@ execute at @e[type=minecraft:ender_dragon] run fill ~-10 ~-10 ~-10 ~10 ~ ~10 air
 execute unless entity @e[type=minecraft:ender_dragon,distance=..500] at @e[tag=dragon_eye,limit=1,sort=nearest] unless entity @e[type=minecraft:lightning_bolt,distance=..10] summon minecraft:lightning_bolt summon minecraft:creeper store success entity @s ExplosionRadius byte 1 store success entity @s Fuse byte 0 store success entity @s ignited byte 1 run tp @e[tag=dragon_eye,limit=1,sort=nearest] 0 -500 0
 
 バグ　問題
-ブリーズが塔から落ちる
-クリスタルが無限に再生する
+エンダーマンの能力でブリーズがtpされる
 
 
 
