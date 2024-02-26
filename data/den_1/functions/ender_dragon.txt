@@ -60,7 +60,7 @@ setblock 0 0 0 minecraft:command_block{
 					auto:1b,
 					Command:
 						\"execute at @e[type=minecraft:end_crystal] run setblock ~ ~-5 ~ minecraft:repeating_command_block[facing=down]{auto:1b,Command:\\\"
-							execute if entity @e[type=minecraft:ender_dragon,distance=..500] unless entity @e[type=minecraft:end_crystal,distance=..10] positioned ~ ~10 ~ unless entity @e[type=minecraft:blaze,distance=..10] run summon armor_stand ~ ~ ~ {Marker:1b,Invisible:1b,Tags:[\\\\\\\"dragon_eye\\\\\\\"],Passengers:[{id:\\\\\\\"minecraft:blaze\\\\\\\",Invulnerable:1b,Tags:[\\\\\\\"dragon_eye\\\\\\\"],Attributes:[{Name:generic.follow_range,Base:100}]}]}
+							execute positioned ~ ~10 ~ if entity @e[type=minecraft:ender_dragon,distance=..500] unless entity @e[type=minecraft:end_crystal,distance=..10] unless entity @e[type=minecraft:blaze,distance=..10] run summon armor_stand ~ ~ ~ {Marker:1b,Invisible:1b,Tags:[\\\\\\\"dragon_eye\\\\\\\"],Passengers:[{id:\\\\\\\"minecraft:blaze\\\\\\\",Invulnerable:1b,Tags:[\\\\\\\"dragon_eye\\\\\\\"],Attributes:[{Name:generic.follow_range,Base:100}]}]}
 						\\\"}\"
 				},
 				Time:1,
