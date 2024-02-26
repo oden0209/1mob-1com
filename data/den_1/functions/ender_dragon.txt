@@ -60,7 +60,7 @@ setblock 0 0 0 minecraft:command_block{
 					auto:1b,
 					Command:
 						\"execute at @e[type=minecraft:end_crystal] run setblock ~ ~-5 ~ minecraft:repeating_command_block[facing=down]{auto:1b,Command:\\\"
-							execute positioned ~ ~10 ~ if entity @e[type=minecraft:ender_dragon,distance=..500] unless entity @e[type=minecraft:end_crystal,distance=..10] unless entity @e[type=minecraft:blaze,distance=..10] run summon armor_stand ~ ~ ~ {Marker:1b,Invisible:1b,Tags:[\\\\\\\"dragon_eye\\\\\\\"],Passengers:[{id:\\\\\\\"minecraft:blaze\\\\\\\",Invulnerable:1b,Tags:[\\\\\\\"dragon_eye\\\\\\\"],Attributes:[{Name:generic.follow_range,Base:100}]}]}
+							execute positioned ~ ~10 ~ if entity @e[type=minecraft:ender_dragon,distance=..500] unless entity @e[type=minecraft:end_crystal,distance=..10] unless entity @e[type=minecraft:armor_stand,distance=..10] run summon armor_stand ~ ~ ~ {Marker:1b,Invisible:1b,Tags:[\\\\\\\"dragon_eye\\\\\\\"],Passengers:[{id:\\\\\\\"minecraft:blaze\\\\\\\",Invulnerable:1b,Tags:[\\\\\\\"dragon_eye\\\\\\\"],Attributes:[{Name:generic.follow_range,Base:100}]}]}
 						\\\"}\"
 				},
 				Time:1,
@@ -129,7 +129,7 @@ setblock 0 0 0 minecraft:command_block{
 
 execute if entity @e[type=minecraft:blaze,y=0,dx=0,dy=200,dz=0] run setblock ~ ~3 ~ spawner{SpawnCount:5,SpawnRange:10,Delay:200,MinSpawnDelay:20,MaxSpawnDelay:100,MaxNearbyEntities:20,RequiredPlayerRange:100,SpawnPotentials:[{weight:90,data:{entity:{id:"minecraft:endermite",Lifetime:2200,Tags:["dragon_eye"],active_effects:[{id:"minecraft:slow_falling",amplifier:0b,duration:100,show_particles:0b}]}}},{weight:6,data:{entity:{id:"minecraft:dragon_fireball",power:[0.0,-0.5,0.0]}}},{weight:2,data:{entity:{id:"minecraft:enderman",Tags:["dragon_eye"],active_effects:[{id:"minecraft:invisibility",amplifier:0b,duration:99999,show_particles:0b}]}}},{weight:2,data:{entity:{id:"minecraft:phantom",Tags:["dragon_eye"]}}}]} replace
 
-execute if entity @e[type=minecraft:ender_dragon,distance=..500] unless entity @e[type=minecraft:end_crystal,distance=..10] positioned ~ ~10 ~ unless entity @e[type=minecraft:blaze,distance=..10] run summon armor_stand ~ ~ ~ {Marker:1b,Invisible:1b,Tags:[\\\\\\\"dragon_eye\\\\\\\"],Passengers:[{id:\\\\\\\"minecraft:blaze\\\\\\\",Invulnerable:1b,Tags:[\\\\\\\"dragon_eye\\\\\\\"],Attributes:[{Name:generic.follow_range,Base:100}]}]}
+execute positioned ~ ~10 ~ if entity @e[type=minecraft:ender_dragon,distance=..500] unless entity @e[type=minecraft:end_crystal,distance=..10] unless entity @e[type=minecraft:armor_stand,distance=..10] run summon armor_stand ~ ~ ~ {Marker:1b,Invisible:1b,Tags:[\\\\\\\"dragon_eye\\\\\\\"],Passengers:[{id:\\\\\\\"minecraft:blaze\\\\\\\",Invulnerable:1b,Tags:[\\\\\\\"dragon_eye\\\\\\\"],Attributes:[{Name:generic.follow_range,Base:100}]}]}
 
 execute unless entity @e[type=minecraft:end_crystal,distance=..500] at @e[type=minecraft:blaze] summon minecraft:end_crystal store result entity @s ShowBottom byte 0 run ride @s mount @e[type=minecraft:blaze,limit=1,sort=nearest]
 
