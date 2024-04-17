@@ -315,7 +315,7 @@ execute at @e[type=minecraft:end_crystal,nbt={ShowBottom:1b},limit=1,sort=random
 #summon rabbit ~ ~ ~ {CustomName:'{"text":"愛くるしいウサギ","color":"light_purple"}',CustomNameVisible:true,Glowing:true,Attributes:[{Name:generic.movement_speed,Base:0.5,Passengers:[{id:"guardian",ActiveEffects:[{Id:14b,Amplifier:0b,Duration:72000}]}]}]}
 
 #装備
-#防具、ロバ、ピグリン
+#防具、ロバ、ピグリン、(オタマジャクシ)
 #武器近、ゾグリン
 #武器遠、
 #食料、ウサギ、タラ、オタマジャクシ
