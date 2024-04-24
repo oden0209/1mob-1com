@@ -36,6 +36,8 @@ execute as @e[type=minecraft:wolf,tag=!1m1cVanilla,nbt={Health:20.0f}] at @s run
 effect give @e[nbt={ShoulderEntityLeft:{}},nbt=!{ShoulderEntityLeft:{Tags:["1m1cVanilla"]}}] minecraft:glowing 10 254
 #アレイ
 execute as @e[type=minecraft:allay,tag=!1m1cVanilla,nbt={HandItems:[{id:"minecraft:echo_shard",Count:1b},{}]}] at @p[distance=..20,nbt={SelectedItem:{id:"minecraft:echo_shard"}}] as @e[distance=..60] store result entity @s ActiveEffects[0].Id byte 24 run effect give @s minecraft:blindness 3 0
+#アルマジロe
+
 #ミツバチe
 #execute as @e[type=minecraft:bee,nbt={HasStung:0b}] at @s positioned ^ ^ ^0.5 as @e[nbt={ActiveEffects:[{Id:19b}]},distance=..0.5,type=!minecraft:bee] run effect give @s minecraft:poison 18 2
 #execute as @e[type=minecraft:bee] at @s if entity @e[type=minecraft:bee,distance=1..20,nbt={HasStung:0b}] on target facing entity @s eyes positioned ^ ^ ^0.5 if entity @s[distance=..2] run effect give @s minecraft:poison 10 1

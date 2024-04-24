@@ -42,6 +42,8 @@ execute as @e[type=minecraft:wolf,tag=!1m1cVanilla,nbt={HurtTime:0s,FallDistance
 #アレイh
 #execute as @e[type=minecraft:allay,nbt={DuplicationCooldown:0L,HandItems:[{id:"minecraft:iron_sword",Count:1b},{}]}] at @s store success entity @s DuplicationCooldown int 30 positioned ^ ^ ^1 as @e[distance=..2,limit=3,sort=random,type=#minecraft:raiders] run damage @s 20 minecraft:mob_attack by @e[type=minecraft:allay,sort=nearest,limit=1] from @p
 execute as @e[type=minecraft:allay,tag=!1m1cVanilla,nbt={DuplicationCooldown:0L,HandItems:[{id:"minecraft:iron_sword",Count:1b},{}]}] at @s store success entity @s DuplicationCooldown int 30 positioned ^ ^ ^1 as @e[distance=..2,limit=3,sort=random,type=!minecraft:player,type=!minecraft:allay] run damage @s 10 minecraft:mob_attack by @e[type=minecraft:allay,sort=nearest,limit=1] from @p
+#アルマジロ
+execute as @e[type=minecraft:armadillo,nbt={state:"scared"}] at @s as @e[distance=..3] run effect give @s minecraft:speed 1 255
 #ミツバチ
 execute at @e[type=bee,tag=!1m1cVanilla,nbt={HasNectar:true},nbt=!{HivePos:{}}] positioned ~ ~1 ~1 unless block ~ ~1 ~ air if block ~ ~ ~ air run setblock ~ ~ ~ bee_nest{Bees:[{EntityData:{id:"bee",Age:-12000}}]}
 #コウモリ

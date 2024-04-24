@@ -46,6 +46,8 @@ execute as @e[type=minecraft:wolf,tag=!1m1cVanilla,nbt={Health:20.0f}] at @s run
 effect give @e[nbt={ShoulderEntityLeft:{}},nbt=!{ShoulderEntityLeft:{Tags:["1m1cVanilla"]}}] minecraft:glowing 10 254
 #アレイ
 execute as @e[type=minecraft:allay,tag=!1m1cVanilla,nbt={HandItems:[{id:"minecraft:echo_shard",Count:1b},{}]}] at @p[distance=..20,nbt={SelectedItem:{id:"minecraft:echo_shard"}}] as @e[distance=..60] store result entity @s ActiveEffects[0].Id byte 24 run effect give @s minecraft:blindness 3 0
+#アルマジロ
+execute as @e[type=minecraft:armadillo,nbt={state:"scared"}] at @s as @e[distance=..3] run effect give @s minecraft:speed 1 255
 #ミツバチ
 #execute as @e[type=bee] at @s positioned ^ ^ ^ if block ^ ^ ^2 #beehives[honey_level=5] unless block ~ ~1 ~ air run setblock ~ ~ ~ bee_nest{Bees:[{EntityData:{id:"bee",Age:-12000}},{EntityData:{id:"bee",Age:-12000}}]} keep
 execute at @e[type=bee,tag=!1m1cVanilla,nbt={HasNectar:true},nbt=!{HivePos:{}}] positioned ~ ~1 ~1 unless block ~ ~1 ~ air if block ~ ~ ~ air run setblock ~ ~ ~ bee_nest{Bees:[{EntityData:{id:"bee",Age:-12000}}]}
