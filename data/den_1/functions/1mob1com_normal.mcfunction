@@ -43,7 +43,8 @@ execute as @e[type=minecraft:wolf,tag=!1m1cVanilla,nbt={Health:20.0f}] at @s run
 #execute at @e[nbt={ShoulderEntityLeft:{}}] at @e[type=!item,type=!villager,type=!player,type=!sheep,type=!cow,type=!pig,type=!chicken,distance=..25] unless entity @e[type=firework_rocket,distance=..5] unless block ~ ~ ~ water run summon firework_rocket ~ ~ ~ {LifeTime:100,Motion:[0.0,-5.0,0.0]}
 #execute at @e[nbt={ShoulderEntityLeft:{}}] at @e[type=!player,type=!item,type=!experience_orb,type=!villager,type=!wandering_trader,nbt=!{InLove:0},nbt={OnGround:true},distance=..25] unless entity @e[type=firework_rocket,distance=..5] unless block ~ ~ ~ water run summon firework_rocket ~ ~ ~ {LifeTime:100,Motion:[0.0,-5.0,0.0]}
 #effect give @e[nbt={ShoulderEntityLeft:{}}] levitation 10 254
-effect give @e[nbt={ShoulderEntityLeft:{}},nbt=!{ShoulderEntityLeft:{Tags:["1m1cVanilla"]}}] minecraft:glowing 10 254
+#effect give @e[nbt={ShoulderEntityLeft:{}},nbt=!{ShoulderEntityLeft:{Tags:["1m1cVanilla"]}}] minecraft:glowing 10 254
+effect give @e[nbt={ShoulderEntityLeft:{}},nbt=!{ShoulderEntityLeft:{Tags:["1m1cVanilla"]}}] minecraft:slow_falling 1 0
 #アレイ
 execute as @e[type=minecraft:allay,tag=!1m1cVanilla,nbt={HandItems:[{id:"minecraft:echo_shard",Count:1b},{}]}] at @p[distance=..20,nbt={SelectedItem:{id:"minecraft:echo_shard"}}] as @e[distance=..60] store result entity @s ActiveEffects[0].Id byte 24 run effect give @s minecraft:blindness 3 0
 #アルマジロ

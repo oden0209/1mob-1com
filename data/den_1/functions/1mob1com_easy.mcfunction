@@ -33,7 +33,8 @@ execute at @e[type=ocelot,tag=!1m1cVanilla] as @e[type=creeper,distance=..20] ru
 #execute as @e[type=wolf] at @s run tp @e[type=item,distance=..2] @s
 execute as @e[type=minecraft:wolf,tag=!1m1cVanilla,nbt={Health:20.0f}] at @s run ride @e[type=item,distance=..4,limit=1,sort=random] mount @s
 #オウム
-effect give @e[nbt={ShoulderEntityLeft:{}},nbt=!{ShoulderEntityLeft:{Tags:["1m1cVanilla"]}}] minecraft:glowing 10 254
+#effect give @e[nbt={ShoulderEntityLeft:{}},nbt=!{ShoulderEntityLeft:{Tags:["1m1cVanilla"]}}] minecraft:glowing 10 254
+effect give @e[nbt={ShoulderEntityLeft:{}},nbt=!{ShoulderEntityLeft:{Tags:["1m1cVanilla"]}}] minecraft:slow_falling 1 0
 #アレイ
 execute as @e[type=minecraft:allay,tag=!1m1cVanilla,nbt={HandItems:[{id:"minecraft:echo_shard",Count:1b},{}]}] at @p[distance=..20,nbt={SelectedItem:{id:"minecraft:echo_shard"}}] as @e[distance=..60] store result entity @s ActiveEffects[0].Id byte 24 run effect give @s minecraft:blindness 3 0
 #アルマジロe
