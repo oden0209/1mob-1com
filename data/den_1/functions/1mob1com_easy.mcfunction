@@ -42,7 +42,8 @@ execute as @e[type=minecraft:allay,tag=!1m1cVanilla,nbt={HandItems:[{id:"minecra
 #ミツバチe
 #execute as @e[type=minecraft:bee,nbt={HasStung:0b}] at @s positioned ^ ^ ^0.5 as @e[nbt={ActiveEffects:[{Id:19b}]},distance=..0.5,type=!minecraft:bee] run effect give @s minecraft:poison 18 2
 #execute as @e[type=minecraft:bee] at @s if entity @e[type=minecraft:bee,distance=1..20,nbt={HasStung:0b}] on target facing entity @s eyes positioned ^ ^ ^0.5 if entity @s[distance=..2] run effect give @s minecraft:poison 10 1
-execute as @e[type=minecraft:bee,tag=!1m1cVanilla,nbt={HasStung:1b}] at @s on target if entity @s[nbt={ActiveEffects:[{Id:19,Amplifier:0b}]},distance=..1] run effect give @s minecraft:poison 5 1
+#execute as @e[type=minecraft:bee,tag=!1m1cVanilla,nbt={HasStung:1b}] at @s on target if entity @s[nbt={ActiveEffects:[{Id:19,Amplifier:0b}]},distance=..1] run effect give @s minecraft:poison 5 1
+execute as @e[type=minecraft:bee] run attribute @s minecraft:generic.scale base set 0.19
 #コウモリe
 execute as @e[type=bat,tag=!1m1cVanilla,nbt=!{Motion:[0.0,0.0,0.0]}] at @s run data modify entity @s BatFlags set value 1
 #キツネ
