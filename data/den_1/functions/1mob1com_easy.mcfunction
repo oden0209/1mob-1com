@@ -229,7 +229,7 @@ execute at @e[type=minecraft:ender_dragon,tag=!1m1cVanilla] as @e[type=minecraft
 #防具、ロバ、ピグリン
 #武器近、ゾグリン
 #武器遠、スケルトンホース
-#食料、タラ
+#食料、タラ、ムーシュルーム
 #バフ、ホグリン、（ゾンビホース）、カメ、エンダーマイト、ラクダ
 #特殊武器、カエル、イカ、ヒカリイカ
 #その他、
