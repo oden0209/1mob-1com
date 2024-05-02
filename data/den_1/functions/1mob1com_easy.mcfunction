@@ -68,7 +68,8 @@ execute as @e[type=sheep,tag=!1m1cVanilla,nbt=!{CustomName:'{"text":"jeb_"}'}] r
 #execute if entity @e[type=!minecraft:goat,distance=..5] run effect give @e[type=minecraft:goat] minecraft:speed 1200 14
 execute as @e[type=minecraft:goat,tag=!1m1cVanilla] at @s if entity @e[type=!minecraft:goat,distance=..5] run effect give @s minecraft:speed 1200 14
 #ニワトリe
-execute as @e[type=chicken,tag=!1m1cVanilla] run data modify entity @s ActiveEffects set value [{Id:8,Amplifier:1,Duration:20,ShowParticles:false},{Id:28,Amplifier:0,Duration:20,ShowParticles:false}]
+#execute as @e[type=chicken,tag=!1m1cVanilla] run data modify entity @s ActiveEffects set value [{Id:8,Amplifier:1,Duration:20,ShowParticles:false},{Id:28,Amplifier:0,Duration:20,ShowParticles:false}]
+execute as @e[type=minecraft:chicken,tag=!1m1cVanilla] run attribute @s minecraft:generic.gravity base set 0.006
 #ブタ
 execute as @e[type=pig,tag=!1m1cVanilla,nbt={Saddle:1b},nbt=!{Health:10.0f,NoGravity:1b}] at @s run data modify entity @s NoGravity set value 1b
 #ウマ
