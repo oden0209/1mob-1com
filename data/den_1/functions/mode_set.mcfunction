@@ -1,4 +1,4 @@
-clear @s minecraft:written_book{title:"READ ME",author:oDen}
+clear @s minecraft:written_book[written_book_content={title:"READ ME",author:oDen}]
 
 gamerule commandBlockOutput false
 
