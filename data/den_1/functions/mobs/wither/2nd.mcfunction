@@ -1,0 +1,1 @@
+execute as @e[type=minecraft:wither,tag=!1m1cVanilla,nbt={Invul:0},nbt=!{HurtTime:0s}] at @s store result entity @s Invul byte 60 unless block ~ ~-1 ~ air unless entity @e[type=minecraft:wither_skull,distance=..5] unless entity @e[type=minecraft:wither_skeleton,distance=..20] at @e[distance=10..20,sort=random] run summon minecraft:wither_skeleton

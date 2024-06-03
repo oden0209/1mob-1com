@@ -1,0 +1,1 @@
+execute as @e[type=minecraft:item,tag=!1m1cVanilla,nbt={Item:{id:"minecraft:ghast_tear"}}] at @s unless entity @e[type=minecraft:chest_boat,distance=..5] if block ~ ~-0.1 ~ minecraft:lava align y store result entity @s Age int 5999 run summon chest_boat ~ ~0.9 ~ {NoGravity:1b,Type:"mangrove",HasVisualFire:1b,LootTable:"minecraft:chests/ruined_portal"}

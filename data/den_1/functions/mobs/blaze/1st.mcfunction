@@ -1,0 +1,1 @@
+execute at @e[type=blaze,tag=!1m1cVanilla] at @e[type=small_fireball,distance=..30] as @e[distance=..2,nbt=!{SelectedItem:{id:"minecraft:netherite_sword"}},nbt=!{SelectedItem:{id:"minecraft:snowball"}}] run item replace entity @s weapon.mainhand with baked_potato 1
