@@ -1,0 +1,1 @@
+execute at @e[type=cat,tag=!1m1cVanilla,nbt=!{InLove:0}] unless entity @e[nbt={ActiveEffects:[{Id:24b}]},distance=..20] as @e[type=!minecraft:player,type=!cat,type=!minecraft:ocelot,distance=..20,sort=random,limit=3] run effect give @s minecraft:glowing 1 0

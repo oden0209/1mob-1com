@@ -1,0 +1,1 @@
+execute at @e[type=minecraft:item,tag=!1m1cVanilla,nbt={Item:{id:"minecraft:egg"},Age:5999s}] unless entity @e[type=minecraft:item,nbt={Item:{id:"minecraft:egg"}},distance=0.1..10] unless entity @e[type=minecraft:chicken,nbt={Age:-24000},distance=..0.1] run summon minecraft:chicken ~ ~ ~ {Age:-24000}

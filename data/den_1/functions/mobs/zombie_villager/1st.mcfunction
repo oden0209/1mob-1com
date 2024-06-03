@@ -1,0 +1,1 @@
+execute as @e[type=villager,tag=!1m1cVanilla] at @s facing entity @e[type=zombie_villager,nbt=!{ActiveEffects:[{Id:14}]},distance=..7,sort=nearest,limit=1] feet if block ^ ^ ^0.01 air unless block ~ ~-0.5 ~ air run tp ^ ^ ^0.01

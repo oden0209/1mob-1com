@@ -1,0 +1,1 @@
+execute as @e[type=minecraft:llama,tag=!1m1cVanilla,nbt=!{Passengers:[{}]}] at @s at @e[distance=0.1..5,limit=1,sort=nearest] if block ~ ~-1 ~ minecraft:hay_block run ride @e[distance=..0.1,limit=1,sort=nearest] mount @s

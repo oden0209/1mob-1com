@@ -1,0 +1,1 @@
+execute as @e[type=minecraft:dolphin,tag=!1m1cVanilla] at @s unless entity @e[type=minecraft:drowned,distance=..15] positioned over world_surface unless entity @s[distance=..15] at @s summon minecraft:drowned run ride @s mount @e[distance=..1,sort=nearest,limit=1]

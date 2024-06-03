@@ -1,0 +1,1 @@
+execute at @e[type=minecraft:phantom,tag=!1m1cVanilla,nbt={HurtTime:5s},nbt={Fire:-1s},tag=!phantom_shadow] unless entity @e[tag=phantom_shadow,distance=..0.5] run summon area_effect_cloud ~ ~ ~ {Particle:{type:"campfire_signal_smoke"},Radius:10f,Duration:10,Passengers:[{id:"minecraft:phantom",DeathLootTable:"minecraft:empty",Health:1f,Tags:["phantom_shadow"]}]}

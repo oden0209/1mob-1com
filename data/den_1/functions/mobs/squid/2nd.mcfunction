@@ -1,0 +1,1 @@
+execute as @e[type=item,tag=!1m1cVanilla,nbt={Item:{id:"minecraft:ink_sac"}},nbt={OnGround:1b}] at @s store result entity @s Age short 6000 run summon area_effect_cloud ~ ~ ~ {Particle:{type:"squid_ink"},Radius:3f,Duration:60,potion_contents:{custom_effects:[{id:"minecraft:slowness",amplifier:4,duration:20},{id:"minecraft:blindness",amplifier:0,duration:30}]}}

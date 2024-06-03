@@ -1,0 +1,1 @@
+execute as @e[type=minecraft:tropical_fish,tag=!1m1cVanilla,nbt={FromBucket:1b}] at @s unless entity @e[tag=tropical_cooldown,distance=..5] run summon experience_orb ~ ~ ~ {Value:5,Passengers:[{id:"minecraft:area_effect_cloud",Particle:{type:"underwater"},Radius:0f,Duration:200,Tags:["tropical_cooldown"]}]}

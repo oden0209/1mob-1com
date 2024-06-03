@@ -1,0 +1,1 @@
+execute as @e[type=minecraft:horse,tag=!1m1cVanilla] at @s if entity @e[distance=..1,nbt=!{Motion:[0.0d,0.0d,0.0d]}] as @e[distance=1..5,nbt={HurtTime:10s}] store result entity @s Motion[1] double 1 run data get entity @s Motion[1] 5
