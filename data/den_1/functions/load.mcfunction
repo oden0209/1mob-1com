@@ -2,3 +2,7 @@
 # reloadコマンドが実行された時や、ワールドに入りなおした時も実行されます
 
 scoreboard objectives add 1mob1com_mode_trigger trigger
+
+
+function den_1:entities/load
+function den_1:difficulty/load
