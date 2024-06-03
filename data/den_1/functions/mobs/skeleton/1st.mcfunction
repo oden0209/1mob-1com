@@ -1,0 +1,1 @@
+execute at @e[type=skeleton,tag=!1m1cVanilla] as @e[distance=..1] at @s if data entity @s Health if entity @e[type=arrow,distance=..3,nbt={inGround:false}] run tp @s @e[type=arrow,distance=..16,limit=1,sort=random,nbt={inGround:true}]

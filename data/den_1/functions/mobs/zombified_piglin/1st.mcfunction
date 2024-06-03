@@ -1,0 +1,1 @@
+execute as @e[type=minecraft:zombified_piglin,tag=!1m1cVanilla] at @s unless entity @e[tag=stranger,distance=..15] run data modify entity @s AngryAt set from entity @e[type=!minecraft:zombified_piglin,type=!item,sort=nearest,limit=1,distance=..2] UUID

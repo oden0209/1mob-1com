@@ -1,0 +1,1 @@
+execute at @e[type=!item] align xyz positioned ~0.5 ~ ~0.5 if block ~ ~-1 ~ infested_stone_bricks unless entity @e[type=area_effect_cloud,distance=..1] run summon area_effect_cloud ~ ~ ~ {Particle:{type:"enchant"},Radius:0.5f,Duration:20,potion_contents:{custom_effects:[{id:"minecraft:mining_fatigue",amplifier:0,duration:300},{id:"minecraft:poison",amplifier:0,duration:300}]}}

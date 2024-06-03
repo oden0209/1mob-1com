@@ -1,0 +1,1 @@
+execute as @e[type=minecraft:item,tag=!1m1cVanilla,nbt={Item:{id:"minecraft:pufferfish"}}] at @s if block ~ ~ ~ minecraft:water if block ~ ~1.5 ~ minecraft:water unless entity @e[type=minecraft:guardian,distance=..10] store success entity @s Age short 5999 run summon minecraft:guardian
