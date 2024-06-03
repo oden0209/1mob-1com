@@ -269,4 +269,4 @@ execute at @e[type=minecraft:end_crystal,nbt={ShowBottom:1b},limit=1,sort=random
 #食料、ウサギ、ウシ
 #バフ、エルダーガーディアン、カエル、スニッファー、ムーシュルーム
 #特殊武器、カエル
-#その他、ヤギ、スニッファー、オウム
+#その他、ヤギ、スニッファー、オウム、ジャイアント
