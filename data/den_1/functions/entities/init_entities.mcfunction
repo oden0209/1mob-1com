@@ -25,6 +25,7 @@ data modify storage den_1:1mob1com entities set value [ \
 	"fox", \
 	"frog", \
 	"ghast", \
+	"giant", \
 	"glow_squid", \
 	"goat", \
 	"guardian", \
@@ -76,6 +77,7 @@ data modify storage den_1:1mob1com entities set value [ \
 	"wolf", \
 	"zoglin", \
 	"zombie", \
+	"zombie_horse", \
 	"zombie_villager", \
 	"zombified_piglin", \
 ]
