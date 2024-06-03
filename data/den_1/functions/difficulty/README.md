@@ -1,5 +1,5 @@
-# エンティティ事個別能力システム
-## エンティティ事個別に能力を指定したい！
+# エンティティ毎個別能力システム
+## エンティティ毎個別に能力を指定したい！
 `zombie`を`2nd`の能力にするには
 ```
 function den_1:difficulty/set_difficulty {name:zombie,difficulty:2nd}
@@ -19,7 +19,7 @@ function den_1:difficulty/set_all_difficulty {difficulty:1nd}
 また、全ての難易度を`1st`や`2nd`にする場合、上記のコマンドを行ってくれる
 `function den_1:difficulty/set_all_1st`や`function den_1:difficulty/set_all_2nd`で代用出来ます。
 
-## エンティティ事に個別の能力を全て指定したい
+## エンティティ毎に個別の能力を全て指定したい
 いわゆる、プリセットが行いたい場合、`den_1/difficulty/normal_sample1`や`den_1/difficulty/normal_sample2`の内容を参考にしつつ、mcfunctionを新たに作成してください。
 
 - `normal_sample1`は、指定されなかったモブの能力はなくなり、
@@ -37,7 +37,7 @@ function den_1:difficulty/set_all_difficulty {difficulty:1nd}
 ```
 	"frog", \
 	"ghast", \
-    "giant", \
+	"giant", \
 	"glow_squid", \
 ```
 このように追加する。
