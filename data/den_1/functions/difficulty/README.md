@@ -19,6 +19,12 @@ function den_1:difficulty/set_all_difficulty {difficulty:1nd}
 また、全ての難易度を`1st`や`2nd`にする場合、上記のコマンドを行ってくれる
 `function den_1:difficulty/set_all_1st`や`function den_1:difficulty/set_all_2nd`で代用出来ます。
 
+## エンティティ事に個別の能力を全て指定したい
+いわゆる、プリセットが行いたい場合、`den_1/difficulty/normal_sample1`や`den_1/difficulty/normal_sample2`の内容を参考にしつつ、mcfunctionを新たに作成してください。
+
+- `normal_sample1`は、指定されなかったモブの能力はなくなり、
+- `normal_sample2`は、指定されなかったモブの能力は元々指定されていた能力のままです。
+
 ## 新しいエンティティに対応したい！
 ### ステップ1 `den_1:entities/init_entities.mcfunction`を開く
 例えば、`minecraft:giant`を追加する場合…
