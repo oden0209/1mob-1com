@@ -1,5 +1,1 @@
-data modify storage den_1:1mob1com entities set value [ \
-    "sheep", \
-    "zombie", \
-    "creeper", \
-]
+function den_1:entities/init_entities

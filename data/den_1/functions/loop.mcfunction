@@ -1,12 +1,15 @@
 
-execute if score mode 1mob1com matches 1 run function den_1:1mob1com_easy
+# execute if score mode 1mob1com matches 1 run function den_1:1mob1com_easy
 
-execute if score mode 1mob1com matches 2 run function den_1:1mob1com_normal
+# execute if score mode 1mob1com matches 2 run function den_1:1mob1com_normal
 
-execute if score mode 1mob1com matches 3 run function den_1:1mob1com_hard
+# execute if score mode 1mob1com matches 3 run function den_1:1mob1com_hard
 
-execute if score mode 1mob1com matches 4 run function den_1:1mob1com_easy
-execute if score mode 1mob1com matches 4 run function den_1:1mob1com_hard
+# execute if score mode 1mob1com matches 4 run function den_1:1mob1com_easy
+# execute if score mode 1mob1com matches 4 run function den_1:1mob1com_hard
+
+# エンティティ事の個別難易度に対応したmcfunctionを勝手に呼び出します
+function den_1:difficulty/tick
 
 # モード設定のトリガーを常に有効にします
 # このコマンドが実行されることで、チート権限を持っていないユーザーでも1mob1com_mode_triggerのスコアを変更出来ます
