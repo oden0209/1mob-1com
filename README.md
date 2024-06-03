@@ -39,3 +39,8 @@ JAVA版 1.18.2〜
 バグ報告など、なにかあればぜひ[issues](https://github.com/oden0209/1mob-1com/issues)へ書き込んでください。
 
 作者のTwitter:https://twitter.com/Hwjka5A2DtCHYdl
+
+# 個別難易度指定
+```
+/function den_1:difficulty/set_difficulty {name:"bat",difficulty:"1st"}
+```
