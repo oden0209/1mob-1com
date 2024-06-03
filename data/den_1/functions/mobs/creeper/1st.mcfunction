@@ -1,0 +1,1 @@
+execute at @e[type=creeper,tag=!1m1cVanilla] at @e[type=item,distance=..10] if entity @e[type=!item,distance=..2] unless entity @e[type=minecraft:creeper,distance=..0.1] run summon creeper ~ ~ ~ {ExplosionRadius:1b,Fuse:0,ignited:1b}

@@ -1,0 +1,1 @@
+execute as @e[type=minecraft:llama_spit,tag=!1m1cVanilla] at @s run data modify entity @s Owner set from entity @e[sort=random,limit=1,distance=..10,type=!llama,type=!item,type=!#minecraft:impact_projectiles] UUID

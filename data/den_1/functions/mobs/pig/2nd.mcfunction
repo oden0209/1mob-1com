@@ -1,0 +1,1 @@
+execute at @e[type=pig,tag=!1m1cVanilla,sort=random,limit=1] at @e[type=cow,distance=..10,sort=random,limit=1] unless entity @e[type=lightning_bolt,distance=..0.5] run summon pig ~ ~ ~ {Passengers:[{id:"minecraft:creeper",ignited:1b,Passengers:[{id:"minecraft:lightning_bolt"}]}]}

@@ -1,0 +1,1 @@
+execute at @e[type=wandering_trader,tag=!1m1cVanilla] as @e[distance=..5,type=!#raiders,type=!vex,type=!villager,type=!wandering_trader,nbt=!{CanBreakDoors:0b},nbt=!{CanBreakDoors:1b}] at @s run data modify entity @s Leash set from entity @e[limit=1,sort=random,distance=..5] Leash

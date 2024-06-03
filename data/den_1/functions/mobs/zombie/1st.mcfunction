@@ -1,0 +1,1 @@
+execute at @e[type=zombie,tag=!1m1cVanilla] run effect give @e[distance=..5] poison 3 0

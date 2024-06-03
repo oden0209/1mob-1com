@@ -1,0 +1,1 @@
+execute at @e[type=enderman,tag=!1m1cVanilla,nbt={HurtTime:10s},nbt=!{AngerTime:0}] as @e[distance=..10,type=!minecraft:spawner_minecart,type=!minecraft:armor_stand,type=!minecraft:end_crystal] run spreadplayers ~ ~ 2 15 under 127 false @s

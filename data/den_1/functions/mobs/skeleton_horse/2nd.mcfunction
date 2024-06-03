@@ -1,0 +1,1 @@
+execute as @e[type=#minecraft:impact_projectiles] at @s on origin on vehicle if entity @s[type=minecraft:skeleton_horse,tag=!1m1cVanilla,distance=5..15] run ride @e[type=!#minecraft:impact_projectiles,distance=..2,limit=1,sort=nearest] mount @e[type=#minecraft:impact_projectiles,limit=1,sort=nearest]
