@@ -32,6 +32,7 @@ data modify storage den_1:1mob1com entities set value [ \
 	"hoglin", \
 	"horse", \
 	"husk", \
+	"illusioner", \
 	"iron_golem", \
 	"llama", \
 	"magma_cube", \
