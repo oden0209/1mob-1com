@@ -18,9 +18,9 @@ data modify storage den_1:1mob1com entities set value [ \
 	"donkey", \
 	"drowned", \
 	"elder_guardian", \
+	"ender_dragon", \
 	"enderman", \
 	"endermite", \
-	"ender_dragon", \
 	"evoker", \
 	"fox", \
 	"frog", \
