@@ -1,0 +1,15 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:command_block"
+    },
+    "title": "1MOB 1COM",
+    "description": "『1行』の新能力を",
+    "background": "minecraft:textures/block/tinted_glass.png"
+  },
+  "criteria": {
+    "1mob1com": {
+      "trigger": "minecraft:location"
+    }
+  }
+}

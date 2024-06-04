@@ -1,0 +1,47 @@
+{
+  "parent": "den_1:1m1c_advancements/root",
+  "display": {
+    "icon": {
+      "id": "minecraft:barrel"
+    },
+    "title": "毛皮で私を覆って",
+    "description": "ロバを調査する"
+  },
+  "criteria": {
+    "1mob1com": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:leather_helmet",
+            "components": {
+              "minecraft:rarity": "uncommon",
+              "minecraft:repair_cost": 1981
+            }
+          },
+          {
+            "items": "minecraft:leather_chestplate",
+            "components": {
+              "minecraft:rarity": "uncommon",
+              "minecraft:repair_cost": 1981
+            }
+          },
+          {
+            "items": "minecraft:leather_leggings",
+            "components": {
+              "minecraft:rarity": "uncommon",
+              "minecraft:repair_cost": 1981
+            }
+          },
+          {
+            "items": "minecraft:leather_boots",
+            "components": {
+              "minecraft:rarity": "uncommon",
+              "minecraft:repair_cost": 1981
+            }
+          }
+        ]
+      }
+    }
+  }
+}
