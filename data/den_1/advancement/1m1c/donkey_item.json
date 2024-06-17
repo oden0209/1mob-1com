@@ -1,11 +1,11 @@
 {
-  "parent": "den_1:1m1c_advancements/root",
+  "parent": "den_1:1m1c/root",
   "display": {
     "icon": {
       "id": "minecraft:barrel"
     },
     "title": "毛皮で私を覆って",
-    "description": "ロバを調査する"
+    "description": "ロバを調査する\n[★★★☆☆]"
   },
   "criteria": {
     "1mob1com": {

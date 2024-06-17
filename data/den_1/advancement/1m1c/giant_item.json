@@ -1,0 +1,26 @@
+{
+  "parent": "den_1:1m1c/root",
+  "display": {
+    "icon": {
+      "id": "minecraft:feather"
+    },
+    "title": "Attack on Giant",
+    "description": "ジャイアントを調査する\n[★★★★☆]"
+  },
+  "criteria": {
+    "1mob1com": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:feather",
+            "components": {
+              "minecraft:rarity": "uncommon",
+              "minecraft:repair_cost": 1981
+            }
+          }
+        ]
+      }
+    }
+  }
+}
