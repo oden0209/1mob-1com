@@ -1,12 +1,12 @@
 data modify storage den_1:1mob1com difficulty set value { \
 	"allay": "2nd": "2nd", \
-	"armadillo": "none", \
+	"armadillo": "off", \
 	"axolotl": "2nd", \
 	"bat": "1st", \
 	"bee": "1st", \
 	"blaze": "1st", \
-	"bogged": "none", \
-	"brreze": "none", \
+	"bogged": "off", \
+	"brreze": "off", \
 	"camel": "2nd", \
 	"cat": "2nd", \
 	"cave_spider": "2nd", \
@@ -64,7 +64,7 @@ data modify storage den_1:1mob1com difficulty set value { \
 	"stray": "2nd", \
 	"strider": "1st", \
 	"tadpole": "1st", \
-	"trader_llama": "none", \
+	"trader_llama": "off", \
 	"tropical_fish": "1st", \
 	"turtle": "1st", \
 	"vex": "1st", \

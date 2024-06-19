@@ -3,6 +3,7 @@
 data modify storage den_1:1mob1com difficulty.bee set value "2nd"
 data modify storage den_1:1mob1com difficulty.cave_spider set value "1st"
 data modify storage den_1:1mob1com difficulty.chicken set value "2nd"
+data modify storage den_1:1mob1com difficulty.cod set value "2nd"
 data modify storage den_1:1mob1com difficulty.drowned set value "2nd"
 data modify storage den_1:1mob1com difficulty.elder_guardian set value "2nd"
 data modify storage den_1:1mob1com difficulty.ender_dragon set value "2nd"

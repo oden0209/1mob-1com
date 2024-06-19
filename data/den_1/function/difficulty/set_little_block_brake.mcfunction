@@ -1,4 +1,4 @@
-# ブロックを破壊または置換するもの。とくに広範囲または回避が難しいもの。
+# ブロックを破壊または置換などで失わせるもの。とくに広範囲または回避が難しいもの。
 
 data modify storage den_1:1mob1com difficulty.cow set value "1st"
 data modify storage den_1:1mob1com difficulty.creeper set value "2nd"
