@@ -34,7 +34,7 @@
 # o x "husk", \2エンチャントが判定されない
 # o o "illusioner", \
 # o o "iron_golem", \2アトリビュートにしたい
-# △ o "llama", \1変更できそう
+# △ o "llama", \1変更できそう、めっちゃ強いとか
 # o △ "magma_cube", \
 # o x "mooshroom", \アイテムに異常
 # o x "mule", \1ゾンビホースに火炎耐性あってもいい
