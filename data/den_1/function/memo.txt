@@ -66,7 +66,7 @@
 # x x "tadpole", \1皮の帽子に異常 2スポーンする羊の内容が不十分
 # x x "trader_llama", \
 # o o "tropical_fish", \
-# x x "turtle", \
+# o x "turtle", \
 # x o "vex", \1パーティクルに異常 2lifetimeが0になるとrideで連れ去るとか
 # o o "villager", \1敵から逃げない
 # o x "vindicator", \
