@@ -37,7 +37,7 @@
 # △ o "llama", \1変更できそう、めっちゃ強いとか
 # o △ "magma_cube", \
 # o x "mooshroom", \アイテムに異常
-# o x "mule", \1ゾンビホースに火炎耐性あってもいい
+# o o "mule", \1ゾンビホースに火炎耐性あってもいい
 # o o "ocelot", \1クリーパー側でやってもいい
 # o o "panda", \1変更できそう
 # o o "parrot", \
