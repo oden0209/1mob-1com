@@ -23,7 +23,7 @@
 # o o "endermite", \
 # o o "evoker", \
 # x x "fox", \
-# x x "frog", \2取引アイテムに異常　2スポーンする羊の内容が不十分
+# o x "frog", \2取引アイテムに異常
 # o o "ghast", \
 # o x "giant", \2巨大な蝙蝠とファントムに異常
 # o x "glow_squid", \2ヒカリゴケがうまく着地しない
@@ -63,7 +63,7 @@
 # o o "squid", \
 # o o "stray", \
 # o x "strider", \
-# x o "tadpole", \1皮の帽子に異常
+# x x "tadpole", \1皮の帽子に異常 2スポーンする羊の内容が不十分
 # x x "trader_llama", \
 # o o "tropical_fish", \
 # x x "turtle", \
