@@ -75,7 +75,7 @@
 # o o "witch", \雪などの上で過剰に起動しないようにしたい
 # x o "wither", \1たぶん
 # o o "wither_skeleton", \
-# x x "wolf", \
+# o x "wolf", \
 # x o "zoglin", \1ドロップする盾に異常
 # o o "zombie", \
 # o o "zombie_horse", \
