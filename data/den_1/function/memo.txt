@@ -15,7 +15,7 @@
 # o x "cow", \
 # o o "creeper", \
 # o o "dolphin", \
-# o o "donkey", \
+# o o "donkey", \1アイテム異常あるかも(未確認)
 # o x "drowned", \
 # x o "elder_guardian", \
 # x o "ender_dragon", \
@@ -23,7 +23,7 @@
 # o o "endermite", \
 # o o "evoker", \
 # x x "fox", \
-# x x "frog", \2取引アイテムに異常
+# x x "frog", \2取引アイテムに異常　2スポーンする羊の内容が不十分
 # o o "ghast", \
 # o x "giant", \2巨大な蝙蝠とファントムに異常
 # o x "glow_squid", \2ヒカリゴケがうまく着地しない
@@ -78,6 +78,6 @@
 # x x "wolf", \
 # x o "zoglin", \1ドロップする盾に異常
 # o o "zombie", \
-# x o "zombie_horse", \
+# o o "zombie_horse", \
 # o o "zombie_villager", \雪などの上で浮いてしまう
 # o o "zombified_piglin", \
