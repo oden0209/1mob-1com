@@ -57,7 +57,7 @@
 # o o "skeleton", \
 # x o "skeleton_horse", \
 # o △ "slime", \
-# x o "sniffer", \
+# o o "sniffer", \
 # x o "snow_golem", \
 # o x "spider", \
 # o o "squid", \
