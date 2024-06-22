@@ -9,7 +9,7 @@
 # x x "brreze", \案足元のブロックが錆びていたらとか
 # o o "camel", \
 # o o "cat", \1ヤマネコと交換?
-# o x "cave_spider", \1,2見直しできそう 2動作確認していないが大きく変更する予定のためxにした
+# o o "cave_spider", \
 # o o "chicken", \
 # o o "cod", \
 # o x "cow", \
@@ -59,7 +59,7 @@
 # o △ "slime", \
 # o o "sniffer", \
 # x o "snow_golem", \
-# o x "spider", \
+# o x "spider", \2案不吉な試練中はむしろ安全になるとか
 # o o "squid", \
 # o o "stray", \
 # o x "strider", \
@@ -73,7 +73,7 @@
 # x x "wandering_trader", \
 # x o "warden", \
 # o o "witch", \雪などの上で過剰に起動しないようにしたい
-# x o "wither", \1たぶん
+# x o "wither", \1たぶん 案不吉な予感のクラウドを出すトライアルスポナー
 # o o "wither_skeleton", \
 # o o "wolf", \
 # x o "zoglin", \1ドロップする盾に異常
