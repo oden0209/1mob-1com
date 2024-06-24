@@ -16,7 +16,7 @@
 # o o "creeper", \
 # o o "dolphin", \
 # o o "donkey", \1アイテム異常あるかも(未確認)
-# o x "drowned", \
+# o o "drowned", \
 # x o "elder_guardian", \
 # x o "ender_dragon", \
 # o o "enderman", \

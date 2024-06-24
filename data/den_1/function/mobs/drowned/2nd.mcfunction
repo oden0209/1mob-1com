@@ -1,1 +1,2 @@
-execute at @e[type=minecraft:drowned,tag=!1m1cVanilla] run effect give @a[distance=..25] levitation 3 128
+#execute at @e[type=minecraft:drowned,tag=!1m1cVanilla] run effect give @a[distance=..25] levitation 3 128
+execute as @e[type=minecraft:drowned,tag=!1m1cVanilla] at @s on target if entity @s[nbt=!{HurtTime:0s}] at @s if block ~ ~ ~ minecraft:water unless entity @e[type=minecraft:trident,distance=..1] summon minecraft:trident store result entity @s Motion[1] double -0.1 store result entity @s life short 1199 run ride @n[type=!#minecraft:impact_projectiles] mount @s
