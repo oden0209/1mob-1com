@@ -50,7 +50,7 @@
 # o o "pufferfish", \
 # x o "rabbit", \1忍刃に異常
 # o o "ravager", \
-# o x "salmon", \
+# o o "salmon", \
 # o o "sheep", \
 # o x "shulker", \1有効範囲を広げ、閉じてるときのみにするとか
 # o o "silverfish", \1改造できそう 案.周囲のエンティティに虫食いを付与　案.スポナーをトライアルスポナーに変更
