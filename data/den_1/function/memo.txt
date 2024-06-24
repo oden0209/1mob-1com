@@ -25,7 +25,7 @@
 # x x "fox", \
 # o x "frog", \2取引アイテムに異常
 # o o "ghast", \
-# o x "giant", \2巨大な蝙蝠とファントムに異常
+# o o "giant", \2巨大な蝙蝠とファントムに異常
 # o x "glow_squid", \2ヒカリゴケがうまく着地しない
 # o o "goat", \1調整か変更する?
 # o x "guardian", \
