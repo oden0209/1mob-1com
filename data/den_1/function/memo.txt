@@ -63,7 +63,7 @@
 # o o "squid", \
 # o o "stray", \
 # o x "strider", \
-# x o "tadpole", \1皮の帽子に異常
+# o o "tadpole", \
 # x x "trader_llama", \
 # o o "tropical_fish", \
 # o x "turtle", \
