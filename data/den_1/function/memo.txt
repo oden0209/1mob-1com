@@ -48,7 +48,7 @@
 # o x "pillager", \
 # o o "polar_bear", \
 # o o "pufferfish", \
-# x o "rabbit", \1忍刃に異常
+# o o "rabbit", \
 # o o "ravager", \
 # o o "salmon", \
 # o o "sheep", \
