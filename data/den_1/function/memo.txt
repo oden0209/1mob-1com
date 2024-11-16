@@ -70,7 +70,7 @@
 # x o "vex", \1パーティクルに異常 2lifetimeが0になるとrideで連れ去るとか
 # o o "villager", \1敵から逃げない
 # o x "vindicator", \
-# x x "wandering_trader", \
+# o o "wandering_trader", \
 # o o "warden", \
 # o o "witch", \雪などの上で過剰に起動しないようにしたい
 # x o "wither", \1たぶん 案不吉な予感のクラウドを出すトライアルスポナー
