@@ -30,7 +30,7 @@
 # o o "goat", \1調整か変更する?
 # o x "guardian", \
 # o o "hoglin", \2変更してもいい
-# o x "horse", \
+# o o "horse", \
 # o o "husk", \
 # o o "illusioner", \
 # o o "iron_golem", \2アトリビュートにしたい
