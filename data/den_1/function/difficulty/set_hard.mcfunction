@@ -64,7 +64,7 @@ data modify storage den_1:1mob1com difficulty set value { \
 	"stray": "2nd", \
 	"strider": "1st", \
 	"tadpole": "1st", \
-	"trader_llama": "off", \
+	"trader_llama": "2nd", \
 	"tropical_fish": "1st", \
 	"turtle": "1st", \
 	"vex": "1st", \

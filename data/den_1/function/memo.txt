@@ -64,7 +64,7 @@
 # o o "stray", \
 # o x "strider", \
 # o o "tadpole", \
-# x x "trader_llama", \
+# x o "trader_llama", \
 # o o "tropical_fish", \
 # o x "turtle", \
 # x o "vex", \1パーティクルに異常 2lifetimeが0になるとrideで連れ去るとか

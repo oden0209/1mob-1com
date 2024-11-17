@@ -1,0 +1,1 @@
+execute as @e[type=minecraft:llama_spit] at @s on origin if entity @e[type=minecraft:trader_llama,tag=!1m1cVanilla] as @n[type=minecraft:llama_spit] positioned over ocean_floor if entity @s[distance=..0.3] summon minecraft:tnt store result entity @s explosion_power float 5 run kill @n[type=minecraft:llama_spit]
