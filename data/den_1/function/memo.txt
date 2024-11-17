@@ -1,5 +1,5 @@
 # 1 2 能力が正常に機能しているか
-# x o "allay", \
+# o o "allay", \
 # o o "armadillo", \
 # o x "axolotl", \
 # o o "bat", \
