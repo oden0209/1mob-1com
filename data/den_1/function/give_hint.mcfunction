@@ -7,8 +7,8 @@ execute if score mode 1mob1com matches 3 run give @p written_book[lore=['"1mob1c
 
 
 #MOB数(1.21.3)=83
-#1st=71/83
+#1st=73/83
 #2nd=68/83
-#all=139/166
+#all=141/166
 
 #e:h = 35:46

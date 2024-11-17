@@ -1,5 +1,5 @@
 data modify storage den_1:1mob1com difficulty set value { \
-	"allay": "2nd": "2nd", \
+	"allay": "2nd", \
 	"armadillo": "1st", \
 	"axolotl": "2nd", \
 	"bat": "1st", \

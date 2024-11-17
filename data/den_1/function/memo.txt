@@ -58,7 +58,7 @@
 # x o "skeleton_horse", \
 # o △ "slime", \
 # o o "sniffer", \
-# x o "snow_golem", \
+# o o "snow_golem", \
 # o x "spider", \2案不吉な試練中はむしろ安全になるとか
 # o o "squid", \
 # o o "stray", \
@@ -67,7 +67,7 @@
 # x o "trader_llama", \
 # o o "tropical_fish", \
 # o x "turtle", \
-# x o "vex", \1パーティクルに異常 2lifetimeが0になるとrideで連れ去るとか
+# o o "vex", \1パーティクルに異常 2lifetimeが0になるとrideで連れ去るとか
 # o o "villager", \1敵から逃げない
 # o x "vindicator", \
 # o o "wandering_trader", \
