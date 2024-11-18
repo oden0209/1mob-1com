@@ -5,7 +5,7 @@
 # o o "bat", \
 # o o "bee", \
 # o o "blaze", \
-# x x "bogged", \
+# x x "bogged", \案キノコを刈らないと倒せないとか
 # x x "brreze", \案足元のブロックが錆びていたらとか
 # o o "camel", \
 # o o "cat", \1ヤマネコと交換?
@@ -43,7 +43,7 @@
 # o o "parrot", \
 # o o "phantom", \
 # o o "pig", \1体力最大ならでもいい 2クリーパーをバニラ化すべき
-# x x "piglin", \
+# o x "piglin", \
 # o o "piglin_brute", \2改造できそう
 # o x "pillager", \
 # o o "polar_bear", \

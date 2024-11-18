@@ -43,7 +43,7 @@ data modify storage den_1:1mob1com difficulty set value { \
 	"parrot": "1st", \
 	"phantom": "1st", \
 	"pig": "1st", \
-	"piglin": "1st", \
+	"piglin": "2nd", \
 	"piglin_brute": "2nd", \
 	"pillager": "1st", \
 	"polar_bear": "2nd", \

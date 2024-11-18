@@ -3,6 +3,7 @@
 data modify storage den_1:1mob1com difficulty.cow set value "1st"
 data modify storage den_1:1mob1com difficulty.creeper set value "2nd"
 data modify storage den_1:1mob1com difficulty.pig set value "1st"
+data modify storage den_1:1mob1com difficulty.piglin set value "2nd"
 data modify storage den_1:1mob1com difficulty.ravager set value "1st"
 data modify storage den_1:1mob1com difficulty.spider set value "1st"
 data modify storage den_1:1mob1com difficulty.trader_llama set value "1st"
