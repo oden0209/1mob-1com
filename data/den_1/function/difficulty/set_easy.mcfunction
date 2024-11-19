@@ -25,7 +25,7 @@ data modify storage den_1:1mob1com difficulty set value { \
 	"fox": "1st", \
 	"frog": "1st", \
 	"ghast": "2nd", \
-	"giant": "1st", \
+	"giant": "2nd", \
 	"glow_squid": "2nd", \
 	"goat": "1st", \
 	"guardian": "1st", \
