@@ -5,8 +5,8 @@
 # o o "bat", \
 # o o "bee", \
 # o o "blaze", \
-# x x "bogged", \案キノコを刈らないと倒せないとか
-# x x "brreze", \案足元のブロックが錆びていたらとか
+# o x "bogged", \案キノコを刈らないと倒せないとか
+# x x "breeze", \案足元のブロックが錆びていたらとか
 # o o "camel", \
 # o o "cat", \1ヤマネコと交換?
 # o o "cave_spider", \

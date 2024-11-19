@@ -1,6 +1,7 @@
 # プレイヤーから遠距離でも容易にエンティティを召喚しうるもの、または短時間に大量のエンティティを召喚するもの。
 
 data modify storage den_1:1mob1com difficulty.bee set value "2nd"
+data modify storage den_1:1mob1com difficulty.bogged set value "2nd"
 data modify storage den_1:1mob1com difficulty.cave_spider set value "1st"
 data modify storage den_1:1mob1com difficulty.chicken set value "2nd"
 data modify storage den_1:1mob1com difficulty.cod set value "2nd"
