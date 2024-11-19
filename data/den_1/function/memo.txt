@@ -5,7 +5,7 @@
 # o o "bat", \
 # o o "bee", \
 # o o "blaze", \
-# o x "bogged", \案キノコを刈らないと倒せないとか
+# o x "bogged", \1stウィザーなども考慮した下方修正が必要
 # x x "breeze", \案足元のブロックが錆びていたらとか
 # o o "camel", \
 # o o "cat", \1ヤマネコと交換?
@@ -18,14 +18,14 @@
 # o o "donkey", \1アイテム異常あるかも(未確認)
 # o o "drowned", \
 # x o "elder_guardian", \
-# x o "ender_dragon", \
+# o o "ender_dragon", \
 # o o "enderman", \
 # o o "endermite", \
 # o o "evoker", \
 # x x "fox", \
 # o x "frog", \2取引アイテムに異常
 # o o "ghast", \
-# o o "giant", \2巨大な蝙蝠とファントムに異常
+# o o "giant", \
 # o o "glow_squid", \
 # o o "goat", \1調整か変更する?
 # o x "guardian", \
