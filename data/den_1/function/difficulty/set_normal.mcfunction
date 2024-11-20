@@ -5,8 +5,8 @@ data modify storage den_1:1mob1com difficulty set value { \
 	"bat": "1st", \
 	"bee": "1st", \
 	"blaze": "1st", \
-	"bogged": "off", \
-	"brreze": "off", \
+	"bogged": "1st", \
+	"brreze": "1st", \
 	"camel": "1st", \
 	"cat": "1st", \
 	"cave_spider": "1st", \

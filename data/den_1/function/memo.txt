@@ -6,7 +6,7 @@
 # o o "bee", \
 # o o "blaze", \
 # o x "bogged", \
-# x x "breeze", \案足元のブロックが錆びていたらとか
+# o x "breeze", \案足元のブロックが錆びていたらとか
 # o o "camel", \
 # o o "cat", \1ヤマネコと交換?
 # o o "cave_spider", \
