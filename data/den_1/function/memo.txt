@@ -5,7 +5,7 @@
 # o o "bat", \
 # o o "bee", \
 # o o "blaze", \
-# o x "bogged", \1stウィザーなども考慮した下方修正が必要
+# o x "bogged", \
 # x x "breeze", \案足元のブロックが錆びていたらとか
 # o o "camel", \
 # o o "cat", \1ヤマネコと交換?
