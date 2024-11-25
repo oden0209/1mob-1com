@@ -53,7 +53,7 @@ data modify storage den_1:1mob1com difficulty set value { \
 	"salmon": "1st", \
 	"sheep": "1st", \
 	"shulker": "2nd", \
-	"silverfish": "2nd", \
+	"silverfish": "1st", \
 	"skeleton": "2nd", \
 	"skeleton_horse": "2nd", \
 	"slime": "2nd", \

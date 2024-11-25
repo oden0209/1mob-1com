@@ -23,13 +23,13 @@
 # o o "endermite", \
 # o o "evoker", \
 # x x "fox", \
-# o x "frog", \2取引アイテムに異常
+# o x "frog", \2取引アイテムに異常 ラナ関係の能力とか
 # o o "ghast", \
 # o o "giant", \
 # o o "glow_squid", \
 # o o "goat", \1調整か変更する?
 # o x "guardian", \
-# o o "hoglin", \2変更してもいい
+# o △ "hoglin", \2変更してもいい
 # o o "horse", \
 # o o "husk", \
 # o o "illusioner", \
