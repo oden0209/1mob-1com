@@ -13,6 +13,7 @@ data modify storage den_1:1mob1com difficulty set value { \
 	"chicken": "1st", \
 	"cod": "2nd", \
 	"cow": "2nd", \
+	"creaking": "off", \
 	"creeper": "1st", \
 	"dolphin": "2nd", \
 	"donkey": "2nd", \
