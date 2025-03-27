@@ -13,6 +13,7 @@
 # o o "chicken", \
 # o o "cod", \
 # o x "cow", \
+# o x "creaking", \
 # o o "creeper", \
 # o o "dolphin", \
 # o o "donkey", \1アイテム異常あるかも(未確認)
