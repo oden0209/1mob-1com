@@ -18,7 +18,7 @@
 # o o "dolphin", \
 # o o "donkey", \1アイテム異常あるかも(未確認)
 # o o "drowned", \
-# x o "elder_guardian", \
+# o o "elder_guardian", \
 # o o "ender_dragon", \
 # o o "enderman", \
 # o o "endermite", \
