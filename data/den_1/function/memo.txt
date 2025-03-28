@@ -52,7 +52,7 @@
 # o o "rabbit", \
 # o o "ravager", \
 # o o "salmon", \
-# o o "sheep", \
+# x o "sheep", \
 # o x "shulker", \1有効範囲を広げ、閉じてるときのみにするとか
 # o o "silverfish", \1改造できそう 案.周囲のエンティティに虫食いを付与　案.スポナーをトライアルスポナーに変更
 # o o "skeleton", \
